@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4638E9A2-C3BD-0878-1B0C-D704E925A834}</ProjectGuid>
+    <ProjectGuid>{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Jumping.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
