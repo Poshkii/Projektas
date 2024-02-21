@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class Jumping : MonoBehaviour
@@ -11,7 +13,7 @@ public class Jumping : MonoBehaviour
 
     private float heldTime = 0f;
     private Rigidbody2D body;
-    private bool jumping = false; // Checks if mid-air
+    private bool isJumping = false; // checks if mid-air
 
     private void Start()
     {
@@ -20,37 +22,32 @@ public class Jumping : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !jumping)
+        // start of touch input to reset touch length measurement
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && !isJumping)
             heldTime = 0f;
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && !jumping)
+        // times and updates held touch input
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && !isJumping)
         {
             heldTime += Time.deltaTime;
             heldTime = Mathf.Clamp(heldTime, 0f, maxTime);
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !jumping)
-            Jump();       
+        // once touch input has ended jumping is initiated
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && !isJumping)
+            Jump();
+
+        // If movement vector is 0 that means body has landed on ground and can jump again
+        if (body.velocity.magnitude == 0)
+            isJumping = false;
+            
     }
 
+    // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
     {
-        jumping = true;
+        isJumping = true;
         float jumpHeight = Mathf.Lerp(minJump, jumpForce, heldTime / maxTime);
         body.velocity = new Vector2(sideJump, jumpHeight);
-    }
-
-    // Unity callback method. Triggers when object colides with other objects with tag "Platform"
-    // All generated platforms need to have added tag "Platform" for this to work
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Platform"))
-        {
-            // Allows to jump once landed
-            jumping = false;
-
-            // Removes horizontal sliding
-            body.velocity = Vector2.zero;
-        }
     }
 }
