@@ -9,7 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: b577a9a04fc4e4c4692a17a226513197
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7709885c369147a4790307cc7d767879
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: c9efd6c06ca197146b2b58688dceac7c
+  - enabled: 1
+    path: Assets/Scenes/DeathScreen.unity
+    guid: 1ca2cdbb00d97dd4eac9e1827ccb9ed7
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a8e4d2bb2fc290d4c96334bca4f01b9a, type: 2}

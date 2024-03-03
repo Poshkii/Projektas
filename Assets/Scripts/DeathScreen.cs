@@ -8,7 +8,7 @@ public class DeathScreen : MonoBehaviour
     // Start is called before the first frame update
     public void StartAgain()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync(1);
     }
     public void Quit()
     {

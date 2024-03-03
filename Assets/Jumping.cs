@@ -20,6 +20,7 @@ public class Jumping : MonoBehaviour
     private float groundCheckRadius = 0.5f;
     public LayerMask whatIsGround;
     public SpriteRenderer spriteRend;
+    private bool flagInvisible = false;
 
     private void Start()
     {
@@ -35,8 +36,7 @@ public class Jumping : MonoBehaviour
     }
 
     private void Update()
-    {
-        
+    {        
         // checks if a touch input was performed during a jump before character landed.
         // if that was the case it prevents touch input from carrying over to prevent missclicks/unintentional jumps
         //if (!isJumping && Input.touchCount == 0 && !allowJump)
@@ -89,6 +89,15 @@ public class Jumping : MonoBehaviour
         //}
 
         allowJump = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, whatIsGround);
+
+        if (!spriteRend.isVisible)
+        {
+            Debug.Log("Invisible to camera");
+            if (flagInvisible)
+                SceneManager.LoadSceneAsync(2);
+            else
+                flagInvisible = true;
+        }
     }    
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
