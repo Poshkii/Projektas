@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    //private int value = 1;
-    public AudioClip collectSound;
-    private AudioSource source;
-    public float volume = 1.0f;
-    public float rotation = 150f;
-    private bool collected = false;
+    public AudioClip collectSound; // main pickup sound
+    private AudioSource source; // object for playing pickup sound
+    public float volume = 1.0f; // volume of pickup sound (optional)
+    public float rotation = 150f; // coin spin speed (optional)
+    private bool collected = false; // prevents duplicate pickups on collision
 
-    // Start is called before the first frame update
     void Start()
     {
         source = GetComponent<AudioSource>();
@@ -17,11 +15,12 @@ public class Coins : MonoBehaviour
             source = gameObject.AddComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         SpinCoin();
     }
+
+    // main collision event to trigger a coin pickup
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!collected && other.CompareTag("Player"))
@@ -30,22 +29,25 @@ public class Coins : MonoBehaviour
 
     internal void AddCoin()
     {
+        // plays pickup sound
         if (collectSound != null)
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position, volume);
 
+        // updates coin counter
         CoinCollect coinCounter = FindObjectOfType<CoinCollect>();
         if (coinCounter != null)
             coinCounter.IncreaseCoins();
 
+        //prevents duplicate pickups on 1 coin
         collected = true;
 
+        // removes coin form the scene once picked up
         Destroy(gameObject);
-
     }
 
+    // (Optional) spinning animation for visuals
     void SpinCoin()
     {
-        // Rotate the coin gradually over time
         transform.Rotate(Vector3.up, rotation * Time.deltaTime);
     }
 }

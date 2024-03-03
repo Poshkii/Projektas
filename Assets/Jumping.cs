@@ -90,16 +90,4 @@ public class Jumping : MonoBehaviour
             jumpIndicator.fillAmount = heldTime / maxTime;
 
     }
-
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Coin"))
-    //    {
-    //        Coins currency = other.GetComponent<Coins>();
-    //        if (currency != null)
-    //        {
-    //            currency.AddCoin();
-    //        }
-    //    }
-    //}
 }

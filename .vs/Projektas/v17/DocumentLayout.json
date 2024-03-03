@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Donatas\\Desktop\\Projektas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\coincollect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\coincollect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\coins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\coins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoinCollect.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\CoinCollect.cs",
+              "RelativeDocumentMoniker": "Assets\\CoinCollect.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\CoinCollect.cs",
+              "RelativeToolTip": "Assets\\CoinCollect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-29T09:38:10.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Coins.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Coins.cs",
+              "RelativeDocumentMoniker": "Assets\\Coins.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Coins.cs",
+              "RelativeToolTip": "Assets\\Coins.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowC0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T12:41:43.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Jumping.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Jumping.cs",
+              "RelativeDocumentMoniker": "Assets\\Jumping.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Jumping.cs",
+              "RelativeToolTip": "Assets\\Jumping.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAwwFsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-03T12:41:43.284Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
