@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Jumping : MonoBehaviour
@@ -18,10 +19,12 @@ public class Jumping : MonoBehaviour
     public Transform groundCheck;
     private float groundCheckRadius = 0.5f;
     public LayerMask whatIsGround;
+    public SpriteRenderer spriteRend;
 
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        spriteRend = GetComponent<SpriteRenderer>();
 
         // Initialize jump strength indicator
         if (jumpIndicator != null)
@@ -33,6 +36,7 @@ public class Jumping : MonoBehaviour
 
     private void Update()
     {
+        
         // checks if a touch input was performed during a jump before character landed.
         // if that was the case it prevents touch input from carrying over to prevent missclicks/unintentional jumps
         //if (!isJumping && Input.touchCount == 0 && !allowJump)
@@ -85,7 +89,7 @@ public class Jumping : MonoBehaviour
         //}
 
         allowJump = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, whatIsGround);
-    }
+    }    
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()

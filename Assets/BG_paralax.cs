@@ -6,7 +6,7 @@ public class BG_paralax : MonoBehaviour
 {
     private float length,
                   startPos,
-                  speed = 3,
+                  speed = 0.7f,
                   centerPoint = 0;
     public float parallaxEffect;
     float distance = 0;

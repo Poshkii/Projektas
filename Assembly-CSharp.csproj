@@ -65,6 +65,7 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\CoinCollect.cs" />
     <Compile Include="Assets\Jumping.cs" />
+    <Compile Include="Assets\BG_paralax.cs" />
     <Compile Include="Assets\Platform.cs" />
     <Compile Include="Assets\PlatformSpawner.cs" />
   </ItemGroup>
