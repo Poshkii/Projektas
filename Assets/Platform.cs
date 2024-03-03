@@ -6,13 +6,13 @@ using UnityEngine.UIElements;
 public class Platform : MonoBehaviour
 {
     Vector2 startPos = new Vector2 (10, -7);
-    float minGap = 1f;
-    float maxGap = 4;
+    float minGap = 2.5f;
+    float maxGap = 7f;
     float yOffset = 1.5f;
     float spawnDelay = 1.5f;
-    float platformSpeed = 1.5f;
-    float minWidth = 0.5f;
-    float maxWidth = 2f;
+    float platformSpeed = 0.7f;
+    float minWidth = 1f;
+    float maxWidth = 2.5f;
     bool screenFilled = false;
     Platform spawnedPlatform = null;
 
@@ -67,7 +67,7 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {       
-        if (transform.position.x < -12)
+        if (transform.position.x < -13)
         {           
             SpawnOnLast();
             Destroy(gameObject);
