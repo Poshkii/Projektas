@@ -13,8 +13,7 @@ public class Jumping : MonoBehaviour
 
     private float heldTime = 0f;
     private Rigidbody2D body;
-    private bool isJumping = false; // checks if mid-air
-    private bool jumpInit = false; // checks if jump was started
+    private bool isJumping = false;
     private bool allowJump = true; // either allows or prevents performing a jump
     public Transform groundCheck;
     private float groundCheckRadius = 0.7f;
@@ -50,15 +49,14 @@ public class Jumping : MonoBehaviour
         //}
 
         // start of touch input to reset touch duration measurement
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !isJumping)
         {
             heldTime = 0f;
-            jumpInit = false;
         }
 
 
         // times and updates held touch input, initializes jump strength indicator
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !jumpInit)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !isJumping)
         {
             heldTime += Time.deltaTime;
             heldTime = Mathf.Clamp(heldTime, 0f, maxTime);
@@ -68,14 +66,10 @@ public class Jumping : MonoBehaviour
 
         // jumping is perfomed if conditions are met and indicator is reset
         // inverts certain checks to perform input control
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump && !isJumping)
         {
-                Jump();
-                jumpInit = true;
-                allowJump = false;
-                //Debug.Log("jumping not allowed");
-            
-
+            Jump();
+            isJumping = true;
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
         }
@@ -93,6 +87,13 @@ public class Jumping : MonoBehaviour
         //}
 
         allowJump = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, whatIsGround);
+
+        if (isJumping && allowJump && Input.touchCount == 0)
+        {
+            isJumping = false;
+            heldTime = 0f;
+            jumpIndicator.fillAmount = 0f;
+        }
 
         if (!spriteRend.isVisible)
         {
@@ -112,10 +113,8 @@ public class Jumping : MonoBehaviour
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
     {
-        isJumping = true;
         float jumpHeight = Mathf.Lerp(minJump, jumpForce, heldTime / maxTime);
         body.velocity = new Vector2(sideJump, jumpHeight);
-
     }
 
     // Displays an indicator of how strong the jump is depending on how long touch input was
