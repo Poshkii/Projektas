@@ -21,6 +21,9 @@ public class Jumping : MonoBehaviour
     public LayerMask whatIsGround;
     public SpriteRenderer spriteRend;
     private bool flagInvisible = false;
+    public GameObject gameManagerObj;
+    ScoreCount scoreCounter;
+    Vector3 startPos = new Vector3(-10, 2, 0);
 
     private void Start()
     {
@@ -33,6 +36,7 @@ public class Jumping : MonoBehaviour
             jumpIndicator.enabled = true;
             jumpIndicator.fillAmount = 0f;
         }
+        scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
     }
 
     private void Update()
@@ -92,9 +96,14 @@ public class Jumping : MonoBehaviour
 
         if (!spriteRend.isVisible)
         {
-            Debug.Log("Invisible to camera");
             if (flagInvisible)
-                SceneManager.LoadSceneAsync(2);
+            {
+                scoreCounter.Death();
+                transform.position = startPos;
+                body.velocity = Vector2.zero;
+            }
+                //SceneManager.LoadSceneAsync(2);
+                
             else
                 flagInvisible = true;
         }
