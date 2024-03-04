@@ -13,7 +13,7 @@ public class PlatformSpawner : MonoBehaviour
     {
         GameObject spawnedPlatform = Instantiate(platform);
         Platform platformScript = spawnedPlatform.GetComponent<Platform>();
-        platformScript.Spawn(startPos);
+        platformScript.Spawn(startPos, 0.7f);
         platformScript.SpawnRecusively(8);
     }
 

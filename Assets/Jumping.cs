@@ -17,7 +17,7 @@ public class Jumping : MonoBehaviour
     private bool jumpInit = false; // checks if jump was started
     private bool allowJump = true; // either allows or prevents performing a jump
     public Transform groundCheck;
-    private float groundCheckRadius = 0.5f;
+    private float groundCheckRadius = 0.7f;
     public LayerMask whatIsGround;
     public SpriteRenderer spriteRend;
     private bool flagInvisible = false;

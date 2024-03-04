@@ -12,10 +12,11 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
+    public TMP_Text scoreboardText;
     public GameObject player;    
     public GameObject starterPlatform;
 
-    private List<int> scores = new List<int>(5);
+    private List<int> scores = new List<int>();
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,18 @@ public class GameManager : MonoBehaviour
     public void DisplayDeathScreen(int runScore, int runCoins)
     {
         Time.timeScale = 0f;
-
+        scores.Add(runScore);
+        scores.Sort();
+        scores.Reverse();
+        if (scores.Count > 10 )
+        {
+            scores.RemoveRange(10, scores.Count - 10);
+        }        
+        scoreboardText.text = "Scoreboard\n";
+        for (int i = 0; i < scores.Count; i++)
+        {
+            scoreboardText.text += (i+1) + ". " + scores[i] + "\n";
+        }
         gameUI.gameObject.SetActive(false);
         deathScreenUI.gameObject.SetActive(true);
         if (runScore > highScore)
@@ -41,11 +53,9 @@ public class GameManager : MonoBehaviour
             highScore = runScore;
         }
         coins += runCoins;
-
         scoreText.text = "Score: " + runScore;
         highscoreText.text = "Highscore: " + highScore;
         coinsText.text = "Coins: " + coins;
-
     }
 
     public void PlayAgain()

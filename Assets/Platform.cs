@@ -10,7 +10,7 @@ public class Platform : MonoBehaviour
     float maxGap = 7f;
     float yOffset = 1.5f;
     float spawnDelay = 1.5f;
-    float platformSpeed = 0.7f;
+    public float platformSpeed = 0.7f;
     float minWidth = 1f;
     float maxWidth = 2.5f;
     bool screenFilled = false;
@@ -22,8 +22,9 @@ public class Platform : MonoBehaviour
 
     }
 
-    public void Spawn(Vector2 position)
+    public void Spawn(Vector2 position, float speed)
     {        
+        platformSpeed = speed;
         float randomWidth = Random.Range(minWidth, maxWidth);
         transform.localScale = new Vector3(randomWidth, 10, 0);
         Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffset, yOffset));
@@ -48,7 +49,7 @@ public class Platform : MonoBehaviour
         if (spawnedPlatform == null)
         {
             spawnedPlatform = Instantiate(gameObject).GetComponent<Platform>();
-            spawnedPlatform.Spawn(transform.position);
+            spawnedPlatform.Spawn(transform.position, platformSpeed);
         }        
     }
 

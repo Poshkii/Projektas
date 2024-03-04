@@ -34,9 +34,9 @@ public class Coins : MonoBehaviour
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position, volume);
 
         // updates coin counter
-        CoinCollect coinCounter = FindObjectOfType<CoinCollect>();
+        ScoreCount coinCounter = FindObjectOfType<ScoreCount>();
         if (coinCounter != null)
-            coinCounter.IncreaseCoins();
+            coinCounter.AddCoin();
 
         //prevents duplicate pickups on 1 coin
         collected = true;
