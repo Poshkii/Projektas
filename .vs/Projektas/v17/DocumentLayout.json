@@ -3,15 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\scripts\\mainmeniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\scripts\\mainmeniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmeniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "ScoreCount.cs",
+              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreCount.cs",
+              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScoreCount.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAcwDUAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T11:28:55.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DeathScreen.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\DeathScreen.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeathScreen.cs",
@@ -58,12 +75,11 @@
               "RelativeToolTip": "Assets\\Scripts\\DeathScreen.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T15:04:05.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T15:04:05.915Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AudioManager.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Audio\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Audio\\AudioManager.cs",
@@ -75,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainMeniu.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\MainMeniu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMeniu.cs",
@@ -83,12 +99,11 @@
               "RelativeToolTip": "Assets\\Scripts\\MainMeniu.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:56:24.836Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T14:56:24.836Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Platform.cs",
               "RelativeDocumentMoniker": "Assets\\Platform.cs",
@@ -100,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BG_paralax.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\BG_paralax.cs",
               "RelativeDocumentMoniker": "Assets\\BG_paralax.cs",
@@ -112,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CoinCollect.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\CoinCollect.cs",
               "RelativeDocumentMoniker": "Assets\\CoinCollect.cs",
@@ -124,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Coins.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Coins.cs",
               "RelativeDocumentMoniker": "Assets\\Coins.cs",
@@ -136,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Jumping.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Jumping.cs",
               "RelativeDocumentMoniker": "Assets\\Jumping.cs",
@@ -144,8 +159,7 @@
               "RelativeToolTip": "Assets\\Jumping.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAQwGIAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T12:41:43.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T12:41:43.284Z"
             }
           ]
         }
