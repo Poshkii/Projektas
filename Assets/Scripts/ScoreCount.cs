@@ -8,6 +8,7 @@ public class ScoreCount : MonoBehaviour
 {
     public int score;
     public int coins;
+    private float speed = 0.7f;
 
     public TMP_Text scoreText;
     public TMP_Text coinsText;
@@ -34,6 +35,7 @@ public class ScoreCount : MonoBehaviour
         {
             platform.GetComponent<Platform>().platformSpeed += 0.1f;
         }
+        speed += 0.1f;
     }
 
     void ResetSpeed()
@@ -58,7 +60,7 @@ public class ScoreCount : MonoBehaviour
        
         //PlayerPrefs.SetInt("Coins", coins);
 
-        if (timer >= 1f)
+        if (timer >= 2f && speed < 3f)
         {
             score++;
             SpeedUp();

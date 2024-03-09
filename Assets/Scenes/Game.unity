@@ -1682,6 +1682,7 @@ MonoBehaviour:
     m_Bits: 128
   spriteRend: {fileID: 0}
   gameManagerObj: {fileID: 661003188}
+  lives: 100
 --- !u!61 &688779441
 BoxCollider2D:
   m_ObjectHideFlags: 0

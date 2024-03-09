@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +24,8 @@ public class Jumping : MonoBehaviour
     public GameObject gameManagerObj;
     ScoreCount scoreCounter;
     Vector3 startPos = new Vector3(-10, 2, 0);
+    public int lives = 1;
+    private bool respawned = false;
 
     private void Start()
     {
@@ -95,20 +98,59 @@ public class Jumping : MonoBehaviour
             jumpIndicator.fillAmount = 0f;
         }
 
-        if (!spriteRend.isVisible)
+        //If player is invisible to camera
+        if (!spriteRend.isVisible && !respawned)
         {
             if (flagInvisible)
             {
-                scoreCounter.Death();
-                transform.position = startPos;
-                body.velocity = Vector2.zero;
-            }
-                //SceneManager.LoadSceneAsync(2);
-                
+                OutOfScreen();
+            }                
             else
                 flagInvisible = true;
         }
-    }    
+    }   
+
+    //Player is outside of the camera view
+    private void OutOfScreen()
+    {
+        lives--;
+        //Dies
+        if (lives < 1)
+        {
+            scoreCounter.Death();
+            transform.position = startPos;
+            body.velocity = Vector2.zero;
+        }
+        //Respawns
+        else
+        {
+            respawned = true;
+            StartCoroutine(WaitAfterRespawn(2f));            
+            body.transform.position = FindNearestPlatform();
+            body.velocity = Vector3.zero;
+        }
+    }
+
+    //Finds the nearest platform to the player
+    private Vector3 FindNearestPlatform()
+    {
+        GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        float minDistance = Vector3.Distance(transform.position, platforms[0].transform.position);
+        Vector3 platformPos = platforms[0].transform.position;
+        foreach (GameObject plat in platforms)
+        {
+            float distance = Vector3.Distance(transform.position, plat.transform.position);
+
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                platformPos = plat.transform.position;
+                platformPos.y += 15f;
+                platformPos.x -= 1.5f * plat.GetComponent<Platform>().platformSpeed;
+            }
+        }
+        return platformPos;
+    }
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
@@ -123,5 +165,13 @@ public class Jumping : MonoBehaviour
         if (jumpIndicator != null)
             jumpIndicator.fillAmount = heldTime / maxTime;
 
+    }
+
+    //Wait before checking if player is outside the view
+    IEnumerator WaitAfterRespawn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        respawned = false;
     }
 }

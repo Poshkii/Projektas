@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     int highScore = 0;
     int coins = 0;
+    int lives = 1;
     public Canvas gameUI;
     public Canvas deathScreenUI;
     public TMP_Text scoreText;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreboardText;
     public GameObject player;    
     public GameObject starterPlatform;
+    private Jumping playerScript;
 
     private List<int> scores = new List<int>();
 
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(starterPlatform);
         deathScreenUI.gameObject.SetActive(false);
+        playerScript = player.GetComponent<Jumping>();
     }
 
     // Update is called once per frame
@@ -65,5 +68,11 @@ public class GameManager : MonoBehaviour
         gameUI.gameObject.SetActive(true);        
         Debug.Log("Play");
         Instantiate(starterPlatform);
+        playerScript.lives = 1;
+    }
+
+    public void AddExtraLife()
+    {
+        playerScript.lives++;
     }
 }
