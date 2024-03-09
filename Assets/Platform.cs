@@ -15,24 +15,39 @@ public class Platform : MonoBehaviour
     float maxWidth = 2.5f;
     bool screenFilled = false;
     Platform spawnedPlatform = null;
+    GameObject coin;
+    private float coinSpawnChance = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
-
+               
     }
 
-    public void Spawn(Vector2 position, float speed)
-    {        
+    public void SetPosAndSpeed(Vector2 position, float speed)
+    {
+        coin = transform.GetChild(0).gameObject;
+        coin.SetActive(false);
+
         platformSpeed = speed;
         float randomWidth = Random.Range(minWidth, maxWidth);
+        coin.transform.parent = null;
         transform.localScale = new Vector3(randomWidth, 10, 0);
+        coin.transform.SetParent(transform);
         Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffset, yOffset));
         position.y = -8f;
         transform.position = position + offset;
 
-        //StartCoroutine(waitToSpawn(spawnDelay));        
-    }     
+        TrySpawnCoin();
+    }    
+    
+    public void TrySpawnCoin()
+    {
+        if (Random.value < coinSpawnChance)
+        {            
+            coin.SetActive(true);
+        }
+    }
 
     public void SpawnRecusively(int count)
     {
@@ -49,7 +64,7 @@ public class Platform : MonoBehaviour
         if (spawnedPlatform == null)
         {
             spawnedPlatform = Instantiate(gameObject).GetComponent<Platform>();
-            spawnedPlatform.Spawn(transform.position, platformSpeed);
+            spawnedPlatform.SetPosAndSpeed(transform.position, platformSpeed);
         }        
     }
 

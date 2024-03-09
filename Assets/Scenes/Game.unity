@@ -1870,6 +1870,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 331669841027679987, guid: 92fe5324d59152e4f8d385ba8f05235f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4024247005987040346, guid: 92fe5324d59152e4f8d385ba8f05235f, type: 3}
       propertyPath: m_Name
       value: coin
@@ -2137,7 +2141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &888059850
 RectTransform:
   m_ObjectHideFlags: 0

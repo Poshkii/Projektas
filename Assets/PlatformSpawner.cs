@@ -13,9 +13,9 @@ public class PlatformSpawner : MonoBehaviour
     {
         GameObject spawnedPlatform = Instantiate(platform);
         Platform platformScript = spawnedPlatform.GetComponent<Platform>();
-        platformScript.Spawn(startPos, 0.7f);
+        platformScript.SetPosAndSpeed(startPos, 0.7f);
         platformScript.SpawnRecusively(8);
-    }
+    }    
 
     // Update is called once per frame
     void Update()
