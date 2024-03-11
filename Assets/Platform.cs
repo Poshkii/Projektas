@@ -5,15 +5,13 @@ using UnityEngine.UIElements;
 
 public class Platform : MonoBehaviour
 {
-    Vector2 startPos = new Vector2 (10, -7);
-    float minGap = 2.5f;
-    float maxGap = 7f;
+    float minGap = 5f;
+    float baseYValue = -5f;
+    float maxGap = 10f;
     float yOffset = 1.5f;
-    float spawnDelay = 1.5f;
     public float platformSpeed = 0.7f;
-    float minWidth = 1f;
-    float maxWidth = 2.5f;
-    bool screenFilled = false;
+    float minWidth = 0.8f;
+    float maxWidth = 1.2f;
     Platform spawnedPlatform = null;
     GameObject coin;
     private float coinSpawnChance = 0.3f;
@@ -32,10 +30,10 @@ public class Platform : MonoBehaviour
         platformSpeed = speed;
         float randomWidth = Random.Range(minWidth, maxWidth);
         coin.transform.parent = null;
-        transform.localScale = new Vector3(randomWidth, 10, 0);
+        transform.localScale = new Vector3(randomWidth, 1, 0);
         coin.transform.SetParent(transform);
         Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffset, yOffset));
-        position.y = -8f;
+        position.y = baseYValue;
         transform.position = position + offset;
 
         TrySpawnCoin();

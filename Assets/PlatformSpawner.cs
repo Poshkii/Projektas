@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] GameObject platform;
-    Vector2 startPos = new Vector2(-12, -8);
+    Vector2 startPos = new Vector2(-12, -2);
     public bool screenIsFilled = false;
 
     // Start is called before the first frame update
