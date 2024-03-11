@@ -12,6 +12,7 @@ public class ScoreCount : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text coinsText;
     float timer = 0;
+    public Character playerScript;
 
     public void AddScore()
     {
@@ -25,6 +26,7 @@ public class ScoreCount : MonoBehaviour
         score = 0;
         coins = 0;
         ResetSpeed();
+        playerScript.ResetValues();
     }
 
     void SpeedUp()
@@ -43,6 +45,7 @@ public class ScoreCount : MonoBehaviour
         {
             platform.GetComponent<Platform>().platformSpeed = 0.7f;
         }
+
     }
 
     internal void AddCoin()

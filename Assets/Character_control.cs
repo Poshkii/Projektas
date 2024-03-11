@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Jumping : MonoBehaviour
+public class Character : MonoBehaviour
 {
     public float jumpForce = 10f;
     public float sideJump = 43;
@@ -35,9 +35,8 @@ public class Jumping : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         bounceMain = GetComponent<EdgeCollider2D>();
         box = GetComponent<BoxCollider2D>();
-
-        sideJump = 3;
-        bounceMaterial.bounciness = 1;
+        
+        ResetValues();
         
         groundCheckBoxSize.x = box.bounds.size.x-0.1f;
         groundCheckBoxSize.y = 0.5f;
@@ -51,6 +50,12 @@ public class Jumping : MonoBehaviour
             jumpIndicator.fillAmount = 0f;
         }
         scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
+    }
+
+    public void ResetValues()
+    {
+        sideJump = 3;
+        bounceMaterial.bounciness = 1;
     }
 
     private void Update()
@@ -133,11 +138,5 @@ public class Jumping : MonoBehaviour
     {
         if (jumpIndicator != null)
             jumpIndicator.fillAmount = heldTime / maxTime;
-    }
-
-    internal void ResetSettings()
-    {
-        sideJump = 3;
-        bounceMaterial.bounciness = 1;
-    }
+    }    
 }
