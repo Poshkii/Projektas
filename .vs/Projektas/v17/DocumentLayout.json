@@ -1,49 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\",
+  "WorkspaceRootPath": "C:\\Users\\Donatas\\Desktop\\Projektas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\platformspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\platformspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\platformspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\jumping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\coins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\deathscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\coins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\coins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\coincollect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\coincollect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\coincollect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\scripts\\mainmeniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\mainmeniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mainmeniu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\audio\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\audio\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\audio\\audiomanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\bg_paralax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\bg_paralax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\bg_paralax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -54,19 +54,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PlatformSpawner.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\PlatformSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\PlatformSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\PlatformSpawner.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\PlatformSpawner.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\PlatformSpawner.cs",
               "RelativeToolTip": "Assets\\PlatformSpawner.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -75,37 +71,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\GameManager.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\GameManager.cs",
               "RelativeToolTip": "Assets\\GameManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T11:52:07.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ScoreCount.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreCount.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ScoreCount.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-04T11:28:55.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-04T11:52:07.87Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "ScoreCount.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreCount.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ScoreCount.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T11:28:55.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DeathScreen.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\DeathScreen.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\DeathScreen.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DeathScreen.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\DeathScreen.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\DeathScreen.cs",
               "RelativeToolTip": "Assets\\Scripts\\DeathScreen.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -115,9 +109,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "AudioManager.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Audio\\AudioManager.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Audio\\AudioManager.cs",
               "RelativeDocumentMoniker": "Assets\\Audio\\AudioManager.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Audio\\AudioManager.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Audio\\AudioManager.cs",
               "RelativeToolTip": "Assets\\Audio\\AudioManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -127,9 +121,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "MainMeniu.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\MainMeniu.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\MainMeniu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MainMeniu.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\MainMeniu.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\MainMeniu.cs",
               "RelativeToolTip": "Assets\\Scripts\\MainMeniu.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -139,9 +133,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Platform.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Platform.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Platform.cs",
               "RelativeDocumentMoniker": "Assets\\Platform.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Platform.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Platform.cs",
               "RelativeToolTip": "Assets\\Platform.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -152,9 +146,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "BG_paralax.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\BG_paralax.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\BG_paralax.cs",
               "RelativeDocumentMoniker": "Assets\\BG_paralax.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\BG_paralax.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\BG_paralax.cs",
               "RelativeToolTip": "Assets\\BG_paralax.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -164,9 +158,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "CoinCollect.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\CoinCollect.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\CoinCollect.cs",
               "RelativeDocumentMoniker": "Assets\\CoinCollect.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\CoinCollect.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\CoinCollect.cs",
               "RelativeToolTip": "Assets\\CoinCollect.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -176,9 +170,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Coins.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Coins.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Coins.cs",
               "RelativeDocumentMoniker": "Assets\\Coins.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Coins.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Coins.cs",
               "RelativeToolTip": "Assets\\Coins.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAxwCYAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -186,13 +180,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Jumping.cs",
-              "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Jumping.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Jumping.cs",
               "RelativeDocumentMoniker": "Assets\\Jumping.cs",
-              "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Jumping.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Jumping.cs",
               "RelativeToolTip": "Assets\\Jumping.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAApAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAowHsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T12:41:43.284Z"
             }

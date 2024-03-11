@@ -14,9 +14,10 @@ public class Jumping : MonoBehaviour
     private float heldTime = 0f;
     private Rigidbody2D body;
     private bool isJumping = false;
-    private bool allowJump = true; // either allows or prevents performing a jump
+    private bool allowJump = true;
     public Transform groundCheck;
-    private float groundCheckRadius = 0.7f;
+    //private float groundCheckRadius = 0.1f;
+    private Vector2 groundCheckBoxSize = new Vector2(1f, 0.3f);
     public LayerMask whatIsGround;
     public SpriteRenderer spriteRend;
     private bool flagInvisible = false;
@@ -24,9 +25,20 @@ public class Jumping : MonoBehaviour
     ScoreCount scoreCounter;
     Vector3 startPos = new Vector3(-10, 2, 0);
 
+    public PhysicsMaterial2D bounceMaterial;
+    public PhysicsMaterial2D frictionMaterial;
+    private EdgeCollider2D bounceMain;
+    private BoxCollider2D box;
+
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        bounceMain = GetComponent<EdgeCollider2D>();
+        box = GetComponent<BoxCollider2D>();
+        
+        groundCheckBoxSize.x = box.bounds.size.x;
+        groundCheckBoxSize.y = 0.3f;
+
         spriteRend = GetComponent<SpriteRenderer>();
 
         // Initialize jump strength indicator
@@ -36,6 +48,9 @@ public class Jumping : MonoBehaviour
             jumpIndicator.fillAmount = 0f;
         }
         scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
+
+        Debug.Log(bounceMain.bounds.size.x);
+        Debug.Log(bounceMain.bounds.size.x-0.1f);
     }
 
     private void Update()
@@ -86,7 +101,8 @@ public class Jumping : MonoBehaviour
         //    isJumping = false;
         //}
 
-        allowJump = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, whatIsGround);
+        //allowJump = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, whatIsGround);
+        allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
 
         if (isJumping && allowJump && Input.touchCount == 0)
         {
@@ -108,6 +124,16 @@ public class Jumping : MonoBehaviour
             else
                 flagInvisible = true;
         }
+
+        if (allowJump)
+        {
+            bounceMain.sharedMaterial = frictionMaterial;
+        }
+        else
+        {
+            bounceMain.sharedMaterial = bounceMaterial;
+        }
+
     }    
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
@@ -122,6 +148,5 @@ public class Jumping : MonoBehaviour
     {
         if (jumpIndicator != null)
             jumpIndicator.fillAmount = heldTime / maxTime;
-
     }
 }
