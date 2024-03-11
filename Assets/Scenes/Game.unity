@@ -1055,7 +1055,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.081472635, y: 0.058418274}
+  m_Offset: {x: -0.12198168, y: 0.042494774}
   m_SpriteTilingProperty:
     border: {x: 1.65, y: 0.45999998, z: 1.8299999, w: 0.42}
     pivot: {x: 0.5, y: 0.5}
@@ -1066,7 +1066,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7817283, y: 5.426527}
+  m_Size: {x: 2.8627462, y: 5.458374}
   m_EdgeRadius: 0
 --- !u!114 &412192600
 MonoBehaviour:
@@ -1083,16 +1083,16 @@ MonoBehaviour:
   jumpForce: 10
   sideJump: 3
   maxTime: 1
-  minJump: 3
-  jumpIndicator: {fileID: 1605961011}
+  minJump: 2
+  bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
+  frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
   groundCheck: {fileID: 1442190553}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
   spriteRend: {fileID: 412192602}
   gameManagerObj: {fileID: 661003188}
-  bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
-  frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
+  jumpIndicator: {fileID: 1605961011}
 --- !u!50 &412192601
 Rigidbody2D:
   serializedVersion: 4
@@ -1181,7 +1181,7 @@ Transform:
   m_GameObject: {fileID: 412192598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.02, y: 2.75, z: 0}
+  m_LocalPosition: {x: -9.011, y: 2.744, z: 0}
   m_LocalScale: {x: 0.5851, y: 0.5851, z: 0.5851}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1221,13 +1221,11 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.05
+  m_EdgeRadius: 0.02
   m_Points:
-  - {x: 0.3594104, y: 2.7701488}
-  - {x: 0.6520146, y: 2.4848008}
-  - {x: 0.6582361, y: 1.3288125}
-  - {x: 1.3756621, y: -0.06632368}
-  - {x: 1.3713428, y: -2.486022}
+  - {x: 1.3601912, y: 2.7442756}
+  - {x: 1.3654379, y: -2.5423787}
+  - {x: 1.283035, y: -2.6143756}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1653,6 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 0}
+  coinCount: 0
 --- !u!1 &663969250
 GameObject:
   m_ObjectHideFlags: 0

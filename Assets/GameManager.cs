@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         deathScreenUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);        
-        Debug.Log("Play");
+        //Debug.Log("Play");
         Instantiate(starterPlatform);
     }
 }

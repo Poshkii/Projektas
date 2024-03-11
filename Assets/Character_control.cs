@@ -5,19 +5,22 @@ using UnityEngine.UI;
 public class Jumping : MonoBehaviour
 {
     public float jumpForce = 10f;
-    public float sideJump = 5f;
+    public float sideJump = 43;
     public float maxTime = 1f;
-    public float minJump = 5f;
-
-    public Image jumpIndicator;
+    public float minJump = 2f;
 
     private float heldTime = 0f;
     private Rigidbody2D body;
+    public PhysicsMaterial2D bounceMaterial;
+    public PhysicsMaterial2D frictionMaterial;
+    private EdgeCollider2D bounceMain;
+    private BoxCollider2D box;
+
     private bool isJumping = false;
     private bool allowJump = true;
     public Transform groundCheck;
-    //private float groundCheckRadius = 0.1f;
-    private Vector2 groundCheckBoxSize = new Vector2(1f, 0.3f);
+
+    private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
     public LayerMask whatIsGround;
     public SpriteRenderer spriteRend;
     private bool flagInvisible = false;
@@ -25,19 +28,19 @@ public class Jumping : MonoBehaviour
     ScoreCount scoreCounter;
     Vector3 startPos = new Vector3(-10, 2, 0);
 
-    public PhysicsMaterial2D bounceMaterial;
-    public PhysicsMaterial2D frictionMaterial;
-    private EdgeCollider2D bounceMain;
-    private BoxCollider2D box;
+    public Image jumpIndicator;
 
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
         bounceMain = GetComponent<EdgeCollider2D>();
         box = GetComponent<BoxCollider2D>();
+
+        sideJump = 3;
+        bounceMaterial.bounciness = 1;
         
-        groundCheckBoxSize.x = box.bounds.size.x;
-        groundCheckBoxSize.y = 0.3f;
+        groundCheckBoxSize.x = box.bounds.size.x-0.1f;
+        groundCheckBoxSize.y = 0.5f;
 
         spriteRend = GetComponent<SpriteRenderer>();
 
@@ -48,20 +51,16 @@ public class Jumping : MonoBehaviour
             jumpIndicator.fillAmount = 0f;
         }
         scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
-
-        Debug.Log(bounceMain.bounds.size.x);
-        Debug.Log(bounceMain.bounds.size.x-0.1f);
     }
 
     private void Update()
-    {        
-        // checks if a touch input was performed during a jump before character landed.
-        // if that was the case it prevents touch input from carrying over to prevent missclicks/unintentional jumps
-        //if (!isJumping && Input.touchCount == 0 && !allowJump)
-        //{
-        //    allowJump = true;
-        //    Debug.Log("jumping allowed");
-        //}
+    {
+        if (sideJump > 2)
+        {
+            sideJump -= 0.02f * Time.deltaTime;
+        }
+
+        bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
 
         // start of touch input to reset touch duration measurement
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !isJumping)
@@ -89,19 +88,6 @@ public class Jumping : MonoBehaviour
                 jumpIndicator.fillAmount = 0f;
         }
 
-        // If movement vector is 0 that means body has landed on ground and can jump again
-        //if (body.velocity.magnitude == 0 && !allowJump)
-        //    isJumping = false;
-
-        //Checks for a platform under the player. If body has landed it can jump again
-        //RaycastHit2D groundCheck = Physics2D.Raycast(transform.position, -transform.up, 1f);
-        //Debug.DrawRay(transform.position, -transform.up, Color.red);
-        //if (groundCheck.collider != null && groundCheck.collider.CompareTag("Platform"))
-        //{
-        //    isJumping = false;
-        //}
-
-        //allowJump = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, whatIsGround);
         allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
 
         if (isJumping && allowJump && Input.touchCount == 0)
@@ -133,7 +119,6 @@ public class Jumping : MonoBehaviour
         {
             bounceMain.sharedMaterial = bounceMaterial;
         }
-
     }    
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
@@ -148,5 +133,11 @@ public class Jumping : MonoBehaviour
     {
         if (jumpIndicator != null)
             jumpIndicator.fillAmount = heldTime / maxTime;
+    }
+
+    internal void ResetSettings()
+    {
+        sideJump = 3;
+        bounceMaterial.bounciness = 1;
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine.UIElements;
 
 public class Platform : MonoBehaviour
 {
-    float minGap = 5f;
+    float minGap = 4f;
     float baseYValue = -5f;
-    float maxGap = 10f;
+    float maxGap = 8f;
     float yOffset = 1.5f;
     public float platformSpeed = 0.7f;
     float minWidth = 0.8f;
@@ -86,7 +86,9 @@ public class Platform : MonoBehaviour
             SpawnOnLast();
             Destroy(gameObject);
         }
-        transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y);
+        platformSpeed += 0.0005f * Time.deltaTime;
+
+        transform.position = new Vector2(transform.position.x - platformSpeed*Time.deltaTime, transform.position.y);
     }
 
     IEnumerator waitToSpawn(float delay)

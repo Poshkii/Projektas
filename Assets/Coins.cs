@@ -29,6 +29,12 @@ public class Coins : MonoBehaviour
 
     internal void AddCoin()
     {
+        //prevents duplicate pickups on 1 coin
+        collected = true;
+
+        // removes coin form the scene once picked up
+        Destroy(gameObject);
+
         // plays pickup sound
         if (collectSound != null)
             AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position, volume);
@@ -37,12 +43,6 @@ public class Coins : MonoBehaviour
         ScoreCount coinCounter = FindObjectOfType<ScoreCount>();
         if (coinCounter != null)
             coinCounter.AddCoin();
-
-        //prevents duplicate pickups on 1 coin
-        collected = true;
-
-        // removes coin form the scene once picked up
-        Destroy(gameObject);
     }
 
     // (Optional) spinning animation for visuals
