@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     int coins = 0;
     public Canvas gameUI;
     public Canvas deathScreenUI;
+    public Canvas optionsPanelUI;
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
@@ -65,5 +66,20 @@ public class GameManager : MonoBehaviour
         gameUI.gameObject.SetActive(true);        
         //Debug.Log("Play");
         Instantiate(starterPlatform);
+    }
+    public void CancelOptions()
+    {
+        deathScreenUI.gameObject.SetActive(true);
+        optionsPanelUI.gameObject.SetActive(false);
+    }
+    public void OpenOptions()
+    {
+        deathScreenUI.gameObject.SetActive(false);
+        optionsPanelUI.gameObject.SetActive(true);
+        gameUI.gameObject.SetActive(false);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

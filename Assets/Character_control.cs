@@ -30,6 +30,12 @@ public class Character : MonoBehaviour
 
     public Image jumpIndicator;
 
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -131,6 +137,8 @@ public class Character : MonoBehaviour
     {
         float jumpHeight = Mathf.Lerp(minJump, jumpForce, heldTime / maxTime);
         body.velocity = new Vector2(sideJump, jumpHeight);
+
+        audioManager.PlaySFX(audioManager.jump);
     }
 
     // Displays an indicator of how strong the jump is depending on how long touch input was

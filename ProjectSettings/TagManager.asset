@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Platform
   - Coin
+  - Audio
   layers:
   - Default
   - TransparentFX
