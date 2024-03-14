@@ -66,4 +66,16 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Play");
         Instantiate(starterPlatform);
     }
+
+    public void Earthquake(float chanceToDropPlatform)
+    {
+        GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        foreach (GameObject plat in platforms) 
+        {
+            if (Random.value < chanceToDropPlatform)
+            {
+                plat.GetComponent<Platform>().DropPlatform();
+            }
+        }
+    }
 }

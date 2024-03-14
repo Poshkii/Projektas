@@ -13,6 +13,13 @@ public class ScoreCount : MonoBehaviour
     public TMP_Text coinsText;
     float timer = 0;
     public Character playerScript;
+    GameManager gameManager;
+    private bool earthquakeReady = true;
+
+    private void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
 
     public void AddScore()
     {
@@ -71,5 +78,17 @@ public class ScoreCount : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+
+        if (score > 10f && earthquakeReady && Random.value < 0.01f)
+        {
+            StartCoroutine(StartEarthquake());
+            earthquakeReady = false;
+        }
+    }
+
+    IEnumerator StartEarthquake()
+    {
+        yield return new WaitForSeconds(5f);
+        gameManager.Earthquake(0.2f);
     }
 }

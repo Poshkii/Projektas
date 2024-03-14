@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\character_control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\character_control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\karol\\Documents\\GitHub\\Projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\karol\\documents\\github\\projektas\\assets\\character_control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\character_control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +34,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Character_control.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Character_control.cs",
               "RelativeDocumentMoniker": "Assets\\Character_control.cs",
@@ -47,13 +47,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ScoreCount.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreCount.cs",
               "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
               "RelativeToolTip": "Assets\\Scripts\\ScoreCount.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAAAjAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAA4wFQAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-11T16:31:59.8Z",
               "EditorCaption": ""
@@ -66,20 +66,20 @@
               "RelativeDocumentMoniker": "Assets\\GameManager.cs",
               "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\GameManager.cs",
               "RelativeToolTip": "Assets\\GameManager.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwA8AAAAcAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowEwAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-11T16:31:44.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Platform.cs",
               "RelativeDocumentMoniker": "Assets\\Platform.cs",
               "ToolTip": "C:\\Users\\karol\\Documents\\GitHub\\Projektas\\Assets\\Platform.cs",
               "RelativeToolTip": "Assets\\Platform.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAAwEkAAAAJAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwEYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-11T14:38:05.31Z",
               "EditorCaption": ""

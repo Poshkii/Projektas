@@ -15,6 +15,7 @@ public class Platform : MonoBehaviour
     Platform spawnedPlatform = null;
     GameObject coin;
     private float coinSpawnChance = 0.3f;
+    float platformSpeedVertical = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -62,7 +63,9 @@ public class Platform : MonoBehaviour
         if (spawnedPlatform == null)
         {
             spawnedPlatform = Instantiate(gameObject).GetComponent<Platform>();
-            spawnedPlatform.SetPosAndSpeed(transform.position, platformSpeed);
+            Vector2 spawnPos = transform.position;
+            spawnPos.y = baseYValue;
+            spawnedPlatform.SetPosAndSpeed(spawnPos, platformSpeed);
         }        
     }
 
@@ -86,9 +89,15 @@ public class Platform : MonoBehaviour
             SpawnOnLast();
             Destroy(gameObject);
         }
-        platformSpeed += 0.0005f * Time.deltaTime;
 
-        transform.position = new Vector2(transform.position.x - platformSpeed*Time.deltaTime, transform.position.y);
+        platformSpeed += 0.0005f * Time.deltaTime;
+        
+        transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y - platformSpeedVertical * Time.deltaTime);
+    }
+
+    public void DropPlatform()
+    {
+        platformSpeedVertical = 10f;
     }
 
     IEnumerator waitToSpawn(float delay)
