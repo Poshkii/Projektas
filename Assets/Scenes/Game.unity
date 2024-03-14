@@ -1639,6 +1639,7 @@ MonoBehaviour:
   scoreboardText: {fileID: 1568109965}
   player: {fileID: 412192598}
   starterPlatform: {fileID: 7357849416912320531, guid: 1654b7a87e945e64fa32be50bb15656f, type: 3}
+  camera: {fileID: 1383391049}
 --- !u!114 &661003192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2582,6 +2583,7 @@ GameObject:
   - component: {fileID: 1383391052}
   - component: {fileID: 1383391051}
   - component: {fileID: 1383391050}
+  - component: {fileID: 1383391053}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2663,6 +2665,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1383391053
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383391049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 166f7774466aef9479ae34fd3e8e5e03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1397169462
 GameObject:
   m_ObjectHideFlags: 0

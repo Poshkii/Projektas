@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,6 +16,12 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreboardText;
     public GameObject player;    
     public GameObject starterPlatform;
+    public GameObject camera;
+    private bool shakeCamera = false;
+    private float duration = 0f;
+    private Vector3 cameraStartPos;
+    private const float baseShakeStrength = 0.2f;
+    private float ShakeStrength;
 
     private List<int> scores = new List<int>();
 
@@ -23,12 +30,32 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(starterPlatform);
         deathScreenUI.gameObject.SetActive(false);
+        cameraStartPos = camera.transform.position;
+        ShakeStrength = baseShakeStrength;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (shakeCamera)
+        {
+            if (duration > 0f)
+            {                
+                if (duration < 1f)
+                {
+                    ShakeStrength *= 0.2f;
+                }
+                camera.transform.localPosition = cameraStartPos + UnityEngine.Random.insideUnitSphere * ShakeStrength;
+                duration -= Time.deltaTime;
+            }
+            else
+            {
+                ShakeStrength = baseShakeStrength;
+                shakeCamera = false;
+                duration = 0f;
+                camera.transform.localPosition = cameraStartPos;
+            }
+        }
     }
 
     public void DisplayDeathScreen(int runScore, int runCoins)
@@ -65,16 +92,26 @@ public class GameManager : MonoBehaviour
         gameUI.gameObject.SetActive(true);        
         //Debug.Log("Play");
         Instantiate(starterPlatform);
+    }    
+
+    private void ShakeCamera(float duration)
+    {
+        shakeCamera = true;
+        this.duration = duration;
     }
 
     public void Earthquake(float chanceToDropPlatform)
     {
-        GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");        
         foreach (GameObject plat in platforms) 
         {
-            if (Random.value < chanceToDropPlatform)
+            if (Math.Abs(plat.transform.position.x - player.transform.position.x) < 8f &&
+                Math.Abs(plat.transform.position.x - player.transform.position.x) > 2f &&
+                UnityEngine.Random.value < chanceToDropPlatform)
             {
+                ShakeCamera(2f);
                 plat.GetComponent<Platform>().DropPlatform();
+                break;
             }
         }
     }
