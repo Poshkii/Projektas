@@ -12,13 +12,12 @@ public class ScoreCount : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text coinsText;
     float timer = 0;
-    public Character playerScript;
+    public Player playerScript;
 
     public void AddScore()
     {
         score++;
-    }
-    
+    }    
 
     public void Death()
     {

@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(starterPlatform);
+        SpawnStarterPlatform();
         deathScreenUI.gameObject.SetActive(false);
     }
 
@@ -64,6 +64,11 @@ public class GameManager : MonoBehaviour
         deathScreenUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);        
         //Debug.Log("Play");
+        Instantiate(starterPlatform);
+    }
+
+    public void SpawnStarterPlatform()
+    {
         Instantiate(starterPlatform);
     }
 }

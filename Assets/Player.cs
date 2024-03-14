@@ -1,13 +1,15 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float jumpForce = 10f;
     public float sideJump = 43;
     public float maxTime = 1f;
     public float minJump = 2f;
+    private int lives = 2;
 
     private float heldTime = 0f;
     private Rigidbody2D body;
@@ -18,6 +20,7 @@ public class Character : MonoBehaviour
 
     private bool isJumping = false;
     private bool allowJump = true;
+    private bool respawned = false;
     public Transform groundCheck;
 
     private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
@@ -25,6 +28,7 @@ public class Character : MonoBehaviour
     public SpriteRenderer spriteRend;
     private bool flagInvisible = false;
     public GameObject gameManagerObj;
+    GameManager gameManager;
     ScoreCount scoreCounter;
     Vector3 startPos = new Vector3(-10, 2, 0);
 
@@ -50,6 +54,7 @@ public class Character : MonoBehaviour
             jumpIndicator.fillAmount = 0f;
         }
         scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
+        gameManager = gameManagerObj.GetComponent<GameManager>();
     }
 
     public void ResetValues()
@@ -102,16 +107,13 @@ public class Character : MonoBehaviour
             jumpIndicator.fillAmount = 0f;
         }
 
-        if (!spriteRend.isVisible)
+        //If player is invisible to camera
+        if (!spriteRend.isVisible && !respawned)
         {
             if (flagInvisible)
             {
-                scoreCounter.Death();
-                transform.position = startPos;
-                body.velocity = Vector2.zero;
+                OutOfScreen();
             }
-                //SceneManager.LoadSceneAsync(2);
-                
             else
                 flagInvisible = true;
         }
@@ -124,7 +126,28 @@ public class Character : MonoBehaviour
         {
             bounceMain.sharedMaterial = bounceMaterial;
         }
-    }    
+    }
+
+    private void OutOfScreen()
+    {
+        lives--;
+        //Dies
+        if (lives < 1)
+        {
+            scoreCounter.Death();
+            transform.position = startPos;
+            body.velocity = Vector2.zero;
+        }
+        //Respawns
+        else
+        {
+            respawned = true;
+            StartCoroutine(WaitAfterRespawn(2f));
+            body.transform.position = startPos + transform.up * 2f;
+            gameManager.SpawnStarterPlatform();
+            body.velocity = Vector3.zero;
+        }
+    }
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
@@ -138,5 +161,13 @@ public class Character : MonoBehaviour
     {
         if (jumpIndicator != null)
             jumpIndicator.fillAmount = heldTime / maxTime;
-    }    
+    }
+
+    //Wait before checking if player is outside the view
+    IEnumerator WaitAfterRespawn(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        respawned = false;
+    }
 }
