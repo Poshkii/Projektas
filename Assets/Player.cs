@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
-    Vector3 startPos = new Vector3(-10, 2, 0);
+    Vector3 startPos = new Vector3(-8, 1, 0);
 
     public Image jumpIndicator;
 

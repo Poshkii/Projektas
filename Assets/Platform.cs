@@ -8,13 +8,15 @@ public class Platform : MonoBehaviour
     float minGap = 4f;
     float baseYValue = -5f;
     float maxGap = 8f;
-    float yOffset = 1.5f;
+    float yOffsetUp = 1f;
+    float yOffsetDown = 3f;
     public float platformSpeed = 0.7f;
     float minWidth = 0.8f;
     float maxWidth = 1.2f;
     Platform spawnedPlatform = null;
     GameObject coin;
     private float coinSpawnChance = 0.3f;
+    float platformSpeedVertical = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class Platform : MonoBehaviour
         coin.transform.parent = null;
         transform.localScale = new Vector3(randomWidth, 1, 0);
         coin.transform.SetParent(transform);
-        Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffset, yOffset));
+        Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffsetDown, yOffsetUp));
         position.y = baseYValue;
         transform.position = position + offset;
 
@@ -88,14 +90,12 @@ public class Platform : MonoBehaviour
         }
         platformSpeed += 0.0005f * Time.deltaTime;
 
-        transform.position = new Vector2(transform.position.x - platformSpeed*Time.deltaTime, transform.position.y);
+        transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y - platformSpeedVertical * Time.deltaTime);
     }
 
-    IEnumerator waitToSpawn(float delay)
+    public void DropPlatform()
     {
-        yield return new WaitForSeconds(delay);
-
-        SpawnPlatform();
+        platformSpeedVertical = 10f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

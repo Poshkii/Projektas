@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BirdMovement : MonoBehaviour
 {
-    public float moveSpeed = 8f;
+    public float moveSpeed = 6f;
 
     void Update()
     {

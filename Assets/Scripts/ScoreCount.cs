@@ -13,6 +13,14 @@ public class ScoreCount : MonoBehaviour
     public TMP_Text coinsText;
     float timer = 0;
     public Player playerScript;
+    GameManager gameManager;
+    private bool birdReady = true;
+    private bool earthquakeReady = true;
+
+    private void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
 
     public void AddScore()
     {
@@ -21,7 +29,7 @@ public class ScoreCount : MonoBehaviour
 
     public void Death()
     {
-        gameObject.GetComponent<GameManager>().DisplayDeathScreen(score, coins);
+        gameManager.DisplayDeathScreen(score, coins);
         score = 0;
         coins = 0;
         ResetSpeed();
@@ -70,5 +78,33 @@ public class ScoreCount : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
+
+        if (score > 10f)
+        {
+            if (birdReady)
+            {
+                gameManager.SpawnBird();
+                birdReady = false;
+                StartCoroutine(BirdCooldown());
+            }
+            if (earthquakeReady)
+            {
+                gameManager.Earthquake(0.5f);
+                earthquakeReady = false;
+                StartCoroutine(EarthquakeCooldown());
+            }
+        }
+    }
+
+    IEnumerator BirdCooldown()
+    {
+        yield return new WaitForSeconds(Random.Range(5, 20));
+        birdReady = true;
+    }
+
+    IEnumerator EarthquakeCooldown()
+    {
+        yield return new WaitForSeconds(Random.Range(5, 30));
+        earthquakeReady = true;
     }
 }
