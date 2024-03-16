@@ -10,20 +10,32 @@ public class GameManager : MonoBehaviour
     public Canvas gameUI;
     public Canvas deathScreenUI;
     public Canvas optionsPanelUI;
+    public Canvas startPanelUI;
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
     public TMP_Text scoreboardText;
     public GameObject player;    
     public GameObject starterPlatform;
+    public GameObject activeBefore;
 
     private List<int> scores = new List<int>();
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(starterPlatform);
+        Time.timeScale = 0f;
+        optionsPanelUI.gameObject.SetActive(false);
+        gameUI.gameObject.SetActive(false);
         deathScreenUI.gameObject.SetActive(false);
+        if (PlayerPrefs.HasKey("coins") || PlayerPrefs.HasKey("highscore"))
+        {
+            LoadPrefs();
+        }
+        else
+        {
+            SetPrefs(coins, highScore);
+        }
     }
 
     // Update is called once per frame
@@ -57,6 +69,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + runScore;
         highscoreText.text = "Highscore: " + highScore;
         coinsText.text = "Coins: " + coins;
+        SetPrefs(coins, highScore);
     }
 
     public void PlayAgain()
@@ -69,15 +82,36 @@ public class GameManager : MonoBehaviour
     }
     public void CancelOptions()
     {
-        deathScreenUI.gameObject.SetActive(true);
         optionsPanelUI.gameObject.SetActive(false);
     }
+
     public void OpenOptions()
     {
-        deathScreenUI.gameObject.SetActive(false);
         optionsPanelUI.gameObject.SetActive(true);
-        gameUI.gameObject.SetActive(false);
     }
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        startPanelUI.gameObject.SetActive(false);
+        gameUI.gameObject.SetActive(true);
+        Instantiate(starterPlatform);
+    }
+    
+    public void SetPrefs(int x, int y)
+    {
+        PlayerPrefs.SetInt("coins", x);
+        PlayerPrefs.SetInt("highscore", y);
+        coins = x;
+        highScore = y;
+    }
+    public void LoadPrefs()
+    {
+        int x = PlayerPrefs.GetInt("coins");
+        int y = PlayerPrefs.GetInt("highscore");
+
+        SetPrefs(x, y);
+    }
+    
     public void QuitGame()
     {
         Application.Quit();
