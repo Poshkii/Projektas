@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     int coins = 0;
     public Canvas gameUI;
     public Canvas deathScreenUI;
+    public Canvas optionsPanelUI;
+    public Canvas startPanelUI;
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
@@ -30,8 +32,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnStarterPlatform();
+        Time.timeScale = 0f;
+        optionsPanelUI.gameObject.SetActive(false);
+        gameUI.gameObject.SetActive(false);
         deathScreenUI.gameObject.SetActive(false);
+        if (PlayerPrefs.HasKey("coins") || PlayerPrefs.HasKey("highscore"))
+        {
+            LoadPrefs();
+        }
+        else
+        {
+            SetPrefs(coins, highScore);
+        }
         birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
         cameraStartPos = camera.transform.position;
         ShakeStrength = baseShakeStrength;
@@ -86,6 +98,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + runScore;
         highscoreText.text = "Highscore: " + highScore;
         coinsText.text = "Coins: " + coins;
+        SetPrefs(coins, highScore);
     }
 
     public void PlayAgain()
@@ -96,7 +109,42 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Play");
         Instantiate(starterPlatform);
     }
+    public void CancelOptions()
+    {
+        optionsPanelUI.gameObject.SetActive(false);
+    }
 
+    public void OpenOptions()
+    {
+        optionsPanelUI.gameObject.SetActive(true);
+    }
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        startPanelUI.gameObject.SetActive(false);
+        gameUI.gameObject.SetActive(true);
+        SpawnStarterPlatform();
+    }
+
+    public void SetPrefs(int x, int y)
+    {
+        PlayerPrefs.SetInt("coins", x);
+        PlayerPrefs.SetInt("highscore", y);
+        coins = x;
+        highScore = y;
+    }
+    public void LoadPrefs()
+    {
+        int x = PlayerPrefs.GetInt("coins");
+        int y = PlayerPrefs.GetInt("highscore");
+
+        SetPrefs(x, y);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     public void SpawnStarterPlatform()
     {
         Instantiate(starterPlatform);
