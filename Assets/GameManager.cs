@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Canvas deathScreenUI;
     public Canvas optionsPanelUI;
     public Canvas startPanelUI;
+    public Canvas shopUI;
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
@@ -148,6 +149,14 @@ public class GameManager : MonoBehaviour
     public void SpawnStarterPlatform()
     {
         Instantiate(starterPlatform);
+    }
+    public void OpenShop()
+    {
+        shopUI.gameObject.SetActive(true);
+    }
+    public void CloseShop()
+    {
+        shopUI.gameObject.SetActive(false);
     }
 
     public void SpawnBird()
