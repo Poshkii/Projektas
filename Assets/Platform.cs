@@ -5,10 +5,10 @@ using UnityEngine.UIElements;
 
 public class Platform : MonoBehaviour
 {
-    float minGap = 4f;
-    float baseYValue = -5f;
+    float minGap = 4f; 
+    float baseYValue = -6f;
     float maxGap = 8f;
-    float yOffset = 1.5f;
+    float yOffset = 1.4f;
     public float platformSpeed = 0.7f;
     float minWidth = 0.8f;
     float maxWidth = 1.2f;
@@ -16,10 +16,17 @@ public class Platform : MonoBehaviour
     GameObject coin;
     private float coinSpawnChance = 0.3f;
 
+    public Sprite[] sprites;
+
     // Start is called before the first frame update
     void Start()
     {
-               
+        SpriteRenderer render = GetComponent<SpriteRenderer>();
+        if (sprites.Length > 0 )
+        {
+            int random = Random.Range( 0,sprites.Length );
+            render.sprite = sprites[random];
+        }
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
