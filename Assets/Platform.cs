@@ -15,37 +15,41 @@ public class Platform : MonoBehaviour
     float maxWidth = 1.2f;
     Platform spawnedPlatform = null;
     GameObject coin;
+    GameObject model;
     private float coinSpawnChance = 0.3f;
     float platformSpeedVertical = 0f;
+    private bool hasCoin = false;
+    private bool animationPlayed = false;
 
     // Start is called before the first frame update
     void Start()
     {
-               
+        model = transform.GetChild(0).gameObject;
+        coin = model.transform.GetChild(0).gameObject;
+
+        if (hasCoin)
+        {
+            coin.SetActive(false);
+        }
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
-    {
-        coin = transform.GetChild(0).gameObject;
-        coin.SetActive(false);
-
+    {       
         platformSpeed = speed;
         float randomWidth = Random.Range(minWidth, maxWidth);
-        coin.transform.parent = null;
         transform.localScale = new Vector3(randomWidth, 1, 0);
-        coin.transform.SetParent(transform);
         Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffsetDown, yOffsetUp));
         position.y = baseYValue;
         transform.position = position + offset;
 
         TrySpawnCoin();
-    }    
+    }      
     
     public void TrySpawnCoin()
     {
         if (Random.value < coinSpawnChance)
         {            
-            coin.SetActive(true);
+            hasCoin = true;
         }
     }
 
@@ -87,7 +91,14 @@ public class Platform : MonoBehaviour
         {           
             SpawnOnLast();
             Destroy(gameObject);
+        }        
+
+        if (transform.position.x < 12 && !animationPlayed)
+        {
+            animationPlayed = true;
+            model.GetComponent<ModelScript>().PlayAnimation();
         }
+
         platformSpeed += 0.0005f * Time.deltaTime;
 
         transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y - platformSpeedVertical * Time.deltaTime);
@@ -96,15 +107,5 @@ public class Platform : MonoBehaviour
     public void DropPlatform()
     {
         platformSpeedVertical = 10f;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        collision.transform.SetParent(transform);
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        collision.transform.SetParent(null);
-    }
+    }    
 }
