@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float sideJump = 43;
     public float maxTime = 1f;
     public float minJump = 2f;
-    private int lives = 2;
+    public int lives = 1;
 
     private float heldTime = 0f;
     private Rigidbody2D body;

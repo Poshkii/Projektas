@@ -170,6 +170,27 @@ public class GameManager : MonoBehaviour
         this.duration = duration;
     }
 
+    public void ApplyBooster(string type)
+    {
+        if (type == "ExtraLife")
+        {
+            AddLife();
+        }
+        else if (type == "ExtraJump")
+        {
+            Debug.Log("Extra Jump activated");
+        }
+        else if (type == "DoubleCoins")
+        {
+            Debug.Log("Double Coins activated");
+        }
+    }
+
+    private void AddLife()
+    {
+        player.GetComponent<Player>().lives++;
+    }
+
     public void Earthquake(float chanceToDropPlatform)
     {
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");

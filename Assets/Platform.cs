@@ -11,14 +11,20 @@ public class Platform : MonoBehaviour
     float yOffsetUp = 1f;
     float yOffsetDown = 3f;
     public float platformSpeed = 0.7f;
+    float platformSpeedVertical = 0f;
     float minWidth = 0.8f;
     float maxWidth = 1.2f;
     Platform spawnedPlatform = null;
     GameObject coin;
+    GameObject extraLife;
+    GameObject extraJump;
     GameObject model;
     private float coinSpawnChance = 0.3f;
-    float platformSpeedVertical = 0f;
+    private float boosterSpawnChance = 0.2f;
+    
     private bool hasCoin = false;
+    private bool hasExtraLife = false;
+    private bool hasExtraJump = false;
     private bool animationPlayed = false;
 
     // Start is called before the first frame update
@@ -26,11 +32,12 @@ public class Platform : MonoBehaviour
     {
         model = transform.GetChild(0).gameObject;
         coin = model.transform.GetChild(0).gameObject;
+        extraLife = model.transform.GetChild(1).gameObject;
+        extraJump = model.transform.GetChild(2).gameObject;
 
-        if (hasCoin)
-        {
-            coin.SetActive(false);
-        }
+        coin.SetActive(hasCoin);              
+        extraLife.SetActive(hasExtraLife);  
+        extraJump.SetActive(hasExtraJump);
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
@@ -43,6 +50,10 @@ public class Platform : MonoBehaviour
         transform.position = position + offset;
 
         TrySpawnCoin();
+        if (!hasCoin)
+        {
+            TrySpawnBooster();
+        }
     }      
     
     public void TrySpawnCoin()
@@ -50,6 +61,26 @@ public class Platform : MonoBehaviour
         if (Random.value < coinSpawnChance)
         {            
             hasCoin = true;
+        }
+    }
+
+    private void TrySpawnBooster()
+    {
+        if (Random.value < boosterSpawnChance)
+        {
+            float val = Random.value;
+            if (val < 0.3f)
+            {
+                hasExtraLife = true;
+            }
+            else if (val < 0.5f)
+            {
+                hasExtraJump = true;
+            }
+            else
+            {
+
+            }
         }
     }
 
