@@ -1181,9 +1181,9 @@ MonoBehaviour:
   jumpForce: 10
   sideJump: 3
   maxTime: 1
-  minJump: 2
-  bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
-  frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
+  minJump: 3
+  bounceMaterial: {fileID: 0}
+  frictionMaterial: {fileID: 0}
   groundCheck: {fileID: 1442190553}
   whatIsGround:
     serializedVersion: 2

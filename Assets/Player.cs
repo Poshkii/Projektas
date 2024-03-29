@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float jumpForce = 10f;
-    public float sideJump = 43;
+    public float sideJump = 4f;
     public float maxTime = 1f;
     public float minJump = 2f;
     private int lives = 2;
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
         
         ResetValues();
         
-        groundCheckBoxSize.x = box.bounds.size.x-0.1f;
+        groundCheckBoxSize.x = box.bounds.size.x;
         groundCheckBoxSize.y = 0.5f;
 
         spriteRend = GetComponent<SpriteRenderer>();
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
     public void ResetValues()
     {
         sideJump = 3;
-        bounceMaterial.bounciness = 1;
+        //bounceMaterial.bounciness = 1;
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
             sideJump -= 0.02f * Time.deltaTime;
         }
 
-        bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
+        //bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
 
         // start of touch input to reset touch duration measurement
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !isJumping)
@@ -117,15 +117,6 @@ public class Player : MonoBehaviour
             else
                 flagInvisible = true;
         }
-
-        if (allowJump)
-        {
-            bounceMain.sharedMaterial = frictionMaterial;
-        }
-        else
-        {
-            bounceMain.sharedMaterial = bounceMaterial;
-        }
     }
 
     private void OutOfScreen()
@@ -152,7 +143,7 @@ public class Player : MonoBehaviour
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
     {
-        float jumpHeight = Mathf.Lerp(minJump, jumpForce, heldTime / maxTime);
+        float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(heldTime / maxTime, (float)1.5));
         body.velocity = new Vector2(sideJump, jumpHeight);
     }
 
