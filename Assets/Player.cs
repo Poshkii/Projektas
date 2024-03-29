@@ -5,41 +5,53 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    // Control options
     public float jumpForce = 10f;
     public float sideJump = 4f;
     public float maxTime = 1f;
     public float minJump = 2f;
     private int lives = 2;
-
     private float heldTime = 0f;
+
+    // Object options
     private Rigidbody2D body;
     public PhysicsMaterial2D bounceMaterial;
     public PhysicsMaterial2D frictionMaterial;
     private EdgeCollider2D bounceMain;
     private BoxCollider2D box;
+    public Image jumpIndicator;
 
+    // Jumping options
     private bool isJumping = false;
     private bool allowJump = true;
-    private bool respawned = false;
-    public Transform groundCheck;
 
-    private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
-    public LayerMask whatIsGround;
-    public SpriteRenderer spriteRend;
+    // Jump boost options
+    private bool isJumpBoosted = false;
+    private float jumpBoostTimer = 0f;
+    private float originalSideJump;
+
+    // Game scene options
+    private bool respawned = false;
     private bool flagInvisible = false;
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
     Vector3 startPos = new Vector3(-10, 2, 0);
 
-    private float raycastDistance = 0.5f;
+    // Ground check options
+    private float raycastDistance = 0.1f;
     public LayerMask groundLayer;
-    private int numberOfRaycasts = 5;
+    private int numberOfRaycasts = 3;
+    private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
+    public LayerMask whatIsGround;
+    public Transform groundCheck;
+    public SpriteRenderer spriteRend;
 
-    public Image jumpIndicator;
 
     private void Start()
     {
+        //originalSideJump = sideJump;
+
         body = GetComponent<Rigidbody2D>();
         bounceMain = GetComponent<EdgeCollider2D>();
         box = GetComponent<BoxCollider2D>();
@@ -76,6 +88,17 @@ public class Player : MonoBehaviour
         if (sideJump > 2)
         {
             sideJump -= 0.02f * Time.deltaTime;
+        }
+
+        if (isJumpBoosted)
+        {
+            jumpBoostTimer -= Time.deltaTime;
+            if (jumpBoostTimer <= 0)
+            {
+                // Reset jump force to original value
+                sideJump -= 2f;
+                isJumpBoosted = false;
+            }
         }
 
         //bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
@@ -168,30 +191,35 @@ public class Player : MonoBehaviour
         respawned = false;
     }
 
+    // Additional ground check validation using raycasts
     private bool CastRaycasts()
     {
         Vector2 bottomCenter = new Vector2(box.bounds.center.x, box.bounds.min.y); // Bottom center of the box collider
-
         float raycastSpacing = box.bounds.size.x / (numberOfRaycasts - 1); // Spacing between raycasts
-        bool hitPlatform = false; // Initialize the flag indicating whether any ray hit a platform
+        bool hitPlatform = false; // Check for raycast colliding with platform
 
         for (int i = 0; i < numberOfRaycasts; i++)
         {
-            Vector2 raycastOrigin = bottomCenter + Vector2.right * (raycastSpacing * i - box.bounds.extents.x);
-
-            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer);
+            Vector2 raycastOrigin = bottomCenter + Vector2.right * (raycastSpacing * i - box.bounds.extents.x); // Position for a raycast
+            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer); // Collider for created raycast
 
             if (hit.collider != null)
             {
-                hitPlatform = true; // Set the flag to true if any ray hits a platform
-                Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.green); // Visualize the raycast
+                hitPlatform = true; // Make raycast collider valid
+                Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.green); // Visualize valid raycast
             }
             else
-            {
-                Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.red); // Visualize the raycast
-            }
+                Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.red); // Visualize invalid raycast
         }
+        return hitPlatform;
+    }
 
-        return hitPlatform; // Return the flag indicating whether any ray hit a platform
+    // Jumping booster effect
+    public void IncreaseJump(float duration)
+    {
+        // Increase jump force for a duration
+        sideJump += 2; // Increase jump force
+        isJumpBoosted = true;
+        jumpBoostTimer = duration;
     }
 }
