@@ -1153,7 +1153,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12198168, y: 0.042494774}
+  m_Offset: {x: -0.075864255, y: 0.042494774}
   m_SpriteTilingProperty:
     border: {x: 1.65, y: 0.45999998, z: 1.8299999, w: 0.42}
     pivot: {x: 0.5, y: 0.5}
@@ -1164,7 +1164,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8627462, y: 5.458374}
+  m_Size: {x: 2.8272696, y: 5.458374}
   m_EdgeRadius: 0
 --- !u!114 &412192600
 MonoBehaviour:
@@ -1190,6 +1190,9 @@ MonoBehaviour:
     m_Bits: 128
   spriteRend: {fileID: 412192602}
   gameManagerObj: {fileID: 661003188}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
   jumpIndicator: {fileID: 1605961011}
 --- !u!50 &412192601
 Rigidbody2D:
@@ -1258,7 +1261,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: cf0efc17088fe1848bd504a6075c5ce3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

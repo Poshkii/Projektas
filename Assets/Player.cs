@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
     ScoreCount scoreCounter;
     Vector3 startPos = new Vector3(-10, 2, 0);
 
+    private float raycastDistance = 0.5f;
+    public LayerMask groundLayer;
+    private int numberOfRaycasts = 5;
+
     public Image jumpIndicator;
 
     private void Start()
@@ -65,6 +69,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        bool touchingWall = !CastRaycasts();
+
+        allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
+
         if (sideJump > 2)
         {
             sideJump -= 0.02f * Time.deltaTime;
@@ -73,14 +81,14 @@ public class Player : MonoBehaviour
         //bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
 
         // start of touch input to reset touch duration measurement
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !isJumping)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !isJumping && !touchingWall)
         {
             heldTime = 0f;
         }
 
 
         // times and updates held touch input, initializes jump strength indicator
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !isJumping)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !isJumping && !touchingWall)
         {
             heldTime += Time.deltaTime;
             heldTime = Mathf.Clamp(heldTime, 0f, maxTime);
@@ -90,7 +98,7 @@ public class Player : MonoBehaviour
 
         // jumping is perfomed if conditions are met and indicator is reset
         // inverts certain checks to perform input control
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump && !isJumping)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump && !isJumping && !touchingWall)
         {
             Jump();
             isJumping = true;
@@ -98,9 +106,7 @@ public class Player : MonoBehaviour
                 jumpIndicator.fillAmount = 0f;
         }
 
-        allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
-
-        if (isJumping && allowJump && Input.touchCount == 0)
+        if (isJumping && allowJump && Input.touchCount == 0 && !touchingWall)
         {
             isJumping = false;
             heldTime = 0f;
@@ -160,5 +166,32 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         respawned = false;
+    }
+
+    private bool CastRaycasts()
+    {
+        Vector2 bottomCenter = new Vector2(box.bounds.center.x, box.bounds.min.y); // Bottom center of the box collider
+
+        float raycastSpacing = box.bounds.size.x / (numberOfRaycasts - 1); // Spacing between raycasts
+        bool hitPlatform = false; // Initialize the flag indicating whether any ray hit a platform
+
+        for (int i = 0; i < numberOfRaycasts; i++)
+        {
+            Vector2 raycastOrigin = bottomCenter + Vector2.right * (raycastSpacing * i - box.bounds.extents.x);
+
+            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer);
+
+            if (hit.collider != null)
+            {
+                hitPlatform = true; // Set the flag to true if any ray hits a platform
+                Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.green); // Visualize the raycast
+            }
+            else
+            {
+                Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.red); // Visualize the raycast
+            }
+        }
+
+        return hitPlatform; // Return the flag indicating whether any ray hit a platform
     }
 }
