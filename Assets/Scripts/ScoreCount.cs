@@ -8,6 +8,7 @@ public class ScoreCount : MonoBehaviour
 {
     public int score;
     public int coins;
+    private int multiplyer=1;
 
     public TMP_Text scoreText;
     public TMP_Text coinsText;
@@ -16,6 +17,7 @@ public class ScoreCount : MonoBehaviour
     GameManager gameManager;
     private bool birdReady = true;
     private bool earthquakeReady = true;
+    private bool multiplyerReady = true;
 
     private void Start()
     {
@@ -55,9 +57,9 @@ public class ScoreCount : MonoBehaviour
 
     }
 
-    internal void AddCoin()
+    internal void AddCoin(int multiplyer)
     {
-        coins++;        
+        coins+=multiplyer;        
     }
 
     // Update is called once per frame
@@ -93,7 +95,18 @@ public class ScoreCount : MonoBehaviour
                 earthquakeReady = false;
                 StartCoroutine(EarthquakeCooldown());
             }
+            if(multiplyerReady)
+            {
+                multiplyerReady = false;
+                multiplyer = 2;
+                StartCoroutine(MultiplyerLastingTime());
+                StartCoroutine (MultiplyerCooldown());
+            }
         }
+    }
+    public int GetMultiplyer()
+    {
+        return multiplyer;
     }
 
     IEnumerator BirdCooldown()
@@ -106,5 +119,16 @@ public class ScoreCount : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(5, 30));
         earthquakeReady = true;
+    }
+    IEnumerator MultiplyerCooldown()
+    {
+        yield return new WaitForSeconds(Random.Range(10, 30));
+        multiplyerReady = true;
+        multiplyer = 1;
+    }
+    IEnumerator MultiplyerLastingTime()
+    {
+        yield return new WaitForSeconds(3);
+        multiplyer = 1;
     }
 }

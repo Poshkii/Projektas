@@ -106,6 +106,6 @@ public class Platform : MonoBehaviour
 
     public void DropPlatform()
     {
-        platformSpeedVertical = 10f;
+        model.GetComponent<ModelScript>().DropAnimation();
     }    
 }

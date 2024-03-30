@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip coin;
     public AudioClip powerUp;
     public AudioClip start;
+    public AudioClip earthquake;
 
     private void Start()
     {
