@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;    
     public GameObject starterPlatform;
     public GameObject birdSpawnerObj;
+    public WindSpawner windSpawner;
     private BirdSpawner birdSpawner;
     public GameObject camera;
     private bool shakeCamera = false;
@@ -205,5 +206,10 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void SpawnWind()
+    {
+        windSpawner.SpawnWind();
     }
 }

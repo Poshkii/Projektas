@@ -16,6 +16,7 @@ public class ScoreCount : MonoBehaviour
     GameManager gameManager;
     private bool birdReady = true;
     private bool earthquakeReady = true;
+    private bool windReady = true;
 
     private void Start()
     {
@@ -93,6 +94,12 @@ public class ScoreCount : MonoBehaviour
                 earthquakeReady = false;
                 StartCoroutine(EarthquakeCooldown());
             }
+            if (windReady)
+            {
+                gameManager.SpawnWind();
+                windReady = false;
+                StartCoroutine(WindCooldown());
+            }
         }
     }
 
@@ -106,5 +113,11 @@ public class ScoreCount : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(5, 30));
         earthquakeReady = true;
+    }
+
+    IEnumerator WindCooldown()
+    {
+        yield return new WaitForSeconds(Random.Range(15, 30));
+        windReady = true;
     }
 }

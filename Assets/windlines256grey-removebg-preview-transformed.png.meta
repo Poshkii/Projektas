@@ -1,0 +1,1218 @@
+fileFormatVersion: 2
+guid: b73bc87dcd8017e46bab06fb1454821f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e4495ceeebc2a04fbf3da05a0d01aed
+      internalID: -1156813238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_1
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65bbbf08a3255e4d9792af0ec4a9ae7
+      internalID: -1739205888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_2
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25706d9ab761974e8bc1991b70f1e25
+      internalID: -2110528664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_3
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f701f629348cc364386993e8f4e643d5
+      internalID: 2102114840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_4
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf1f10d34648e64488041f3cad2887a
+      internalID: -801104552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_5
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e032040f4e3d994189565e85194ee04
+      internalID: -236712953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_6
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1715
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4d1e624859d1e4482de80c80f15bca
+      internalID: 1952796741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7279e09fbfe734aa2d47b93c30c471
+      internalID: 1320272513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_8
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7143acda53de7bc42bc269228e740e5b
+      internalID: 1315819980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_9
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22bf6d850ecbd19469d8972d91a36660
+      internalID: -466839763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_10
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03306dccca883c547aec6b8f1262d8be
+      internalID: -1893114450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_11
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b4aa4a69601574891368eac35bdaaa
+      internalID: 1034466305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_12
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df5a59debd3aa3489aaa25ec50c1086
+      internalID: 655094563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_13
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1430
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8678d7bd055af2143adce66e605ee2da
+      internalID: 1147588185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60d81ffd7b070f46986ca55671779d7
+      internalID: -1713909402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_15
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3584b751b9e35f48adb597405ae561c
+      internalID: -1947996304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_16
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65cf10d9f0961f343b8380a5af4e9011
+      internalID: -1689209684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_17
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634bd16fef2443246a0e5148a605431d
+      internalID: 1090001092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_18
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418e21ad76315dd499d6980d7a7501f9
+      internalID: -1530255071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_19
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c2426d818bb38f448a95a259ea868a0
+      internalID: 822518987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_20
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1145
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1f7bd11dc2deb44acee3d14a7559b0
+      internalID: 1601652158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75822f971ab9923498e3d75d66f1741e
+      internalID: -1146023383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_22
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f414ff5cd3c360c42bacdc57e666e94a
+      internalID: -1762696086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_23
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757c8eed63ec7dd489aae7d58b441d6e
+      internalID: -1774276971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_24
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0663a3e62c9088469cc094d4c30b999
+      internalID: 2054348175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_25
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 961e8995b883d6b4eaa95c08fc15add8
+      internalID: -1691681145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_26
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb47db2a157a2f408a2a99601372025
+      internalID: 266054658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_27
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 860
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6159fa3adbaeb4091544ab83db51c6
+      internalID: -950889633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c8bcadaf4ebee42805a2709f4259cf
+      internalID: -1207980367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_29
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a23428136a47f346bee0d93a50afcdc
+      internalID: -413853239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_30
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c95b76f6a38e7c46bd03ea5b2423b25
+      internalID: -1523249237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_31
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f73f497a52435442b70305163d83f76
+      internalID: -1489081861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_32
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48e89c4e27b3df4a8b909b9a214f481
+      internalID: 2070748884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_33
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa904a358c5aae34aa9323d42b7e2ade
+      internalID: -88770829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_34
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 575
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c52dda76dfcdfb246bc2ea72507de359
+      internalID: -1215034198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecca4cde7bc22c4599f242217761268
+      internalID: 1798245938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_36
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdd1b75a0c33cd4fb68932310d5a0d1
+      internalID: -1977181892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_37
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ef6af709f32f54dbb287b6fb890929
+      internalID: -667876574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_38
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61d1dff3c328fd4094be5d9981072a3
+      internalID: -419091900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_39
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dc13a0e562c954c93f5c66a016e849
+      internalID: -1827152982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_40
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ab946d9530c02458c8d5155bc3284b
+      internalID: -1627355849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_41
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 290
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7958724e77afde641802ef9c3466cc12
+      internalID: -68636022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbb962ecddd06249ab7c521c425b0bd
+      internalID: 327055559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_43
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc0a3744c866a59458fa01145f260c6d
+      internalID: 10002703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_44
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32932e6e92962c048b9915f09d079df3
+      internalID: 2015240335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_45
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fb5ae370d66a84e924223efd2205a1
+      internalID: -1804533381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_46
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a8fb8ae5a2ce14cbcf85f08e0eb7d9
+      internalID: -1534034869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_47
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be12d815c1527a4a809699bb3cedadb
+      internalID: -1034073216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: windlines256grey-removebg-preview-transformed_48
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 5
+        width: 285
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644d538d30538624f945106c35f4749b
+      internalID: -513861139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      windlines256grey-removebg-preview-transformed_0: -1156813238
+      windlines256grey-removebg-preview-transformed_1: -1739205888
+      windlines256grey-removebg-preview-transformed_10: -1893114450
+      windlines256grey-removebg-preview-transformed_11: 1034466305
+      windlines256grey-removebg-preview-transformed_12: 655094563
+      windlines256grey-removebg-preview-transformed_13: 1147588185
+      windlines256grey-removebg-preview-transformed_14: -1713909402
+      windlines256grey-removebg-preview-transformed_15: -1947996304
+      windlines256grey-removebg-preview-transformed_16: -1689209684
+      windlines256grey-removebg-preview-transformed_17: 1090001092
+      windlines256grey-removebg-preview-transformed_18: -1530255071
+      windlines256grey-removebg-preview-transformed_19: 822518987
+      windlines256grey-removebg-preview-transformed_2: -2110528664
+      windlines256grey-removebg-preview-transformed_20: 1601652158
+      windlines256grey-removebg-preview-transformed_21: -1146023383
+      windlines256grey-removebg-preview-transformed_22: -1762696086
+      windlines256grey-removebg-preview-transformed_23: -1774276971
+      windlines256grey-removebg-preview-transformed_24: 2054348175
+      windlines256grey-removebg-preview-transformed_25: -1691681145
+      windlines256grey-removebg-preview-transformed_26: 266054658
+      windlines256grey-removebg-preview-transformed_27: -950889633
+      windlines256grey-removebg-preview-transformed_28: -1207980367
+      windlines256grey-removebg-preview-transformed_29: -413853239
+      windlines256grey-removebg-preview-transformed_3: 2102114840
+      windlines256grey-removebg-preview-transformed_30: -1523249237
+      windlines256grey-removebg-preview-transformed_31: -1489081861
+      windlines256grey-removebg-preview-transformed_32: 2070748884
+      windlines256grey-removebg-preview-transformed_33: -88770829
+      windlines256grey-removebg-preview-transformed_34: -1215034198
+      windlines256grey-removebg-preview-transformed_35: 1798245938
+      windlines256grey-removebg-preview-transformed_36: -1977181892
+      windlines256grey-removebg-preview-transformed_37: -667876574
+      windlines256grey-removebg-preview-transformed_38: -419091900
+      windlines256grey-removebg-preview-transformed_39: -1827152982
+      windlines256grey-removebg-preview-transformed_4: -801104552
+      windlines256grey-removebg-preview-transformed_40: -1627355849
+      windlines256grey-removebg-preview-transformed_41: -68636022
+      windlines256grey-removebg-preview-transformed_42: 327055559
+      windlines256grey-removebg-preview-transformed_43: 10002703
+      windlines256grey-removebg-preview-transformed_44: 2015240335
+      windlines256grey-removebg-preview-transformed_45: -1804533381
+      windlines256grey-removebg-preview-transformed_46: -1534034869
+      windlines256grey-removebg-preview-transformed_47: -1034073216
+      windlines256grey-removebg-preview-transformed_48: -513861139
+      windlines256grey-removebg-preview-transformed_5: -236712953
+      windlines256grey-removebg-preview-transformed_6: 1952796741
+      windlines256grey-removebg-preview-transformed_7: 1320272513
+      windlines256grey-removebg-preview-transformed_8: 1315819980
+      windlines256grey-removebg-preview-transformed_9: -466839763
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
