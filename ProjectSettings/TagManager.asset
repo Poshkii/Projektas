@@ -8,6 +8,8 @@ TagManager:
   - Platform
   - Coin
   - Bird
+  - Audio
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -11,14 +11,22 @@ public class Platform : MonoBehaviour
     float yOffsetUp = 1f;
     float yOffsetDown = 3f;
     public float platformSpeed = 0.7f;
+    float platformSpeedVertical = 0f;
     float minWidth = 0.8f;
     float maxWidth = 1.2f;
     Platform spawnedPlatform = null;
     GameObject coin;
     GameObject model;
-    private float coinSpawnChance = 0.3f;
-    float platformSpeedVertical = 0f;
+    GameObject extraLife;
+    GameObject extraJump;
+    GameObject doubleCoins;
+    private float coinSpawnChance = 0.4f;
+    private float boosterSpawnChance = 0.1f;
+
     private bool hasCoin = false;
+    private bool hasExtraLife = false;
+    private bool hasExtraJump = false;
+    private bool hasDoubleCoins = false;
     private bool animationPlayed = false;
 
     // Start is called before the first frame update
@@ -26,11 +34,14 @@ public class Platform : MonoBehaviour
     {
         model = transform.GetChild(0).gameObject;
         coin = model.transform.GetChild(0).gameObject;
+        extraLife = model.transform.GetChild(1).gameObject;
+        extraJump = model.transform.GetChild(2).gameObject;
+        doubleCoins = model.transform.GetChild(3).gameObject;
 
-        if (hasCoin)
-        {
-            coin.SetActive(false);
-        }
+        coin.SetActive(hasCoin);
+        extraLife.SetActive(hasExtraLife);
+        extraJump.SetActive(hasExtraJump);
+        doubleCoins.SetActive(hasDoubleCoins);
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
@@ -43,6 +54,10 @@ public class Platform : MonoBehaviour
         transform.position = position + offset;
 
         TrySpawnCoin();
+        if (!hasCoin)
+        {
+            TrySpawnBooster();
+        }
     }      
     
     public void TrySpawnCoin()
@@ -60,6 +75,26 @@ public class Platform : MonoBehaviour
             count--;
             SpawnPlatform();
             spawnedPlatform.SpawnRecusively(count);
+        }
+    }
+
+    private void TrySpawnBooster()
+    {
+        if (Random.value < boosterSpawnChance)
+        {
+            float val = Random.value;
+            if (val < 0.3f)
+            {
+                hasExtraLife = true;
+            }
+            else if (val < 0.5f)
+            {
+                hasExtraJump = true;
+            }
+            else
+            {
+                hasDoubleCoins = true;
+            }
         }
     }
 

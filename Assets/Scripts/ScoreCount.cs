@@ -18,6 +18,7 @@ public class ScoreCount : MonoBehaviour
     private bool birdReady = true;
     private bool earthquakeReady = true;
     private bool multiplyerReady = true;
+    private bool windReady = true;
 
     private void Start()
     {
@@ -94,19 +95,24 @@ public class ScoreCount : MonoBehaviour
                 gameManager.Earthquake(0.5f);
                 earthquakeReady = false;
                 StartCoroutine(EarthquakeCooldown());
-            }
-            if(multiplyerReady)
+            }            
+            if (windReady)
             {
-                multiplyerReady = false;
-                multiplyer = 2;
-                StartCoroutine(MultiplyerLastingTime());
-                StartCoroutine (MultiplyerCooldown());
+                gameManager.SpawnWind();
+                windReady = false;
+                StartCoroutine(WindCooldown());
             }
         }
     }
     public int GetMultiplyer()
     {
         return multiplyer;
+    }
+
+    public void SetMultiplier(int value)
+    {
+        multiplyer = value;
+        StartCoroutine(MultiplyerLastingTime());
     }
 
     IEnumerator BirdCooldown()
@@ -124,11 +130,17 @@ public class ScoreCount : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(10, 30));
         multiplyerReady = true;
-        multiplyer = 1;
+        //multiplyer = 1;
     }
     IEnumerator MultiplyerLastingTime()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(15);
         multiplyer = 1;
+    }
+
+    IEnumerator WindCooldown()
+    {
+        yield return new WaitForSeconds(Random.Range(15, 30));
+        windReady = true;
     }
 }

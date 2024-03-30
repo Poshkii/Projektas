@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject player;    
     public GameObject starterPlatform;
     public GameObject birdSpawnerObj;
+    public WindSpawner windSpawner;
     private BirdSpawner birdSpawner;
+    ScoreCount scoreCount;
     public GameObject camera;
     private bool shakeCamera = false;
     private float duration = 0f;
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreCount = GetComponent<ScoreCount>();
         Time.timeScale = 0f;
         optionsPanelUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(false);
@@ -192,5 +195,32 @@ public class GameManager : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void ApplyBooster(string type)
+    {
+        if (type == "ExtraLife")
+        {
+            AddLife();
+        }
+        else if (type == "ExtraJump")
+        {
+            Debug.Log("Extra Jump activated");
+        }
+        else if (type == "DoubleCoins")
+        {
+            scoreCount.SetMultiplier(2);
+            Debug.Log("Double Coins activated");
+        }
+    }
+
+    private void AddLife()
+    {
+        player.GetComponent<Player>().lives++;
+    }
+
+    public void SpawnWind()
+    {
+        windSpawner.SpawnWind();
     }
 }
