@@ -10746,6 +10746,7 @@ MonoBehaviour:
   coin: {fileID: 8300000, guid: 2eaa0e28734645b4c86ef12882536884, type: 3}
   powerUp: {fileID: 8300000, guid: 2db9b4c1a0383f543a24400b88e13a3d, type: 3}
   start: {fileID: 8300000, guid: 2449663faa20b2b49ba1baa719443830, type: 3}
+  earthquake: {fileID: 8300000, guid: 3714f4dcf5b46234da8fc76c464ec84b, type: 3}
 --- !u!224 &1787174605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12305,7 +12306,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 472316555410567917, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.94
+      value: 7.08
       objectReference: {fileID: 0}
     - target: {fileID: 472316555410567917, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
       propertyPath: m_LocalPosition.y

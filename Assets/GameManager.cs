@@ -27,9 +27,13 @@ public class GameManager : MonoBehaviour
     private Vector3 cameraStartPos;
     private const float baseShakeStrength = 0.2f;
     private float ShakeStrength;
+    AudioManager audioManager;
 
     private List<int> scores = new List<int>();
-
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
         birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
         cameraStartPos = camera.transform.position;
         ShakeStrength = baseShakeStrength;
+        //GetComponent<Animator>().Play("Drop", -1, 0f);
     }
 
     // Update is called once per frame
@@ -125,6 +130,8 @@ public class GameManager : MonoBehaviour
         startPanelUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);
         SpawnStarterPlatform();
+        // GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        //platforms[1].GetComponentInChildren<Animator>().Play("Drop", -1, 0f);
     }
 
     public void SetPrefs(int x, int y)
@@ -181,6 +188,7 @@ public class GameManager : MonoBehaviour
             {
                 ShakeCamera(2f);
                 plat.GetComponent<Platform>().DropPlatform();
+                audioManager.PlaySFX(audioManager.earthquake);
                 break;
             }
         }

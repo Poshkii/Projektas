@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ModelScript : MonoBehaviour
@@ -26,6 +27,10 @@ public class ModelScript : MonoBehaviour
     public void PlayAnimation()
     {
         GetComponent<Animator>().Play("PlatformAnim", -1, 0f);
+    }
+    public void DropAnimation()
+    {
+        GetComponent<Animator>().Play("Drop", -1, 0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Coins : MonoBehaviour
@@ -42,7 +43,12 @@ public class Coins : MonoBehaviour
         // updates coin counter
         ScoreCount coinCounter = FindObjectOfType<ScoreCount>();
         if (coinCounter != null)
-            coinCounter.AddCoin();
+        {
+            int multiplyer = coinCounter.GetMultiplyer();
+            coinCounter.AddCoin(multiplyer);
+        }
+        else
+            coinCounter.AddCoin(1);
     }
 
     // (Optional) spinning animation for visuals
