@@ -5,11 +5,12 @@ using UnityEngine.UIElements;
 
 public class Platform : MonoBehaviour
 {
-    float minGap = 4f;
-    float baseYValue = -5f;
+    float minGap = 4f; 
+    float baseYValue = -7f;
     float maxGap = 8f;
     float yOffsetUp = 1f;
     float yOffsetDown = 3f;
+    float yOffset = 1.4f;
     public float platformSpeed = 0.7f;
     float minWidth = 0.8f;
     float maxWidth = 1.2f;
@@ -21,6 +22,8 @@ public class Platform : MonoBehaviour
     private bool hasCoin = false;
     private bool animationPlayed = false;
 
+    public Sprite[] sprites;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,11 @@ public class Platform : MonoBehaviour
         if (hasCoin)
         {
             coin.SetActive(false);
+        SpriteRenderer render = GetComponent<SpriteRenderer>();
+        if (sprites.Length > 0 )
+        {
+            int random = Random.Range( 0,sprites.Length );
+            render.sprite = sprites[random];
         }
     }
 
