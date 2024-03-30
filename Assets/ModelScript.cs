@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class ModelScript : MonoBehaviour
 {
+    public Sprite[] sprites;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpriteRenderer render = GetComponent<SpriteRenderer>();
+        if (sprites.Length > 0)
+        {
+            int random = Random.Range(0, sprites.Length);
+            render.sprite = sprites[random];
+        }
     }
 
     // Update is called once per frame

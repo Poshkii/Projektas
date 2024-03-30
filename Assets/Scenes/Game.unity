@@ -1421,6 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ce7ab27aa84fa43aa75e88c18e9dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites: []
 --- !u!1 &170694116
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2922,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12198168, y: 0.042494774}
+  m_Offset: {x: -0.12198162, y: 0.023401141}
   m_SpriteTilingProperty:
     border: {x: 1.65, y: 0.45999998, z: 1.8299999, w: 0.42}
     pivot: {x: 0.5, y: 0.5}
@@ -2932,7 +2933,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8627462, y: 5.458374}
+  m_Size: {x: 2.8627462, y: 5.496561}
   m_EdgeRadius: 0
 --- !u!114 &412192600
 MonoBehaviour:
@@ -2956,7 +2957,7 @@ MonoBehaviour:
   gameManagerObj: {fileID: 661003188}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
