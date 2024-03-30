@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class Platform : MonoBehaviour
 {
-    float minGap = 4f; 
+    float minGap = 4f;
     float baseYValue = -7f;
     float maxGap = 8f;
     float yOffsetUp = 1f;
@@ -33,16 +33,17 @@ public class Platform : MonoBehaviour
         if (hasCoin)
         {
             coin.SetActive(false);
-        SpriteRenderer render = GetComponent<SpriteRenderer>();
-        if (sprites.Length > 0 )
-        {
-            int random = Random.Range( 0,sprites.Length );
-            render.sprite = sprites[random];
+            SpriteRenderer render = GetComponent<SpriteRenderer>();
+            if (sprites.Length > 0)
+            {
+                int random = Random.Range(0, sprites.Length);
+                render.sprite = sprites[random];
+            }
         }
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
-    {       
+    {
         platformSpeed = speed;
         float randomWidth = Random.Range(minWidth, maxWidth);
         transform.localScale = new Vector3(randomWidth, 1, 0);
@@ -51,12 +52,12 @@ public class Platform : MonoBehaviour
         transform.position = position + offset;
 
         TrySpawnCoin();
-    }      
-    
+    }
+
     public void TrySpawnCoin()
     {
         if (Random.value < coinSpawnChance)
-        {            
+        {
             hasCoin = true;
         }
     }
@@ -77,7 +78,7 @@ public class Platform : MonoBehaviour
         {
             spawnedPlatform = Instantiate(gameObject).GetComponent<Platform>();
             spawnedPlatform.SetPosAndSpeed(transform.position, platformSpeed);
-        }        
+        }
     }
 
     public void SpawnOnLast()
@@ -91,15 +92,15 @@ public class Platform : MonoBehaviour
             SpawnPlatform();
         }
     }
-   
+
     // Update is called once per frame
     void Update()
-    {       
+    {
         if (transform.position.x < -13)
-        {           
+        {
             SpawnOnLast();
             Destroy(gameObject);
-        }        
+        }
 
         if (transform.position.x < 12 && !animationPlayed)
         {
@@ -115,5 +116,6 @@ public class Platform : MonoBehaviour
     public void DropPlatform()
     {
         platformSpeedVertical = 10f;
-    }    
+    }
 }
+
