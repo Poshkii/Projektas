@@ -46,6 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformSpeed: 0.7
+  sprites:
+  - {fileID: 21300000, guid: bd06e5a91616ec144a7b7e794464baa4, type: 3}
+  - {fileID: 21300000, guid: 666a03d4f7871a84f94febd07583e8de, type: 3}
+  - {fileID: 21300000, guid: 99a2544de988b3844b4036202652759f, type: 3}
+  - {fileID: 21300000, guid: d71abf36fefa70d47859f3694e139fd0, type: 3}
+  - {fileID: 21300000, guid: d64d5eae3025175429295527a5833cf5, type: 3}
 --- !u!1 &3753764282559155791
 GameObject:
   m_ObjectHideFlags: 0

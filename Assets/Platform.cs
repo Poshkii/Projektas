@@ -27,18 +27,19 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SpriteRenderer render = GetComponent<SpriteRenderer>();
+        if (sprites.Length > 0)
+        {
+            int random = Random.Range(0, sprites.Length);
+            render.sprite = sprites[random];
+        }
+
         model = transform.GetChild(0).gameObject;
         coin = model.transform.GetChild(0).gameObject;
 
         if (hasCoin)
         {
             coin.SetActive(false);
-            SpriteRenderer render = GetComponent<SpriteRenderer>();
-            if (sprites.Length > 0)
-            {
-                int random = Random.Range(0, sprites.Length);
-                render.sprite = sprites[random];
-            }
         }
     }
 
