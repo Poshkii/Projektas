@@ -8,7 +8,6 @@ TagManager:
   - Platform
   - Coin
   - Bird
-  - JumpBoost
   layers:
   - Default
   - TransparentFX
