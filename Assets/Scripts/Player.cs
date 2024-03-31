@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -28,7 +27,6 @@ public class Player : MonoBehaviour
     // Jump boost options
     private bool isJumpBoosted = false;
     private float jumpBoostTimer = 0f;
-    private float originalSideJump;
 
     // Game scene options
     private bool respawned = false;
@@ -39,13 +37,17 @@ public class Player : MonoBehaviour
     Vector3 startPos = new Vector3(-10, 2, 0);
 
     // Ground check options
-    private float raycastDistance = 0.1f;
+    private float raycastDistance = 0.05f;
     public LayerMask groundLayer;
     private int numberOfRaycasts = 3;
     private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
     public LayerMask whatIsGround;
     public Transform groundCheck;
+
     public SpriteRenderer spriteRend;
+    public Sprite[] jumpSprites;
+    public Sprite jumpingSprite;
+    public Sprite defaultSprite;
 
     AudioManager audioManager;
     private void Awake()
@@ -58,10 +60,10 @@ public class Player : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         bounceMain = GetComponent<EdgeCollider2D>();
         box = GetComponent<BoxCollider2D>();
-        
+
         ResetValues();
-        
-        groundCheckBoxSize.x = box.bounds.size.x-0.1f;
+
+        groundCheckBoxSize.x = box.bounds.size.x - 0.1f;
         groundCheckBoxSize.y = 0.5f;
 
         spriteRend = GetComponent<SpriteRenderer>();
@@ -84,15 +86,29 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        bool touchingWall = !CastRaycasts();
+        UpdatePlayerSprite();
 
+        // Checks if ground check raycasts are valid
+        bool touchingWall = !CastRaycasts();
         allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
+
+        if (!allowJump)
+        {
+            // Player is in the air, show jump in progress sprite
+            spriteRend.sprite = jumpingSprite;
+        }
+        else
+        {
+            // Player is not jumping, update based on charge level
+            UpdatePlayerSprite();
+        }
 
         if (sideJump > 2)
         {
             sideJump -= 0.02f * Time.deltaTime;
         }
 
+        // Returns jump strength back to normal after jump boost time expires
         if (isJumpBoosted)
         {
             jumpBoostTimer -= Time.deltaTime;
@@ -131,7 +147,6 @@ public class Player : MonoBehaviour
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
         }
-
 
         if (isJumping && allowJump && Input.touchCount == 0 && !touchingWall)
         {
@@ -177,6 +192,7 @@ public class Player : MonoBehaviour
     private void Jump()
     {
         float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(heldTime / maxTime, (float)1.5));
+        heldTime = 0;
         body.velocity = new Vector2(sideJump, jumpHeight);
 
         audioManager.PlaySFX(audioManager.jump);
@@ -214,7 +230,9 @@ public class Player : MonoBehaviour
                 Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.green); // Visualize valid raycast
             }
             else
+            {
                 Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.red); // Visualize invalid raycast
+            }
         }
         return hitPlatform;
     }
@@ -223,8 +241,24 @@ public class Player : MonoBehaviour
     public void IncreaseJump(float duration)
     {
         // Increase jump force for a duration
-        sideJump += 2; // Increase jump force
+        sideJump += 2; // Increase side jump strength
         isJumpBoosted = true;
         jumpBoostTimer = duration;
+    }
+
+    private void UpdatePlayerSprite()
+    {
+        // Calculate the charge percentage of the jump
+        float chargePercentage = heldTime / maxTime;
+        // Calculate the charge level based on 25% intervals
+        int chargeLevel = Mathf.FloorToInt(chargePercentage / 0.25f);
+
+        // Ensure charge level is within bounds
+        chargeLevel = Mathf.Clamp(chargeLevel, 0, jumpSprites.Length - 1);
+
+        // Set the sprite based on charge level
+        if (chargeLevel < jumpSprites.Length)
+            spriteRend.sprite = jumpSprites[chargeLevel];
+        
     }
 }

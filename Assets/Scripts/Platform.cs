@@ -6,10 +6,10 @@ using UnityEngine.UIElements;
 public class Platform : MonoBehaviour
 {
     float minGap = 4f;
-    float baseYValue = -5f;
+    float baseYValue = -6f;
     float maxGap = 8f;
     float yOffsetUp = 1f;
-    float yOffsetDown = 3f;
+    float yOffsetDown = 2f;
     public float platformSpeed = 0.7f;
     float platformSpeedVertical = 0f;
     float minWidth = 0.8f;
