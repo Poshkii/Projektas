@@ -16,12 +16,10 @@ public class Player : MonoBehaviour
     private Rigidbody2D body;
     public PhysicsMaterial2D bounceMaterial;
     public PhysicsMaterial2D frictionMaterial;
-    private EdgeCollider2D bounceMain;
     private BoxCollider2D box;
     public Image jumpIndicator;
 
     // Jumping options
-    private bool isJumping = false;
     private bool allowJump = true;
 
     // Jump boost options
@@ -44,6 +42,7 @@ public class Player : MonoBehaviour
     public LayerMask whatIsGround;
     public Transform groundCheck;
 
+    // Character sprite options
     public SpriteRenderer spriteRend;
     public Sprite[] jumpSprites;
     public Sprite jumpingSprite;
@@ -58,7 +57,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        bounceMain = GetComponent<EdgeCollider2D>();
         box = GetComponent<BoxCollider2D>();
 
         ResetValues();
@@ -86,20 +84,22 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        UpdatePlayerSprite();
-
         // Checks if ground check raycasts are valid
-        bool touchingWall = !CastRaycasts();
+        bool raycastCheck = !CastRaycasts();
         allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
 
-        if (!allowJump)
+        if (raycastCheck)
+        // Player is in the air, show jump in progress sprite
         {
-            // Player is in the air, show jump in progress sprite
             spriteRend.sprite = jumpingSprite;
         }
-        else
+        else if (!raycastCheck && Input.touchCount == 0)
         {
-            // Player is not jumping, update based on charge level
+            spriteRend.sprite = defaultSprite;
+        }
+        else
+        // Player is not jumping, update based on charge level
+        {
             UpdatePlayerSprite();
         }
 
@@ -123,14 +123,14 @@ public class Player : MonoBehaviour
         //bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
 
         // start of touch input to reset touch duration measurement
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !isJumping && !touchingWall)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !raycastCheck)
         {
             heldTime = 0f;
         }
 
 
         // times and updates held touch input, initializes jump strength indicator
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !isJumping && !touchingWall)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !raycastCheck)
         {
             heldTime += Time.deltaTime;
             heldTime = Mathf.Clamp(heldTime, 0f, maxTime);
@@ -140,17 +140,15 @@ public class Player : MonoBehaviour
 
         // jumping is perfomed if conditions are met and indicator is reset
         // inverts certain checks to perform input control
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump && !isJumping && !touchingWall)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump && !raycastCheck)
         {
             Jump();
-            isJumping = true;
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
         }
 
-        if (isJumping && allowJump && Input.touchCount == 0 && !touchingWall)
+        if (allowJump && Input.touchCount == 0 && !raycastCheck)
         {
-            isJumping = false;
             heldTime = 0f;
             jumpIndicator.fillAmount = 0f;
         }
@@ -185,6 +183,12 @@ public class Player : MonoBehaviour
             body.transform.position = startPos + transform.up * 2f;
             gameManager.SpawnStarterPlatform();
             body.velocity = Vector3.zero;
+            if (isJumpBoosted)
+            {
+                // Reset jump force to original value
+                sideJump -= 2f;
+                isJumpBoosted = false;
+            }
         }
     }
 
@@ -240,8 +244,8 @@ public class Player : MonoBehaviour
     // Jumping booster effect
     public void IncreaseJump(float duration)
     {
-        // Increase jump force for a duration
-        sideJump += 2; // Increase side jump strength
+        // Increase side jump force for a duration
+        sideJump += 2;
         isJumpBoosted = true;
         jumpBoostTimer = duration;
     }
@@ -258,7 +262,22 @@ public class Player : MonoBehaviour
 
         // Set the sprite based on charge level
         if (chargeLevel < jumpSprites.Length)
+        {
             spriteRend.sprite = jumpSprites[chargeLevel];
-        
+        }
+    }
+
+    private void ResizeCollider()
+    {
+        if (spriteRend == null || spriteRend.sprite == null || box == null)
+        {
+            return;
+        }
+
+        // Get the size of the sprite
+        Vector2 spriteSize = spriteRend.sprite.bounds.size;
+
+        // Set the size of the collider to match the sprite's size
+        box.size = spriteSize;
     }
 }
