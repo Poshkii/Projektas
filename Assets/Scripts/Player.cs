@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public float minJump = 2f;
     public int lives = 1;
     private float heldTime = 0f;
+    private int jumpCount = 2;
+    private int jumpsAvailable = 2;
 
     // Object options
     private Rigidbody2D body;
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
 
     // Jumping options
     private bool allowJump = true;
+    private bool allowChecks = true;
 
     // Jump boost options
     private bool isJumpBoosted = false;
@@ -85,8 +88,16 @@ public class Player : MonoBehaviour
     private void Update()
     {
         // Checks if ground check raycasts are valid
-        bool raycastCheck = !CastRaycasts();
-        allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
+        bool raycastCheck = true;
+        if (allowChecks)
+        {
+            raycastCheck = !CastRaycasts();
+            allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
+        }        
+        if (!raycastCheck && allowJump)
+        {
+            jumpsAvailable = jumpCount;
+        }
 
         if (raycastCheck)
         // Player is in the air, show jump in progress sprite
@@ -123,14 +134,14 @@ public class Player : MonoBehaviour
         //bounceMaterial.bounciness += 0.2f * (Time.deltaTime*0.3f);
 
         // start of touch input to reset touch duration measurement
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && allowJump && !raycastCheck)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && jumpsAvailable > 0)
         {
             heldTime = 0f;
         }
 
 
         // times and updates held touch input, initializes jump strength indicator
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && allowJump && !raycastCheck)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && jumpsAvailable > 0)
         {
             heldTime += Time.deltaTime;
             heldTime = Mathf.Clamp(heldTime, 0f, maxTime);
@@ -140,14 +151,14 @@ public class Player : MonoBehaviour
 
         // jumping is perfomed if conditions are met and indicator is reset
         // inverts certain checks to perform input control
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && allowJump && !raycastCheck)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && jumpsAvailable > 0)
         {
             Jump();
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
         }
 
-        if (allowJump && Input.touchCount == 0 && !raycastCheck)
+        if (Input.touchCount == 0 && jumpsAvailable > 0)
         {
             heldTime = 0f;
             jumpIndicator.fillAmount = 0f;
@@ -195,11 +206,17 @@ public class Player : MonoBehaviour
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
     {
-        float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(heldTime / maxTime, (float)1.5));
-        heldTime = 0;
-        body.velocity = new Vector2(sideJump, jumpHeight);
+        if (jumpsAvailable > 0)
+        {
+            float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(heldTime / maxTime, (float)1.5));
+            heldTime = 0;
+            body.velocity = new Vector2(sideJump, jumpHeight);
 
-        audioManager.PlaySFX(audioManager.jump);
+            audioManager.PlaySFX(audioManager.jump);
+            jumpsAvailable--;
+            allowChecks = false;
+            StartCoroutine(DelayChecks());
+        }        
     }
 
     // Displays an indicator of how strong the jump is depending on how long touch input was
@@ -279,5 +296,11 @@ public class Player : MonoBehaviour
 
         // Set the size of the collider to match the sprite's size
         box.size = spriteSize;
+    }
+
+    IEnumerator DelayChecks()
+    {
+        yield return new WaitForSeconds(0.1f);
+        allowChecks = true;
     }
 }
