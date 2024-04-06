@@ -206,6 +206,8 @@ public class GameManager : MonoBehaviour
         else if (type == "ExtraJump")
         {
             Debug.Log("Extra Jump activated");
+            SetJump(2);
+            StartCoroutine(DoubleJumpLastingTime());
         }
         else if (type == "DoubleCoins")
         {
@@ -219,8 +221,19 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Player>().lives++;
     }
 
+    private void SetJump(int count)
+    {
+        player.GetComponent<Player>().jumpCount = count;
+    }
+
     public void SpawnWind()
     {
         windSpawner.SpawnWind();
+    }
+
+    IEnumerator DoubleJumpLastingTime()
+    {
+        yield return new WaitForSeconds(15f);
+        SetJump(1);
     }
 }

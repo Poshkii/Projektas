@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
     public float minJump = 2f;
     public int lives = 1;
     private float heldTime = 0f;
-    private int jumpCount = 2;
-    private int jumpsAvailable = 2;
+    public int jumpCount = 1;
+    private int jumpsAvailable = 1;
 
     // Object options
     private Rigidbody2D body;
