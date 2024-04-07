@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Donatas\\Desktop\\Projektas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\scripts\\starterplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\starterplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\birdspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\birdspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,6 +39,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BirdSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\BirdSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BirdSpawner.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\BirdSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BirdSpawner.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T19:10:35.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StarterPlatform.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\StarterPlatform.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StarterPlatform.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\StarterPlatform.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StarterPlatform.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T19:03:53.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ScoreCount.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\ScoreCount.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreCount.cs",
@@ -42,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
@@ -50,12 +83,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Player.cs",
               "ViewState": "AQIAAPgAAAAAAAAAAAAqwAABAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-31T09:40:23.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-31T09:40:23.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Platform.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Platform.cs",
@@ -67,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ModelScript.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\ModelScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ModelScript.cs",
