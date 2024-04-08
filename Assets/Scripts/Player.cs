@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    const int maxLives = 5;
+
     // Control options
     public float jumpForce = 10f;
     public float sideJump = 4f;
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
     public PhysicsMaterial2D frictionMaterial;
     private BoxCollider2D box;
     public Image jumpIndicator;
+    public GameObject[] hearts;
 
     // Jumping options
     private bool allowJump = true;
@@ -35,7 +38,7 @@ public class Player : MonoBehaviour
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
-    Vector3 startPos = new Vector3(-10, 2, 0);
+    Vector3 startPos = new Vector3(-9, 2, 0);
 
     // Ground check options
     private float raycastDistance = 0.05f;
@@ -77,6 +80,8 @@ public class Player : MonoBehaviour
         }
         scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
         gameManager = gameManagerObj.GetComponent<GameManager>();
+
+        UpdateLives();
     }
 
     public void ResetValues()
@@ -85,8 +90,22 @@ public class Player : MonoBehaviour
         //bounceMaterial.bounciness = 1;
     }
 
-    private void Update()
+    public void UpdateLives()
     {
+        if (lives > maxLives)
+            lives = maxLives;
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < lives)
+                hearts[i].SetActive(true);
+            else
+                hearts[i].SetActive(false);
+        }
+    }
+
+    private void Update()
+    {      
         // Checks if ground check raycasts are valid
         bool raycastCheck = true;
         if (allowChecks)
@@ -185,6 +204,7 @@ public class Player : MonoBehaviour
             scoreCounter.Death();
             transform.position = startPos;
             body.velocity = Vector2.zero;
+            lives = 1;
         }
         //Respawns
         else
@@ -200,7 +220,8 @@ public class Player : MonoBehaviour
                 sideJump -= 2f;
                 isJumpBoosted = false;
             }
-        }
+            UpdateLives();
+        }        
     }
 
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
@@ -265,6 +286,12 @@ public class Player : MonoBehaviour
         sideJump += 2;
         isJumpBoosted = true;
         jumpBoostTimer = duration;
+    }
+
+    public void AddLife()
+    {
+        lives++;
+        UpdateLives();
     }
 
     private void UpdatePlayerSprite()

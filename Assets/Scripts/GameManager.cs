@@ -218,7 +218,7 @@ public class GameManager : MonoBehaviour
 
     private void AddLife()
     {
-        player.GetComponent<Player>().lives++;
+        player.GetComponent<Player>().AddLife();
     }
 
     private void SetJump(int count)
