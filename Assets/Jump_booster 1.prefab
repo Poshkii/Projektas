@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1400361592983551463}
   - component: {fileID: 4062069878065175410}
   - component: {fileID: 8809654924724542903}
+  - component: {fileID: 4019283580427101299}
   m_Layer: 0
   m_Name: Jump_booster 1
   m_TagString: Coin
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 31fc5bc2ee1075e41924573669c39967, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36b0f18697e6bfc478f2aadeb240ac4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,3 +150,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: ExtraJump
+--- !u!95 &4019283580427101299
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688375022934626474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76c04e12106403446a0b4ecaf2858725, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

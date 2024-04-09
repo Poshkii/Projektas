@@ -18,7 +18,7 @@ public class Coins : MonoBehaviour
 
     void Update()
     {
-        SpinCoin();
+        //SpinCoin();
     }
 
     // main collision event to trigger a coin pickup
