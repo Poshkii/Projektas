@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9102900798923910528}
   - component: {fileID: -118269838229175406}
   - component: {fileID: 6221322765272271261}
+  - component: {fileID: 6819842234161231281}
   m_Layer: 0
   m_Name: bird
   m_TagString: Bird
@@ -340,3 +341,24 @@ PolygonCollider2D:
       - {x: 0.995, y: -1.675}
       - {x: 0.97499996, y: -1.655}
   m_UseDelaunayMesh: 0
+--- !u!95 &6819842234161231281
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3348182735912115794}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0bd4da511603a6248a7216eeb5d8fd26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
