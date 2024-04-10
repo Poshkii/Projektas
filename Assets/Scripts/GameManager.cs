@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private const float baseShakeStrength = 0.2f;
     private float ShakeStrength;
     AudioManager audioManager;
+    private float startTimeScale;
+    private float startFixedDeltaTime;
 
     private List<int> scores = new List<int>();
     private void Awake()
@@ -39,6 +41,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startTimeScale = Time.timeScale;
+        startFixedDeltaTime = Time.fixedDeltaTime;
+        Debug.Log(startTimeScale);
+        Debug.Log(startFixedDeltaTime);
         scoreCount = GetComponent<ScoreCount>();
         Time.timeScale = 0f;
         optionsPanelUI.gameObject.SetActive(false);
@@ -214,6 +220,15 @@ public class GameManager : MonoBehaviour
             scoreCount.SetMultiplier(2);
             Debug.Log("Double Coins activated");
         }
+        else if (type == "SlowTime")
+        {
+            Debug.Log("Slow motion activated");
+            Time.timeScale = 0.5f;
+            Time.fixedDeltaTime = startFixedDeltaTime * 0.5f;
+            Debug.Log(Time.timeScale);
+            Debug.Log(Time.fixedDeltaTime);
+            StartCoroutine(SlowTimeLastingTime());
+        }
     }
 
     private void AddLife()
@@ -235,5 +250,14 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
         SetJump(1);
+    }
+
+    IEnumerator SlowTimeLastingTime()
+    {
+        yield return new WaitForSeconds(15f);
+        Time.timeScale = startTimeScale;
+        Time.fixedDeltaTime = startFixedDeltaTime;
+        Debug.Log(Time.timeScale);
+        Debug.Log(Time.fixedDeltaTime);
     }
 }
