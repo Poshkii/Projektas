@@ -21,7 +21,7 @@ public class Platform : MonoBehaviour
     GameObject extraJump;
     GameObject doubleCoins;
     private float coinSpawnChance = 0.4f;
-    private float boosterSpawnChance = 0.1f;
+    private float boosterSpawnChance = 1f;
 
     private bool hasCoin = false;
     private bool hasExtraLife = false;

@@ -17,7 +17,7 @@ public class JumpBoost : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpinBooster();
+        //SpinBooster();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
