@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private const float baseShakeStrength = 0.2f;
     private float ShakeStrength;
     AudioManager audioManager;
+    public ParticleSystem fogPartciles;
 
     private List<int> scores = new List<int>();
     private void Awake()
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fogPartciles.Stop();
         scoreCount = GetComponent<ScoreCount>();
         Time.timeScale = 0f;
         optionsPanelUI.gameObject.SetActive(false);
@@ -117,6 +119,8 @@ public class GameManager : MonoBehaviour
         gameUI.gameObject.SetActive(true);        
         //Debug.Log("Play");
         Instantiate(starterPlatform);
+        StopFog();
+        fogPartciles.Clear();
     }
     public void CancelOptions()
     {
@@ -197,6 +201,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartFog()
+    {
+        fogPartciles.Play();
+        StartCoroutine(FogLastingTime());
+    }
+    public void StopFog()
+    {
+        fogPartciles.Stop();
+    }
+
     public void ApplyBooster(string type)
     {
         if (type == "ExtraLife")
@@ -235,5 +249,11 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(15f);
         SetJump(1);
+    }
+
+    IEnumerator FogLastingTime()
+    {
+        yield return new WaitForSeconds(15f);
+        StopFog();
     }
 }
