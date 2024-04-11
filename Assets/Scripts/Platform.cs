@@ -20,6 +20,7 @@ public class Platform : MonoBehaviour
     GameObject extraLife;
     GameObject extraJump;
     GameObject doubleCoins;
+    GameObject slowTime;
     private float coinSpawnChance = 0.4f;
     private float boosterSpawnChance = 0.15f;
 
@@ -27,6 +28,7 @@ public class Platform : MonoBehaviour
     private bool hasExtraLife = false;
     private bool hasExtraJump = false;
     private bool hasDoubleCoins = false;
+    private bool hasSlowTime = false;
     private bool animationPlayed = false;
 
     // Start is called before the first frame update
@@ -37,11 +39,13 @@ public class Platform : MonoBehaviour
         extraLife = model.transform.GetChild(1).gameObject;
         extraJump = model.transform.GetChild(2).gameObject;
         doubleCoins = model.transform.GetChild(3).gameObject;
+        slowTime = model.transform.GetChild(4).gameObject;
 
         coin.SetActive(hasCoin);
         extraLife.SetActive(hasExtraLife);
         extraJump.SetActive(hasExtraJump);
         doubleCoins.SetActive(hasDoubleCoins);
+        slowTime.SetActive(hasSlowTime);
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
@@ -83,13 +87,17 @@ public class Platform : MonoBehaviour
         if (Random.value < boosterSpawnChance)
         {
             float val = Random.value;
-            if (val < 0.3f)
+            if (val < 0.1f)
             {
                 hasExtraLife = true;
             }
-            else if (val < 0.5f)
+            else if (val < 0.3f)
             {
                 hasExtraJump = true;
+            }
+            else if (val < 0.6f)
+            {
+                hasSlowTime = true;
             }
             else
             {
