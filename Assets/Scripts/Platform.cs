@@ -91,11 +91,11 @@ public class Platform : MonoBehaviour
             {
                 hasExtraLife = true;
             }
-            else if (val < 0.1)
+            else if (val < 0.3f)
             {
                 hasExtraJump = true;
             }
-            else if (val < 0.8)
+            else if (val < 0.6f)
             {
                 hasSlowTime = true;
             }
