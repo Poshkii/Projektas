@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     private float ShakeStrength;
     AudioManager audioManager;
     public ParticleSystem fogPartciles;
+    public PlatformSpawner platformSpawner;
 
     private List<int> scores = new List<int>();
     private void Awake()
@@ -121,6 +122,7 @@ public class GameManager : MonoBehaviour
         Instantiate(starterPlatform);
         StopFog();
         fogPartciles.Clear();
+        platformSpawner.Restart();
     }
     public void CancelOptions()
     {
