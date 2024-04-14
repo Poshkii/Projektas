@@ -4552,6 +4552,8 @@ MonoBehaviour:
   birdSpawnerObj: {fileID: 1107501987}
   windSpawner: {fileID: 845220008}
   camera: {fileID: 1383391049}
+  fogPartciles: {fileID: 765951640}
+  platformSpawner: {fileID: 1708826677}
 --- !u!1 &663969250
 GameObject:
   m_ObjectHideFlags: 0
@@ -4816,6 +4818,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759025616}
   m_CullTransparentMesh: 1
+--- !u!1001 &765951639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5365000918961364497, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_Name
+      value: FogParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+--- !u!198 &765951640 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+  m_PrefabInstance: {fileID: 765951639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &778534815
 GameObject:
   m_ObjectHideFlags: 0
@@ -10888,7 +10952,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 3311479972532951146, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
-  screenIsFilled: 0
 --- !u!1 &1718169868
 GameObject:
   m_ObjectHideFlags: 0
@@ -13021,3 +13084,4 @@ SceneRoots:
   - {fileID: 845220007}
   - {fileID: 2044620619}
   - {fileID: 1302279414}
+  - {fileID: 765951639}

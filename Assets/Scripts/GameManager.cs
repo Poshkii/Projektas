@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private const float baseShakeStrength = 0.2f;
     private float ShakeStrength;
     AudioManager audioManager;
+    public ParticleSystem fogPartciles;
+    public PlatformSpawner platformSpawner;
     private float startTimeScale;
     private float startFixedDeltaTime;
 
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StopFog();
         startTimeScale = Time.timeScale;
         startFixedDeltaTime = Time.fixedDeltaTime;
         Debug.Log(startTimeScale);
@@ -123,6 +126,9 @@ public class GameManager : MonoBehaviour
         gameUI.gameObject.SetActive(true);        
         //Debug.Log("Play");
         Instantiate(starterPlatform);
+        StopFog();
+        fogPartciles.Clear();
+        platformSpawner.Restart();
     }
     public void CancelOptions()
     {
@@ -231,6 +237,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartFog()
+    {
+        fogPartciles.Play();
+        StartCoroutine(FogLastingTime());
+    }
+    public void StopFog()
+    {
+        fogPartciles.Stop();
+    }
+
     private void AddLife()
     {
         player.GetComponent<Player>().AddLife();
@@ -254,10 +270,16 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SlowTimeLastingTime()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(5f);
         Time.timeScale = startTimeScale;
         Time.fixedDeltaTime = startFixedDeltaTime;
         Debug.Log(Time.timeScale);
         Debug.Log(Time.fixedDeltaTime);
+    }
+
+    IEnumerator FogLastingTime()
+    {
+        yield return new WaitForSeconds(15f);
+        StopFog();
     }
 }
