@@ -9,6 +9,8 @@ public class ScoreCount : MonoBehaviour
     public int score;
     public int coins;
     private int multiplyer=1;
+    private float maxSpeed = 4f;
+    private float currentSpeed = 0.7f;
 
     public TMP_Text scoreText;
     public TMP_Text coinsText;
@@ -18,6 +20,7 @@ public class ScoreCount : MonoBehaviour
     private bool birdReady = true;
     private bool earthquakeReady = true;
     private bool multiplyerReady = true;
+    private bool fogReady = true;
     private bool windReady = true;
 
     private void Start()
@@ -43,8 +46,9 @@ public class ScoreCount : MonoBehaviour
     {
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         foreach (GameObject platform in platforms)
-        {
+        {            
             platform.GetComponent<Platform>().platformSpeed += 0.1f;
+            currentSpeed = platform.GetComponent<Platform>().platformSpeed;
         }
     }
 
@@ -54,6 +58,7 @@ public class ScoreCount : MonoBehaviour
         foreach (GameObject platform in platforms)
         {
             platform.GetComponent<Platform>().platformSpeed = 0.7f;
+            currentSpeed = platform.GetComponent<Platform>().platformSpeed;
         }
 
     }
@@ -74,7 +79,8 @@ public class ScoreCount : MonoBehaviour
         if (timer >= 1f)
         {
             score++;
-            SpeedUp();
+            if (currentSpeed < maxSpeed)
+                SpeedUp();
             timer = 0f;
         }
         else
@@ -89,18 +95,33 @@ public class ScoreCount : MonoBehaviour
                 gameManager.SpawnBird();
                 birdReady = false;
                 StartCoroutine(BirdCooldown());
-            }
-            if (earthquakeReady)
+            }                     
+        }
+        if (score > 15f)
+        {            
+            if (fogReady)
             {
-                gameManager.Earthquake(0.5f);
-                earthquakeReady = false;
-                StartCoroutine(EarthquakeCooldown());
-            }            
+                gameManager.StartFog();
+                fogReady = false;
+                StartCoroutine(FogCooldown());
+            }
+        }
+        if (score > 20f)
+        {
             if (windReady)
             {
                 gameManager.SpawnWind();
                 windReady = false;
                 StartCoroutine(WindCooldown());
+            }
+        }
+        if (score > 25f)
+        {
+            if (earthquakeReady)
+            {
+                gameManager.Earthquake(0.5f);
+                earthquakeReady = false;
+                StartCoroutine(EarthquakeCooldown());
             }
         }
     }
@@ -142,5 +163,11 @@ public class ScoreCount : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(15, 30));
         windReady = true;
+    }
+
+    IEnumerator FogCooldown()
+    {
+        yield return new WaitForSeconds(Random.Range(15, 30));
+        fogReady = true;
     }
 }

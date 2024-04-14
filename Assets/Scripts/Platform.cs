@@ -125,7 +125,7 @@ public class Platform : MonoBehaviour
         {
             SpawnPlatform();
         }
-    }
+    }    
    
     // Update is called once per frame
     void Update()
