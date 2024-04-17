@@ -576,7 +576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5008010607134960065, guid: 97c095e2e66ebd04aa8090d70826d552, type: 3}
       propertyPath: m_SortingOrder
-      value: 17
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5066462892962568719, guid: 97c095e2e66ebd04aa8090d70826d552, type: 3}
       propertyPath: m_IsTrigger
@@ -896,7 +896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9004429656515571555, guid: be3bbbdfc5ed0fd4b8ae2aafd4aec62d, type: 3}
       propertyPath: m_SortingOrder
-      value: 16
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1941831894638340114, guid: be3bbbdfc5ed0fd4b8ae2aafd4aec62d, type: 3}
