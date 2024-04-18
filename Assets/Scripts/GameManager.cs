@@ -285,4 +285,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(15f);
         StopFog();
     }
+    public int GetCoins()
+    {
+        return PlayerPrefs.GetInt("coins");
+    }
 }
+

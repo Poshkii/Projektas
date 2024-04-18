@@ -8,7 +8,7 @@ public class ScoreCount : MonoBehaviour
 {
     public int score;
     public int coins;
-    private int multiplyer=1;
+    private int multiplyer = 1;
     private float maxSpeed = 4f;
     private float currentSpeed = 0.7f;
 
@@ -26,18 +26,19 @@ public class ScoreCount : MonoBehaviour
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
+        coins = gameManager.GetCoins();
     }
 
     public void AddScore()
     {
         score++;
-    }    
+    }
 
     public void Death()
     {
         gameManager.DisplayDeathScreen(score, coins);
         score = 0;
-        coins = 0;
+        //coins = 0;
         ResetSpeed();
         playerScript.ResetValues();
     }
@@ -46,7 +47,7 @@ public class ScoreCount : MonoBehaviour
     {
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         foreach (GameObject platform in platforms)
-        {            
+        {
             platform.GetComponent<Platform>().platformSpeed += 0.1f;
             currentSpeed = platform.GetComponent<Platform>().platformSpeed;
         }
@@ -65,7 +66,7 @@ public class ScoreCount : MonoBehaviour
 
     internal void AddCoin(int multiplyer)
     {
-        coins+=multiplyer;        
+        coins += multiplyer;
     }
 
     // Update is called once per frame
@@ -73,7 +74,7 @@ public class ScoreCount : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
         coinsText.text = coins.ToString();
-       
+
         //PlayerPrefs.SetInt("Coins", coins);
 
         if (timer >= 1f)
@@ -95,10 +96,10 @@ public class ScoreCount : MonoBehaviour
                 gameManager.SpawnBird();
                 birdReady = false;
                 StartCoroutine(BirdCooldown());
-            }                     
+            }
         }
         if (score > 15f)
-        {            
+        {
             if (fogReady)
             {
                 gameManager.StartFog();
@@ -171,3 +172,4 @@ public class ScoreCount : MonoBehaviour
         fogReady = true;
     }
 }
+
