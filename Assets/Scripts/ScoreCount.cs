@@ -167,7 +167,7 @@ public class ScoreCount : MonoBehaviour
 
     IEnumerator FogCooldown()
     {
-        yield return new WaitForSeconds(Random.Range(15, 30));
+        yield return new WaitForSeconds(Random.Range(20, 40));
         fogReady = true;
     }
 }
