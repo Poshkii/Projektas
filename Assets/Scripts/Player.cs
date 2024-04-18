@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
-    Vector3 startPos = new Vector3(-9, 2, 0);
+    Vector3 startPos = new Vector3(-8, 1.4f, 0);
 
     // Ground check options
     private float raycastDistance = 0.05f;
@@ -62,6 +62,8 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        transform.position = startPos;
+
         body = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
 
@@ -108,6 +110,10 @@ public class Player : MonoBehaviour
     {      
         // Checks if ground check raycasts are valid
         bool raycastCheck = true;
+        if (Time.timeScale == 0f)
+        {
+            jumpsAvailable = 0;
+        }
         if (allowChecks)
         {
             raycastCheck = !CastRaycasts();
@@ -211,7 +217,7 @@ public class Player : MonoBehaviour
         {
             respawned = true;
             StartCoroutine(WaitAfterRespawn(2f));
-            body.transform.position = startPos + transform.up * 2f;
+            body.transform.position = startPos; //transform.up * 2f;
             gameManager.SpawnStarterPlatform();
             body.velocity = Vector3.zero;
             if (isJumpBoosted)
