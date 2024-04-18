@@ -197,7 +197,10 @@ public class GameManager : MonoBehaviour
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         foreach (GameObject plat in platforms)
         {
-            if (Math.Abs(plat.transform.position.x - player.transform.position.x) < 8f &&
+            Platform platformScript = plat.GetComponent<Platform>();
+
+            if (!platformScript.dropped &&
+                Math.Abs(plat.transform.position.x - player.transform.position.x) < 8f &&
                 Math.Abs(plat.transform.position.x - player.transform.position.x) > 2f &&
                 UnityEngine.Random.value < chanceToDropPlatform)
             {

@@ -30,6 +30,7 @@ public class Platform : MonoBehaviour
     private bool hasDoubleCoins = false;
     private bool hasSlowTime = false;
     private bool animationPlayed = false;
+    public bool dropped = false;
 
     // Start is called before the first frame update
     void Start()
@@ -150,6 +151,10 @@ public class Platform : MonoBehaviour
 
     public void DropPlatform()
     {
-        model.GetComponent<ModelScript>().DropAnimation();
+        if (!dropped)
+        {
+            dropped = true;
+            model.GetComponent<ModelScript>().DropAnimation();
+        }
     }    
 }
