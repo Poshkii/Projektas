@@ -72,7 +72,7 @@ public class ScoreCount : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score: " + score.ToString();
-        coinsText.text = "Coins: " + coins.ToString();
+        coinsText.text = coins.ToString();
        
         //PlayerPrefs.SetInt("Coins", coins);
 
