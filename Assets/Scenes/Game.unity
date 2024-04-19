@@ -14956,6 +14956,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 4a8dc03ebebee7948b9e1960854101e2, type: 2}
+    - target: {fileID: 2016764807566465902, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1be3c8503f621e48b22890a52d2d24a, type: 3}
     - target: {fileID: 3311479972532951146, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
       propertyPath: m_Name
       value: Platform_new
@@ -15016,6 +15020,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7551653998545239706, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7858c65ba1cab3a4aa403e21850e357e, type: 3}
     - target: {fileID: 7922329333507177577, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
       propertyPath: m_Layer
       value: 7

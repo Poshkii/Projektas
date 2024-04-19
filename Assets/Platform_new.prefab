@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformSpeed: 0.7
+  dropped: 0
 --- !u!1 &3753764282559155791
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,6 +706,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5008010607134960065, guid: 8d8e0b31a08ac1d4da2213fa76109010, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7858c65ba1cab3a4aa403e21850e357e, type: 3}
+    - target: {fileID: 5008010607134960065, guid: 8d8e0b31a08ac1d4da2213fa76109010, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
@@ -894,6 +899,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9004429656515571555, guid: be3bbbdfc5ed0fd4b8ae2aafd4aec62d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a1be3c8503f621e48b22890a52d2d24a, type: 3}
     - target: {fileID: 9004429656515571555, guid: be3bbbdfc5ed0fd4b8ae2aafd4aec62d, type: 3}
       propertyPath: m_SortingOrder
       value: 10
