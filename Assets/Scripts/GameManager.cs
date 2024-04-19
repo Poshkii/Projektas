@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -238,6 +239,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(Time.fixedDeltaTime);
             StartCoroutine(SlowTimeLastingTime());
         }
+        audioManager.PlaySFX(audioManager.powerUp);
     }
 
     public void StartFog()
