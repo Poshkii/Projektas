@@ -5,10 +5,14 @@ public class Coins : MonoBehaviour
 {
     public AudioClip collectSound; // main pickup sound
     private AudioSource source; // object for playing pickup sound
+    AudioManager audioManager;
     public float volume = 1.0f; // volume of pickup sound (optional)
     public float rotation = 150f; // coin spin speed (optional)
     private bool collected = false; // prevents duplicate pickups on collision
-
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         source = GetComponent<AudioSource>();
@@ -37,8 +41,9 @@ public class Coins : MonoBehaviour
         Destroy(gameObject);
 
         // plays pickup sound
-        if (collectSound != null)
-            AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position, volume);
+        //if (collectSound != null)
+        //    AudioSource.PlayClipAtPoint(collectSound, Camera.main.transform.position, volume);
+        audioManager.PlaySFX(audioManager.coin);
 
         // updates coin counter
         ScoreCount coinCounter = FindObjectOfType<ScoreCount>();

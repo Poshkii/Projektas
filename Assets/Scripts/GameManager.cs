@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
         {
             highScore = runScore;
         }
-        coins += runCoins;
+        coins = runCoins;
         scoreText.text = "Score: " + runScore;
         highscoreText.text = "Highscore: " + highScore;
         coinsText.text = "Coins: " + coins;
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
         startPanelUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);
         SpawnStarterPlatform();
-        // GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        //GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         //platforms[1].GetComponentInChildren<Animator>().Play("Drop", -1, 0f);
     }
 
