@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     // Jumping options
     private bool allowJump = true;
     private bool allowChecks = true;
+    internal bool raycastCheck;
 
     // Jump boost options
     private bool isJumpBoosted = false;
@@ -38,7 +39,8 @@ public class Player : MonoBehaviour
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
-    Vector3 startPos = new Vector3(-8, 1.4f, 0);
+    //Vector3 startPos = new Vector3(-8, 1.4f, 0);
+    Vector3 startPos;
 
     // Ground check options
     private float raycastDistance = 0.05f;
@@ -62,8 +64,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        transform.position = startPos;
-
         body = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
 
@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
     private void Update()
     {      
         // Checks if ground check raycasts are valid
-        bool raycastCheck = true;
+        raycastCheck = true;
         if (Time.timeScale == 0f)
         {
             jumpsAvailable = 0;
@@ -335,5 +335,10 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         allowChecks = true;
+    }
+    
+    internal void SetSpawnPos(Vector3 pos)
+    {
+        transform.position = pos;
     }
 }
