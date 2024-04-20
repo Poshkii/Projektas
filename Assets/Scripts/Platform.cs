@@ -146,6 +146,7 @@ public class Platform : MonoBehaviour
         float logFactor = 0.01f; 
         platformSpeed += logFactor * Mathf.Log(platformSpeed + 1) * Time.deltaTime;
         transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y - platformSpeedVertical * Time.deltaTime);
+        Debug.Log(platformSpeed);
     }
 
     public void DropPlatform()

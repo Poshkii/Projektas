@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -34,7 +35,6 @@ public class GameManager : MonoBehaviour
     public PlatformSpawner platformSpawner;
     private float startTimeScale;
     private float startFixedDeltaTime;
-    internal bool gameStarted = false;
 
     private List<int> scores = new List<int>();
     private void Awake()
@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
         StopFog();
         startTimeScale = Time.timeScale;
         startFixedDeltaTime = Time.fixedDeltaTime;
+        Debug.Log(startTimeScale);
+        Debug.Log(startFixedDeltaTime);
         scoreCount = GetComponent<ScoreCount>();
         Time.timeScale = 0f;
         optionsPanelUI.gameObject.SetActive(false);
@@ -111,7 +113,7 @@ public class GameManager : MonoBehaviour
         {
             highScore = runScore;
         }
-        coins += runCoins;
+        coins = runCoins;
         scoreText.text = "Score: " + runScore;
         highscoreText.text = "Highscore: " + highScore;
         coinsText.text = "Coins: " + coins;
@@ -128,7 +130,6 @@ public class GameManager : MonoBehaviour
         StopFog();
         fogPartciles.Clear();
         platformSpawner.Restart();
-        gameStarted = true;
     }
     public void CancelOptions()
     {
@@ -145,8 +146,7 @@ public class GameManager : MonoBehaviour
         startPanelUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);
         SpawnStarterPlatform();
-        gameStarted = true;
-        // GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
+        //GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         //platforms[1].GetComponentInChildren<Animator>().Play("Drop", -1, 0f);
     }
 
@@ -221,22 +221,25 @@ public class GameManager : MonoBehaviour
         }
         else if (type == "ExtraJump")
         {
-            //Debug.Log("Extra Jump activated");
+            Debug.Log("Extra Jump activated");
             SetJump(2);
             StartCoroutine(DoubleJumpLastingTime());
         }
         else if (type == "DoubleCoins")
         {
             scoreCount.SetMultiplier(2);
-            //Debug.Log("Double Coins activated");
+            Debug.Log("Double Coins activated");
         }
         else if (type == "SlowTime")
         {
-            //Debug.Log("Slow motion activated");
+            Debug.Log("Slow motion activated");
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = startFixedDeltaTime * 0.5f;
+            Debug.Log(Time.timeScale);
+            Debug.Log(Time.fixedDeltaTime);
             StartCoroutine(SlowTimeLastingTime());
         }
+        audioManager.PlaySFX(audioManager.powerUp);
     }
 
     public void StartFog()
@@ -275,6 +278,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         Time.timeScale = startTimeScale;
         Time.fixedDeltaTime = startFixedDeltaTime;
+        Debug.Log(Time.timeScale);
+        Debug.Log(Time.fixedDeltaTime);
     }
 
     IEnumerator FogLastingTime()
@@ -282,4 +287,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(15f);
         StopFog();
     }
+    public int GetCoins()
+    {
+        return PlayerPrefs.GetInt("coins");
+    }
 }
+

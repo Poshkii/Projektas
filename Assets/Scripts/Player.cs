@@ -27,8 +27,6 @@ public class Player : MonoBehaviour
     // Jumping options
     private bool allowJump = true;
     private bool allowChecks = true;
-    internal bool raycastCheck;
-    private bool jumpInitiated = false;
 
     // Jump boost options
     private bool isJumpBoosted = false;
@@ -40,8 +38,7 @@ public class Player : MonoBehaviour
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
-    //Vector3 startPos = new Vector3(-8, 1.4f, 0);
-    Vector3 startPos;
+    Vector3 startPos = new Vector3(-9, 2, 0);
 
     // Ground check options
     private float raycastDistance = 0.05f;
@@ -85,11 +82,6 @@ public class Player : MonoBehaviour
         gameManager = gameManagerObj.GetComponent<GameManager>();
 
         UpdateLives();
-
-        jumpsAvailable = 0;
-        jumpCount = 0;
-        Debug.Log("Start" + jumpsAvailable);
-
     }
 
     public void ResetValues()
@@ -113,16 +105,9 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (gameManager.gameStarted && !jumpInitiated)
-        {
-            Debug.Log(jumpInitiated);
-            initiateJump();
-        }
-
+    {      
         // Checks if ground check raycasts are valid
-        raycastCheck = true;
-        
+        bool raycastCheck = true;
         if (allowChecks)
         {
             raycastCheck = !CastRaycasts();
@@ -173,6 +158,7 @@ public class Player : MonoBehaviour
             heldTime = 0f;
         }
 
+
         // times and updates held touch input, initializes jump strength indicator
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && jumpsAvailable > 0)
         {
@@ -215,11 +201,6 @@ public class Player : MonoBehaviour
         //Dies
         if (lives < 1)
         {
-            jumpInitiated = false;
-            jumpsAvailable = 0;
-            jumpCount = 0;
-            gameManager.gameStarted = false;
-            ResetValues();
             scoreCounter.Death();
             transform.position = startPos;
             body.velocity = Vector2.zero;
@@ -230,7 +211,7 @@ public class Player : MonoBehaviour
         {
             respawned = true;
             StartCoroutine(WaitAfterRespawn(2f));
-            body.transform.position = startPos; //transform.up * 2f;
+            body.transform.position = startPos + transform.up * 2f;
             gameManager.SpawnStarterPlatform();
             body.velocity = Vector3.zero;
             if (isJumpBoosted)
@@ -246,7 +227,6 @@ public class Player : MonoBehaviour
     // Applies jumping vector to implement jumping and disables multi jumping mid-air 
     private void Jump()
     {
-        Debug.Log(jumpsAvailable);
         if (jumpsAvailable > 0)
         {
             float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(heldTime / maxTime, (float)1.5));
@@ -349,21 +329,5 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         allowChecks = true;
-    }
-
-    public void initiateJump()
-    {
-        if (gameManager.gameStarted && Input.touchCount == 0)
-        {
-            Debug.Log("Initiate" + jumpsAvailable);
-            jumpsAvailable = 1;
-            jumpCount = 1;
-            jumpInitiated = true;
-        }
-    }
-    
-    internal void SetSpawnPos(Vector3 pos)
-    {
-        transform.position = pos;
     }
 }
