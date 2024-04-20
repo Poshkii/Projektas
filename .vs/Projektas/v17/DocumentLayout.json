@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Donatas\\Desktop\\Projektas\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\modelscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\modelscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +18,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\scripts\\starterplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\starterplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
     }
   ],
   "DocumentGroupContainers": [
@@ -26,6 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 3,
           "Children": [
             {
@@ -39,8 +53,9 @@
               "ViewState": "AQIAAEEAAAAAAAAAAIAxwHMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-14T11:22:26.58Z",
-              "EditorCaption": ""
-            },
+=======
+          "SelectedChildIndex": 1,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -49,7 +64,31 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AQIAANsAAAAAAAAAAAAkwB4BAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T08:10:26.29Z",
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AQIAALwAAAAAAAAAAAAqwMIAAAAsAAAA",
+=======
+              "DocumentIndex": 0,
+              "Title": "StarterPlatform.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\StarterPlatform.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StarterPlatform.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\StarterPlatform.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StarterPlatform.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T12:50:44.969Z",
               "EditorCaption": ""
@@ -57,6 +96,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+<<<<<<< HEAD
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Platform.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Platform.cs",
@@ -76,6 +116,14 @@
               "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\ModelScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\ModelScript.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAgwBoAAAAfAAAA",
+=======
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player.cs",
+              "ViewState": "AQIAAO8AAAAAAAAAAAAUwPoAAAAFAAAA",
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T09:27:34.237Z",
               "EditorCaption": ""

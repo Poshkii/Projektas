@@ -3719,7 +3719,11 @@ Transform:
   m_GameObject: {fileID: 412192598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -9.12, y: 2.56, z: 0}
+=======
+  m_LocalPosition: {x: -8.22, y: 1.97, z: 0}
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
   m_LocalScale: {x: 0.5851, y: 0.5851, z: 0.5851}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5049,7 +5053,7 @@ MonoBehaviour:
   coins: 0
   scoreText: {fileID: 1397169464}
   coinsText: {fileID: 1175180523}
-  playerScript: {fileID: 412192600}
+  playerScript: {fileID: 0}
 --- !u!4 &661003190
 Transform:
   m_ObjectHideFlags: 0
@@ -5086,7 +5090,7 @@ MonoBehaviour:
   highscoreText: {fileID: 853309851}
   coinsText: {fileID: 1420077189}
   scoreboardText: {fileID: 1568109965}
-  player: {fileID: 412192598}
+  player: {fileID: 0}
   starterPlatform: {fileID: 7357849416912320531, guid: 1654b7a87e945e64fa32be50bb15656f, type: 3}
   birdSpawnerObj: {fileID: 1107501987}
   windSpawner: {fileID: 845220008}
