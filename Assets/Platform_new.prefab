@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformSpeed: 0.7
+  dropped: 0
 --- !u!1 &3753764282559155791
 GameObject:
   m_ObjectHideFlags: 0

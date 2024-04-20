@@ -27,10 +27,6 @@ public class Player : MonoBehaviour
     // Jumping options
     private bool allowJump = true;
     private bool allowChecks = true;
-<<<<<<< HEAD
-=======
-    internal bool raycastCheck;
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
 
     // Jump boost options
     private bool isJumpBoosted = false;
@@ -111,15 +107,7 @@ public class Player : MonoBehaviour
     private void Update()
     {      
         // Checks if ground check raycasts are valid
-<<<<<<< HEAD
         bool raycastCheck = true;
-=======
-        raycastCheck = true;
-        if (Time.timeScale == 0f)
-        {
-            jumpsAvailable = 0;
-        }
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
         if (allowChecks)
         {
             raycastCheck = !CastRaycasts();
@@ -342,12 +330,4 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         allowChecks = true;
     }
-<<<<<<< HEAD
-=======
-    
-    internal void SetSpawnPos(Vector3 pos)
-    {
-        transform.position = pos;
-    }
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
 }
