@@ -13,7 +13,10 @@ GameObject:
   - component: {fileID: 988490759622739853}
   - component: {fileID: 5066462892962568719}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: 5308926178093575852}
+=======
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
 =======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
   m_Layer: 0
@@ -149,6 +152,7 @@ BoxCollider2D:
   m_Size: {x: 1, y: 0.8828125}
   m_EdgeRadius: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!95 &5308926178093575852
 Animator:
   serializedVersion: 5
@@ -170,5 +174,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
 =======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)

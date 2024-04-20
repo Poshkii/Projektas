@@ -5,6 +5,9 @@ using UnityEngine;
 =======
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+<<<<<<< HEAD
+>>>>>>> parent of 4adc18f (cloud fade and jump fix)
+=======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
 
 public class StarterPlatform : MonoBehaviour
