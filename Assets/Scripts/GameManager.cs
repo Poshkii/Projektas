@@ -147,11 +147,8 @@ public class GameManager : MonoBehaviour
         gameUI.gameObject.SetActive(true);
         SpawnStarterPlatform();
 <<<<<<< HEAD
-<<<<<<< HEAD
         //GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
 =======
-=======
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
         // GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
         //platforms[1].GetComponentInChildren<Animator>().Play("Drop", -1, 0f);

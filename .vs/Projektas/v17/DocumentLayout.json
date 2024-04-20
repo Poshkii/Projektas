@@ -4,7 +4,6 @@
   "Documents": [
     {
 <<<<<<< HEAD
-<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\modelscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\modelscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -20,8 +19,6 @@
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|C:\\Users\\Donatas\\Desktop\\Projektas\\assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorecount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 =======
-=======
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\scripts\\starterplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\starterplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -32,9 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|c:\\users\\donatas\\desktop\\projektas\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9374BA7-C046-6C9B-1BA5-5D8DBADB4EA8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-<<<<<<< HEAD
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
-=======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
     }
   ],
@@ -45,7 +39,6 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
 <<<<<<< HEAD
           "SelectedChildIndex": 3,
           "Children": [
@@ -65,12 +58,6 @@
           "Children": [
             {
               "$type": "Document",
-=======
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "DocumentIndex": 2,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\GameManager.cs",
@@ -86,7 +73,6 @@
             {
               "$type": "Document",
 <<<<<<< HEAD
-<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\GameManager.cs",
@@ -95,8 +81,6 @@
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AQIAALwAAAAAAAAAAAAqwMIAAAAsAAAA",
 =======
-=======
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "DocumentIndex": 0,
               "Title": "StarterPlatform.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\StarterPlatform.cs",
@@ -104,9 +88,6 @@
               "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\StarterPlatform.cs",
               "RelativeToolTip": "Assets\\Scripts\\StarterPlatform.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
-<<<<<<< HEAD
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
-=======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-08T12:50:44.969Z",
@@ -115,7 +96,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-<<<<<<< HEAD
 <<<<<<< HEAD
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Platform.cs",
@@ -137,17 +117,12 @@
               "RelativeToolTip": "Assets\\Scripts\\ModelScript.cs",
               "ViewState": "AQIAABAAAAAAAAAAAAAgwBoAAAAfAAAA",
 =======
-=======
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player.cs",
               "ToolTip": "C:\\Users\\Donatas\\Desktop\\Projektas\\Assets\\Scripts\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player.cs",
               "ViewState": "AQIAAO8AAAAAAAAAAAAUwPoAAAAFAAAA",
-<<<<<<< HEAD
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
-=======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-31T09:27:34.237Z",

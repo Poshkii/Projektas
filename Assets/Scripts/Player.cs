@@ -30,9 +30,6 @@ public class Player : MonoBehaviour
 <<<<<<< HEAD
 =======
     internal bool raycastCheck;
-<<<<<<< HEAD
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
-=======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
 
     // Jump boost options
@@ -122,9 +119,6 @@ public class Player : MonoBehaviour
         {
             jumpsAvailable = 0;
         }
-<<<<<<< HEAD
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
-=======
 >>>>>>> parent of 4adc18f (cloud fade and jump fix)
         if (allowChecks)
         {
@@ -349,10 +343,7 @@ public class Player : MonoBehaviour
         allowChecks = true;
     }
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
-=======
->>>>>>> parent of 4adc18f (cloud fade and jump fix)
     
     internal void SetSpawnPos(Vector3 pos)
     {
