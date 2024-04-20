@@ -3577,7 +3577,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.07476872, y: 0.02340126}
   m_SpriteTilingProperty:
-    border: {x: 1.65, y: 0.45999998, z: 1.8299999, w: 0.42}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 6.4, y: 6.4}
     newSize: {x: 2.85, y: 5.5}
@@ -3604,7 +3604,7 @@ MonoBehaviour:
   sideJump: 3
   maxTime: 1
   minJump: 2
-  lives: 2
+  lives: 1
   jumpCount: 1
   bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
   frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
@@ -3699,7 +3699,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: cf0efc17088fe1848bd504a6075c5ce3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c179004c549060c4eb886b1366819c56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3719,8 +3719,8 @@ Transform:
   m_GameObject: {fileID: 412192598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.12, y: 2.56, z: 0}
-  m_LocalScale: {x: 0.5851, y: 0.5851, z: 0.5851}
+  m_LocalPosition: {x: -8.144544, y: 1.308019, z: 0}
+  m_LocalScale: {x: 0.5851, y: 0.5851, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1880925468}
@@ -5179,6 +5179,18 @@ MonoBehaviour:
       - m_Target: {fileID: 661003191}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 412192600}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: initiateJump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9386,6 +9398,18 @@ MonoBehaviour:
       - m_Target: {fileID: 661003191}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 412192600}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: initiateJump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

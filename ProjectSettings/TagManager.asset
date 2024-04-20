@@ -10,6 +10,7 @@ TagManager:
   - Bird
   - Audio
   - GameManager
+  - StarterPlatform
   layers:
   - Default
   - TransparentFX

@@ -40,7 +40,6 @@ public class ScoreCount : MonoBehaviour
         score = 0;
         //coins = 0;
         ResetSpeed();
-        playerScript.ResetValues();
     }
 
     void SpeedUp()
