@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public PlatformSpawner platformSpawner;
     private float startTimeScale;
     private float startFixedDeltaTime;
+    internal bool gameStarted = false;
 
     private List<int> scores = new List<int>();
     private void Awake()
@@ -130,6 +131,7 @@ public class GameManager : MonoBehaviour
         StopFog();
         fogPartciles.Clear();
         platformSpawner.Restart();
+        gameStarted = true;
     }
     public void CancelOptions()
     {
@@ -146,6 +148,7 @@ public class GameManager : MonoBehaviour
         startPanelUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);
         SpawnStarterPlatform();
+        gameStarted = true;
         //GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         //platforms[1].GetComponentInChildren<Animator>().Play("Drop", -1, 0f);
     }

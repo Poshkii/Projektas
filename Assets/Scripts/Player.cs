@@ -27,10 +27,13 @@ public class Player : MonoBehaviour
     // Jumping options
     private bool allowJump = true;
     private bool allowChecks = true;
+    private bool jumpInitiated = false;
+    internal bool raycastCheck;
 
     // Jump boost options
     private bool isJumpBoosted = false;
     private float jumpBoostTimer = 0f;
+
 
     // Game scene options
     private bool respawned = false;
@@ -38,10 +41,11 @@ public class Player : MonoBehaviour
     public GameObject gameManagerObj;
     GameManager gameManager;
     ScoreCount scoreCounter;
-    Vector3 startPos = new Vector3(-9, 2, 0);
+    //Vector3 startPos = new Vector3(-9, 2, 0);
+    Vector3 startPos;
 
     // Ground check options
-    private float raycastDistance = 0.05f;
+    private float raycastDistance = 0.03f;
     public LayerMask groundLayer;
     private int numberOfRaycasts = 3;
     private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
@@ -82,6 +86,9 @@ public class Player : MonoBehaviour
         gameManager = gameManagerObj.GetComponent<GameManager>();
 
         UpdateLives();
+
+        jumpsAvailable = 0;
+        jumpCount = 0;
     }
 
     public void ResetValues()
@@ -105,9 +112,14 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {      
+    {
+        if (gameManager.gameStarted && !jumpInitiated)
+        {
+            initiateJump();
+        }
+
         // Checks if ground check raycasts are valid
-        bool raycastCheck = true;
+        raycastCheck = true;
         if (allowChecks)
         {
             raycastCheck = !CastRaycasts();
@@ -201,6 +213,11 @@ public class Player : MonoBehaviour
         //Dies
         if (lives < 1)
         {
+            jumpInitiated = false;
+            jumpsAvailable = 0;
+            jumpCount = 0;
+            gameManager.gameStarted = false;
+            ResetValues();
             scoreCounter.Death();
             transform.position = startPos;
             body.velocity = Vector2.zero;
@@ -329,5 +346,21 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         allowChecks = true;
+    }
+
+    public void initiateJump()
+    {
+        if (gameManager.gameStarted && Input.touchCount == 0)
+        {
+            Debug.Log("Initiate" + jumpsAvailable);
+            jumpsAvailable = 1;
+            jumpCount = 1;
+            jumpInitiated = true;
+        }
+    }
+
+    internal void SetSpawnPos(Vector3 pos)
+    {
+        transform.position = pos;
     }
 }
