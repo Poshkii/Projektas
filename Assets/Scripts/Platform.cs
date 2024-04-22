@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class Platform : MonoBehaviour
 {
+    private float randomWidth = 1f;
     float minGap = 4f;
     float baseYValue = -6f;
     float maxGap = 8f;
@@ -36,11 +37,13 @@ public class Platform : MonoBehaviour
     void Start()
     {
         model = transform.GetChild(0).gameObject;
-        coin = model.transform.GetChild(0).gameObject;
-        extraLife = model.transform.GetChild(1).gameObject;
-        extraJump = model.transform.GetChild(2).gameObject;
-        doubleCoins = model.transform.GetChild(3).gameObject;
-        slowTime = model.transform.GetChild(4).gameObject;
+        coin = transform.transform.GetChild(1).gameObject;
+        extraLife = transform.transform.GetChild(2).gameObject;
+        extraJump = transform.transform.GetChild(3).gameObject;
+        doubleCoins = transform.transform.GetChild(4).gameObject;
+        slowTime = transform.transform.GetChild(5).gameObject;
+
+        model.transform.localScale = new Vector3(randomWidth, 1, 0);
 
         coin.SetActive(hasCoin);
         extraLife.SetActive(hasExtraLife);
@@ -52,8 +55,8 @@ public class Platform : MonoBehaviour
     public void SetPosAndSpeed(Vector2 position, float speed)
     {       
         platformSpeed = speed;
-        float randomWidth = Random.Range(minWidth, maxWidth);
-        transform.localScale = new Vector3(randomWidth, 1, 0);
+        randomWidth = Random.Range(minWidth, maxWidth);
+        //transform.localScale = new Vector3(randomWidth, 1, 0);
         Vector2 offset = new Vector2(Random.Range(randomWidth + minGap, maxGap), Random.Range(-yOffsetDown, yOffsetUp));
         position.y = baseYValue;
         transform.position = position + offset;
@@ -146,7 +149,6 @@ public class Platform : MonoBehaviour
         float logFactor = 0.01f; 
         platformSpeed += logFactor * Mathf.Log(platformSpeed + 1) * Time.deltaTime;
         transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y - platformSpeedVertical * Time.deltaTime);
-        Debug.Log(platformSpeed);
     }
 
     public void DropPlatform()
