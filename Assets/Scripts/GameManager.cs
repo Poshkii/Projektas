@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
                 Math.Abs(plat.transform.position.x - player.transform.position.x) > 2f &&
                 UnityEngine.Random.value < chanceToDropPlatform)
             {
-                ShakeCamera(2f);
+                StartCoroutine(DelayedCameraShake(2.2f, 2.2f));
                 plat.GetComponent<Platform>().DropPlatform();
                 audioManager.PlaySFX(audioManager.earthquake);
                 break;
@@ -293,6 +293,11 @@ public class GameManager : MonoBehaviour
     public int GetCoins()
     {
         return PlayerPrefs.GetInt("coins");
+    }
+    IEnumerator DelayedCameraShake(float delay, float strength)
+    {
+        yield return new WaitForSeconds(delay);
+        ShakeCamera(strength);
     }
 }
 
