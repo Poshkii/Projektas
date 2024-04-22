@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class GameManager : MonoBehaviour
 {
@@ -298,6 +299,20 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         ShakeCamera(strength);
+    }
+    public void ChangePlayer(GameObject objectToActivate, GameObject text1, GameObject text2)
+    {
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Player");
+
+        // Iterate through the objects found
+        foreach (GameObject obj in objectsWithTag)
+        {
+            // Deactivate the object with the specified tag
+            obj.SetActive(false);
+        }
+        objectToActivate.SetActive(true);
+        text1.SetActive(false);
+        text2.SetActive(true);
     }
 }
 
