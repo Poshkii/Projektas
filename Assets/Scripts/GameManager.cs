@@ -300,19 +300,44 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         ShakeCamera(strength);
     }
-    public void ChangePlayer(GameObject objectToActivate, GameObject text1, GameObject text2)
-    {
-        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Player");
 
-        // Iterate through the objects found
-        foreach (GameObject obj in objectsWithTag)
+    bool canChange = false;
+    bool canChangeText = false;
+    public void ChangePlayer(GameObject objectToActivate)
+    {
+        if (canChange)
         {
-            // Deactivate the object with the specified tag
-            obj.SetActive(false);
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Player");
+
+            // Iterate through the objects found
+            foreach (GameObject obj in objectsWithTag)
+            {
+                // Deactivate the object with the specified tag
+                obj.SetActive(false);
+            }
+
+            objectToActivate.SetActive(true);
         }
-        objectToActivate.SetActive(true);
-        text1.SetActive(false);
-        text2.SetActive(true);
+    }
+    public void UnactivateTextBuy(GameObject text)
+    {
+        text.SetActive(false);
+        canChange = true;
+    }
+    public void ActivateTextSelect(GameObject text)
+    {
+        if (canChangeText)
+            text.SetActive(false);
+        else
+        {
+            text.SetActive(true);
+            canChangeText = true;
+        }
+    }
+    public void ActivateTextSelected(GameObject text)
+    {
+        if(canChangeText)
+            text.SetActive(true);
     }
 }
 
