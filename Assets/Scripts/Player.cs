@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     // Ground check options
     private float raycastDistance = 0.03f;
     public LayerMask groundLayer;
+    public LayerMask cloudLayer;
     private int numberOfRaycasts = 3;
     private Vector2 groundCheckBoxSize = new Vector2(1f, 0.5f);
     public LayerMask whatIsGround;
@@ -59,6 +60,12 @@ public class Player : MonoBehaviour
     public Sprite defaultSprite;
 
     AudioManager audioManager;
+
+    public ParticleSystem jumpParticles;
+    private LayerMask activeLayer;
+    private float particleSpeed;
+    private Platform platformScript;
+
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -66,10 +73,13 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+
         body = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
 
         ResetValues();
+
+        jumpParticles.Stop();
 
         groundCheckBoxSize.x = box.bounds.size.x - 0.1f;
         groundCheckBoxSize.y = 0.5f;
@@ -113,6 +123,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        particleSpeed = FindAnyObjectByType<Platform>().GetPlatformSpeed();
+        jumpParticles.transform.position = new Vector2(jumpParticles.transform.position.x - particleSpeed * Time.deltaTime, jumpParticles.transform.position.y - 0f * Time.deltaTime);
+
         if (gameManager.gameStarted && !jumpInitiated)
         {
             initiateJump();
@@ -123,7 +136,7 @@ public class Player : MonoBehaviour
         if (allowChecks)
         {
             raycastCheck = !CastRaycasts();
-            allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround);
+            allowJump = Physics2D.OverlapBox(groundCheck.position, groundCheckBoxSize, 0f, whatIsGround | cloudLayer);
         }        
         if (!raycastCheck && allowJump)
         {
@@ -184,6 +197,8 @@ public class Player : MonoBehaviour
         // inverts certain checks to perform input control
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && jumpsAvailable > 0)
         {
+            if (activeLayer == groundLayer)
+                playJumpParticles();
             Jump();
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
@@ -281,7 +296,14 @@ public class Player : MonoBehaviour
         for (int i = 0; i < numberOfRaycasts; i++)
         {
             Vector2 raycastOrigin = bottomCenter + Vector2.right * (raycastSpacing * i - box.bounds.extents.x); // Position for a raycast
-            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer); // Collider for created raycast
+            LayerMask layer = new LayerMask();
+            if (Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer))
+                layer = groundLayer;
+            if (Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, cloudLayer))
+                layer = cloudLayer;
+
+            activeLayer = layer;
+            RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, layer); // Collider for created raycast
 
             if (hit.collider != null)
             {
@@ -362,5 +384,17 @@ public class Player : MonoBehaviour
     internal void SetSpawnPos(Vector3 pos)
     {
         transform.position = pos;
+    }
+
+    private void playJumpParticles()
+    {
+        jumpParticles.transform.position = new Vector3(box.bounds.center.x, box.bounds.min.y, box.bounds.center.z);
+        jumpParticles.Play();
+        Invoke("StopJumpParticles", 0.5f);
+    }
+
+    private void StopJumpParticles()
+    {
+        jumpParticles.Stop();
     }
 }

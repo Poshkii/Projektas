@@ -158,5 +158,10 @@ public class Platform : MonoBehaviour
             dropped = true;
             model.GetComponent<ModelScript>().DropAnimation();
         }
-    }    
+    }   
+    
+    internal float GetPlatformSpeed()
+    {
+        return platformSpeed;
+    }
 }
