@@ -123,8 +123,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        particleSpeed = FindAnyObjectByType<Platform>().GetPlatformSpeed();
-        jumpParticles.transform.position = new Vector2(jumpParticles.transform.position.x - particleSpeed * Time.deltaTime, jumpParticles.transform.position.y - 0f * Time.deltaTime);
+        //particleSpeed = FindAnyObjectByType<Platform>().GetPlatformSpeed();
+        //jumpParticles.transform.position = new Vector2(jumpParticles.transform.position.x - particleSpeed * Time.deltaTime, jumpParticles.transform.position.y - 0f * Time.deltaTime);
 
         if (gameManager.gameStarted && !jumpInitiated)
         {
@@ -197,8 +197,8 @@ public class Player : MonoBehaviour
         // inverts certain checks to perform input control
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && jumpsAvailable > 0)
         {
-            if (activeLayer == groundLayer)
-                playJumpParticles();
+            //if (activeLayer == groundLayer)
+            playJumpParticles();
             Jump();
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
@@ -388,13 +388,16 @@ public class Player : MonoBehaviour
 
     private void playJumpParticles()
     {
-        jumpParticles.transform.position = new Vector3(box.bounds.center.x, box.bounds.min.y, box.bounds.center.z);
+        //jumpParticles.transform.position = new Vector3(box.bounds.center.x, box.bounds.min.y, box.bounds.center.z);
         jumpParticles.Play();
+        //jumpParticles.Stop();
+        Debug.Log("Playing");
         Invoke("StopJumpParticles", 0.5f);
     }
 
     private void StopJumpParticles()
     {
+        Debug.Log("Stopping");
         jumpParticles.Stop();
     }
 }
