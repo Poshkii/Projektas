@@ -156,8 +156,9 @@ public class ScoreCount : MonoBehaviour
     }
     IEnumerator MultiplyerLastingTime()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(20f);
         multiplyer = 1;
+        Debug.Log("Double coins expired");
     }
 
     IEnumerator WindCooldown()

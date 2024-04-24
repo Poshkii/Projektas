@@ -18,9 +18,13 @@ public class GameManager : MonoBehaviour
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
     public TMP_Text scoreboardText;
+    public TMP_Text pickupText;
     public GameObject player;    
     public GameObject starterPlatform;
     public GameObject birdSpawnerObj;
+    BoosterManager boosterManager;
+    public GameObject doubleCoinsIndication;
+    public Animator pickupTextAnim;
     public WindSpawner windSpawner;
     private BirdSpawner birdSpawner;
     ScoreCount scoreCount;
@@ -45,6 +49,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        boosterManager = GetComponent<BoosterManager>();
         StopFog();
         startTimeScale = Time.timeScale;
         startFixedDeltaTime = Time.fixedDeltaTime;
@@ -218,30 +223,36 @@ public class GameManager : MonoBehaviour
 
     public void ApplyBooster(string type)
     {
+        float duration = 15;
         if (type == "ExtraLife")
         {
+            pickupText.text = "Extra Life Picked Up!";
+            duration = 1f;
             AddLife();
         }
         else if (type == "ExtraJump")
         {
-            Debug.Log("Extra Jump activated");
+            pickupText.text = "Double Jump Picked Up!";
+            duration = 15f;
             SetJump(2);
             StartCoroutine(DoubleJumpLastingTime());
         }
         else if (type == "DoubleCoins")
         {
+            duration = 20f;
+            pickupText.text = "Double Coins Picked Up!";            
             scoreCount.SetMultiplier(2);
-            Debug.Log("Double Coins activated");
         }
         else if (type == "SlowTime")
         {
-            Debug.Log("Slow motion activated");
+            duration = 5f;
+            pickupText.text = "Slow Motion Picked Up!";
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = startFixedDeltaTime * 0.5f;
-            Debug.Log(Time.timeScale);
-            Debug.Log(Time.fixedDeltaTime);
             StartCoroutine(SlowTimeLastingTime());
         }
+        boosterManager.AddBooster(type, duration);
+        pickupTextAnim.Play("BoosterPickupTextAnim", -1, 0f);
         audioManager.PlaySFX(audioManager.powerUp);
     }
 
