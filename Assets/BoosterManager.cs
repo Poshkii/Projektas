@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class BoosterManager : MonoBehaviour
 {
     public RectTransform[] indications;
     public GameObject[] indicationObjects;
+    private Vector3 startPos;
     private List<string> activeIndicators = new List<string>();
     private Dictionary<string, int> dic = new Dictionary<string, int>() {
         {"DoubleCoins", 0},
@@ -25,7 +27,7 @@ public class BoosterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPos = indications[0].localPosition;
     }
 
     // Update is called once per frame
@@ -42,10 +44,8 @@ public class BoosterManager : MonoBehaviour
             activeIndicators.Add(name);            
         }
         int index = 0;
-        dic.TryGetValue(name, out index);
-        Vector3 currentPos = indications[index].localPosition;
-        currentPos.y += (activeIndicators.Count - 1) * 200;
-        indications[index].localPosition = currentPos;
+        dic.TryGetValue(name, out index);       
+        RearangeBoosters();
         indicationObjects[index].SetActive(true);
         indicationObjects[index].GetComponent<PickupIndication>().StartTimer(duration);
     }
@@ -58,12 +58,13 @@ public class BoosterManager : MonoBehaviour
 
     private void RearangeBoosters()
     {
-        foreach(string name in activeIndicators)
+        for(int i = 0; i < activeIndicators.Count; i++)
         {
+            string name = activeIndicators[i];
             int index = 0;
             dic.TryGetValue(name, out index);
-            Vector3 currentPos = indications[index].localPosition;
-            currentPos.y -= 200;
+            Vector3 currentPos = startPos;
+            currentPos.y += 200 * i;
             indications[index].localPosition = currentPos;
         }
     }
