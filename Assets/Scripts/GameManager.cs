@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +29,9 @@ public class GameManager : MonoBehaviour
     private BirdSpawner birdSpawner;
     ScoreCount scoreCount;
     public GameObject camera;
+    public GameObject[] characters;
+    public Button[] buttonsBuy;
+    public int[] isBought;
     private bool shakeCamera = false;
     private float duration = 0f;
     private Vector3 cameraStartPos;
@@ -41,6 +47,7 @@ public class GameManager : MonoBehaviour
     private List<int> scores = new List<int>();
     private void Awake()
     {
+        isBought = Enumerable.Repeat(0, characters.Length).ToArray();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     // Start is called before the first frame update
@@ -63,6 +70,14 @@ public class GameManager : MonoBehaviour
         else
         {
             SetPrefs(coins, highScore);
+        }
+        if (PlayerPrefs.HasKey("default") || PlayerPrefs.HasKey("red") || PlayerPrefs.HasKey("violet") || PlayerPrefs.HasKey("yellow"))
+        {
+            LoadPrefsCharacter();
+        }
+        else
+        {
+            SetPrefsCharacter(isBought);
         }
         birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
         cameraStartPos = camera.transform.position;
@@ -167,6 +182,47 @@ public class GameManager : MonoBehaviour
         int y = PlayerPrefs.GetInt("highscore");
 
         SetPrefs(x, y);
+    }
+    public void SetPrefsCharacter(int[]x)
+    {
+        PlayerPrefs.SetInt("default", x[0]);
+        PlayerPrefs.SetInt("red", x[1]);
+        PlayerPrefs.SetInt("violet", x[2]);
+        PlayerPrefs.SetInt("yellow", x[3]);
+
+        isBought[0] = x[0];
+        isBought[1] = x[1];
+        isBought[2] = x[2];
+        isBought[3] = x[3];
+        ChangeButtonText(isBought[0], buttonsBuy[0], characters[0]);
+        ChangeButtonText(isBought[1], buttonsBuy[1], characters[1]);
+        ChangeButtonText(isBought[2], buttonsBuy[2], characters[2]);
+        ChangeButtonText(isBought[3], buttonsBuy[3], characters[3]);
+
+    }
+    public void ChangeButtonText(int x, Button button, GameObject character)
+    {
+        TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+        if (x == 1)
+        {
+            buttonText.text = "SELECT";
+            character.SetActive(false);
+        }
+        if (x == 2)
+        {
+            buttonText.text = "SELECTED";
+            character.SetActive(true);
+        }
+    }
+    public void LoadPrefsCharacter()
+    {
+        int[] x = new int[isBought.Length];
+        x[0] = PlayerPrefs.GetInt("default");
+        x[1] = PlayerPrefs.GetInt("red");
+        x[2] = PlayerPrefs.GetInt("violet");
+        x[3] = PlayerPrefs.GetInt("yellow");
+
+        SetPrefsCharacter(x);
     }
 
     public void QuitGame()
@@ -301,43 +357,40 @@ public class GameManager : MonoBehaviour
         ShakeCamera(strength);
     }
 
-    bool canChange = false;
-    bool canChangeText = false;
-    public void ChangePlayer(GameObject objectToActivate)
+    public void ChangePlayer(int index)
     {
-        if (canChange)
+        if (isBought[index] == 1)
         {
-            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Player");
-
-            // Iterate through the objects found
-            foreach (GameObject obj in objectsWithTag)
+            for(int i = 0; i < characters.Length;i++)
             {
-                // Deactivate the object with the specified tag
-                obj.SetActive(false);
+                if (characters[i].activeSelf)
+                {
+                    TextMeshProUGUI selectedText = buttonsBuy[i].GetComponentInChildren<TextMeshProUGUI>();
+                    selectedText.text = "SELECT";
+                    isBought[i] = 1;
+                }
+                characters[i].SetActive(false);
+            }
+            characters[index].SetActive(true);
+            TextMeshProUGUI buttonText = buttonsBuy[index].GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = "SELECTED";
+            isBought[index] = 2;
+        }
+        else if(isBought[index] != 2)
+        {
+            if(coins - 5 >= 0)
+            {
+                coins = coins - 5;
+                SetPrefs(coins, highScore);
+                LoadPrefs();
+                isBought[index] = 1;
+                TextMeshProUGUI buttonText = buttonsBuy[index].GetComponentInChildren<TextMeshProUGUI>();
+                buttonText.text = "SELECT";
             }
 
-            objectToActivate.SetActive(true);
         }
+        SetPrefsCharacter(isBought);
     }
-    public void UnactivateTextBuy(GameObject text)
-    {
-        text.SetActive(false);
-        canChange = true;
-    }
-    public void ActivateTextSelect(GameObject text)
-    {
-        if (canChangeText)
-            text.SetActive(false);
-        else
-        {
-            text.SetActive(true);
-            canChangeText = true;
-        }
-    }
-    public void ActivateTextSelected(GameObject text)
-    {
-        if(canChangeText)
-            text.SetActive(true);
-    }
+
 }
 
