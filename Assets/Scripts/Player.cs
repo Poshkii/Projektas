@@ -62,6 +62,8 @@ public class Player : MonoBehaviour
     AudioManager audioManager;
 
     public ParticleSystem jumpParticles;
+    public ParticleSystem landParticles;
+    private bool landingPlayed = false;
     private LayerMask activeLayer;
     private float particleSpeed;
     private Platform platformScript;
@@ -124,7 +126,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         //particleSpeed = FindAnyObjectByType<Platform>().GetPlatformSpeed();
-        //jumpParticles.transform.position = new Vector2(jumpParticles.transform.position.x - particleSpeed * Time.deltaTime, jumpParticles.transform.position.y - 0f * Time.deltaTime);
+        //landParticles.transform.position = new Vector2(landParticles.transform.position.x - particleSpeed * Time.deltaTime, landParticles.transform.position.y - 0f * Time.deltaTime);
 
         if (gameManager.gameStarted && !jumpInitiated)
         {
@@ -142,6 +144,8 @@ public class Player : MonoBehaviour
         {
             jumpsAvailable = jumpCount;
         }
+
+        playLandParticles();
 
         if (raycastCheck)
         // Player is in the air, show jump in progress sprite
@@ -197,8 +201,8 @@ public class Player : MonoBehaviour
         // inverts certain checks to perform input control
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && jumpsAvailable > 0)
         {
-            //if (activeLayer == groundLayer)
-            playJumpParticles();
+            if (activeLayer != cloudLayer && !raycastCheck)
+                playJumpParticles();
             Jump();
             if (jumpIndicator != null)
                 jumpIndicator.fillAmount = 0f;
@@ -269,6 +273,8 @@ public class Player : MonoBehaviour
             jumpsAvailable--;
             allowChecks = false;
             StartCoroutine(DelayChecks());
+            if (!raycastCheck)
+                landingPlayed = false;
         }        
     }
 
@@ -298,9 +304,15 @@ public class Player : MonoBehaviour
             Vector2 raycastOrigin = bottomCenter + Vector2.right * (raycastSpacing * i - box.bounds.extents.x); // Position for a raycast
             LayerMask layer = new LayerMask();
             if (Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer))
+            {
                 layer = groundLayer;
+            }
+            
             if (Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, cloudLayer))
+            {
                 layer = cloudLayer;
+            }
+                
 
             activeLayer = layer;
             RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, layer); // Collider for created raycast
@@ -374,7 +386,6 @@ public class Player : MonoBehaviour
     {
         if (gameManager.gameStarted && Input.touchCount == 0)
         {
-            Debug.Log("Initiate" + jumpsAvailable);
             jumpsAvailable = 1;
             jumpCount = 1;
             jumpInitiated = true;
@@ -390,14 +401,26 @@ public class Player : MonoBehaviour
     {
         //jumpParticles.transform.position = new Vector3(box.bounds.center.x, box.bounds.min.y, box.bounds.center.z);
         jumpParticles.Play();
-        //jumpParticles.Stop();
-        Debug.Log("Playing");
         Invoke("StopJumpParticles", 0.5f);
     }
 
     private void StopJumpParticles()
     {
-        Debug.Log("Stopping");
         jumpParticles.Stop();
+    }
+
+    private void playLandParticles()
+    {
+        if (allowJump && !raycastCheck && !landingPlayed && activeLayer != cloudLayer)
+        {
+            landingPlayed = true;
+            landParticles.Play();
+            Invoke("StopLandParticles", 0.5f);
+        }
+    }
+
+    private void StopLandParticles()
+    {
+        landParticles.Stop();
     }
 }
