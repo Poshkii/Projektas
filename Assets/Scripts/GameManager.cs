@@ -378,9 +378,9 @@ public class GameManager : MonoBehaviour
         }
         else if(isBought[index] != 2)
         {
-            if(coins - 5 >= 0)
+            if(coins - 25 >= 0)
             {
-                coins = coins - 5;
+                DecreaseCoin(25); ;
                 SetPrefs(coins, highScore);
                 LoadPrefs();
                 isBought[index] = 1;
@@ -391,6 +391,13 @@ public class GameManager : MonoBehaviour
         }
         SetPrefsCharacter(isBought);
     }
-
+    internal void DecreaseCoin(int cost)
+    {
+        ScoreCount coinCounter = FindObjectOfType<ScoreCount>();
+        if (coinCounter != null)
+        {
+            coinCounter.DecreaseCoin(cost);
+        }
+    }
 }
 
