@@ -298,21 +298,22 @@ public class Player : MonoBehaviour
         Vector2 bottomCenter = new Vector2(box.bounds.center.x, box.bounds.min.y); // Bottom center of the box collider
         float raycastSpacing = box.bounds.size.x / (numberOfRaycasts - 1); // Spacing between raycasts
         bool hitPlatform = false; // Check for raycast colliding with platform
+        bool groundActive = false;
+        LayerMask layer = new LayerMask();
 
         for (int i = 0; i < numberOfRaycasts; i++)
         {
             Vector2 raycastOrigin = bottomCenter + Vector2.right * (raycastSpacing * i - box.bounds.extents.x); // Position for a raycast
-            LayerMask layer = new LayerMask();
             if (Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, groundLayer))
             {
                 layer = groundLayer;
+                groundActive = true;
             }
             
             if (Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, cloudLayer))
             {
                 layer = cloudLayer;
-            }
-                
+            } 
 
             activeLayer = layer;
             RaycastHit2D hit = Physics2D.Raycast(raycastOrigin, Vector2.down, raycastDistance, layer); // Collider for created raycast
@@ -327,6 +328,8 @@ public class Player : MonoBehaviour
                 Debug.DrawRay(raycastOrigin, Vector2.down * raycastDistance, Color.red); // Visualize invalid raycast
             }
         }
+        if (groundActive)
+            activeLayer = groundLayer;
         return hitPlatform;
     }
 
@@ -411,7 +414,7 @@ public class Player : MonoBehaviour
 
     private void playLandParticles()
     {
-        if (allowJump && !raycastCheck && !landingPlayed && activeLayer != cloudLayer)
+        if (allowJump && !raycastCheck && !landingPlayed && activeLayer != cloudLayer && activeLayer == groundLayer)
         {
             landingPlayed = true;
             landParticles.Play();
