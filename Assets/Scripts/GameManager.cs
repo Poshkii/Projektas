@@ -33,8 +33,11 @@ public class GameManager : MonoBehaviour
     ScoreCount scoreCount;
     public GameObject camera;
     public GameObject[] characters;
+    public GameObject[] worlds;
     public Button[] buttonsBuy;
+    public Button[] buttonsWorldBuy;
     public int[] isBought;
+    public int[] worldsBought;
     private bool shakeCamera = false;
     private float duration = 0f;
     private Vector3 cameraStartPos;
@@ -51,11 +54,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         isBought = Enumerable.Repeat(0, characters.Length).ToArray();
+        worldsBought = Enumerable.Repeat(0, characters.Length).ToArray();
+        worldsBought[0] = 2;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         boosterManager = GetComponent<BoosterManager>();
         StopFog();
         startTimeScale = Time.timeScale;
@@ -82,6 +87,14 @@ public class GameManager : MonoBehaviour
         else
         {
             SetPrefsCharacter(isBought);
+        }
+        if (PlayerPrefs.HasKey("mountains") || PlayerPrefs.HasKey("desert") || PlayerPrefs.HasKey("winter"))
+        {
+            LoadPrefsWorld();
+        }
+        else
+        {
+            SetPrefsWorld(worldsBought);
         }
         birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
         cameraStartPos = camera.transform.position;
@@ -216,6 +229,8 @@ public class GameManager : MonoBehaviour
         {
             buttonText.text = "SELECTED";
             character.SetActive(true);
+            if (character.CompareTag("Player"))
+                player = character;
         }
     }
     public void LoadPrefsCharacter()
@@ -228,6 +243,29 @@ public class GameManager : MonoBehaviour
 
         SetPrefsCharacter(x);
     }
+
+    public void SetPrefsWorld(int[] x)
+    {
+        PlayerPrefs.SetInt("mountains", x[0]);
+        PlayerPrefs.SetInt("desert", x[1]);
+        PlayerPrefs.SetInt("winter", x[2]);
+    }
+
+    public void LoadPrefsWorld()
+    {
+        int[] x = new int[worldsBought.Length];
+        x[0] = PlayerPrefs.GetInt("mountains");
+        x[1] = PlayerPrefs.GetInt("desert");
+        x[2] = PlayerPrefs.GetInt("winter");        
+
+        for(int i = 0; i < worldsBought.Length; i++)
+        {
+            worldsBought[i] = x[i];
+            ChangeButtonText(x[i], buttonsWorldBuy[i], worlds[i]);            
+        }
+    }
+
+    
 
     public void QuitGame()
     {
@@ -382,6 +420,7 @@ public class GameManager : MonoBehaviour
                 characters[i].SetActive(false);
             }
             characters[index].SetActive(true);
+            player = characters[index];
             TextMeshProUGUI buttonText = buttonsBuy[index].GetComponentInChildren<TextMeshProUGUI>();
             buttonText.text = "SELECTED";
             isBought[index] = 2;
@@ -401,6 +440,41 @@ public class GameManager : MonoBehaviour
         }
         SetPrefsCharacter(isBought);
     }
+
+    public void SelectWorld(int index)
+    {
+        //Buy
+        if (worldsBought[index] == 0)
+        {
+            if (coins >= 50)
+            {
+                DecreaseCoin(50);
+                SetPrefs(coins, highScore);
+                LoadPrefs();
+                worldsBought[index] = 1;
+                buttonsWorldBuy[index].GetComponentInChildren<TMP_Text>().text = "SELECT";
+            }
+        }
+
+        //Select
+        else if (worldsBought[index] == 1)
+        {
+            for(int i = 0; i < worlds.Length; i++)
+            {
+                worlds[i].SetActive(false);
+                if (worldsBought[i] == 2)
+                {
+                    worldsBought[i] = 1;
+                    buttonsWorldBuy[i].GetComponentInChildren<TMP_Text>().text = "SELECT";
+                }
+            }
+            worldsBought[index] = 2;
+            worlds[index].SetActive(true);
+            buttonsWorldBuy[index].GetComponentInChildren<TMP_Text>().text = "SELECTED";
+        }
+        SetPrefsWorld(worldsBought);
+    }
+
     internal void DecreaseCoin(int cost)
     {
         ScoreCount coinCounter = FindObjectOfType<ScoreCount>();
