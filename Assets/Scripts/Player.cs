@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     private bool respawned = false;
     private bool flagInvisible = false;
     public GameObject gameManagerObj;
-    GameManager gameManager;
+    public GameManager gameManager;
     ScoreCount scoreCounter;
     //Vector3 startPos = new Vector3(-9, 2, 0);
     Vector3 startPos;
@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
     }
 
     private void Start()
@@ -94,8 +95,8 @@ public class Player : MonoBehaviour
             jumpIndicator.enabled = true;
             jumpIndicator.fillAmount = 0f;
         }
-        scoreCounter = gameManagerObj.GetComponent<ScoreCount>();
-        gameManager = gameManagerObj.GetComponent<GameManager>();
+        
+        //gameManager = gameManagerObj.GetComponent<GameManager>();
 
         UpdateLives();
 

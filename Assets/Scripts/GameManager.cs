@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         worldsBought = Enumerable.Repeat(0, characters.Length).ToArray();
         worldsBought[0] = 2;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
     }
     // Start is called before the first frame update
     void Start()
@@ -96,7 +97,7 @@ public class GameManager : MonoBehaviour
         {
             SetPrefsWorld(worldsBought);
         }
-        birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
+        
         cameraStartPos = camera.transform.position;
         ShakeStrength = baseShakeStrength;
         //GetComponent<Animator>().Play("Drop", -1, 0f);
@@ -258,7 +259,7 @@ public class GameManager : MonoBehaviour
         x[1] = PlayerPrefs.GetInt("desert");
         x[2] = PlayerPrefs.GetInt("winter");        
 
-        for(int i = 0; i < worldsBought.Length; i++)
+        for(int i = 0; i < 3; i++)
         {
             worldsBought[i] = x[i];
             ChangeButtonText(x[i], buttonsWorldBuy[i], worlds[i]);            
