@@ -3234,7 +3234,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -5892,7 +5892,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -10733,7 +10733,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -11787,7 +11787,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
