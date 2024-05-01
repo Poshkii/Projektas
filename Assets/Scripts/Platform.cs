@@ -146,7 +146,7 @@ public class Platform : MonoBehaviour
             model.GetComponent<ModelScript>().PlayAnimation();
         }
 
-        float logFactor = 0.01f; 
+        float logFactor = 0.005f; 
         platformSpeed += logFactor * Mathf.Log(platformSpeed + 1) * Time.deltaTime;
         transform.position = new Vector2(transform.position.x - platformSpeed * Time.deltaTime, transform.position.y - platformSpeedVertical * Time.deltaTime);
     }

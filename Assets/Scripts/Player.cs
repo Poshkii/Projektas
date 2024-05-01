@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
 
         if (sideJump > 2)
         {
-            sideJump -= 0.02f * Time.deltaTime;
+            sideJump -= 0.001f * Time.deltaTime;
         }
 
         // Returns jump strength back to normal after jump boost time expires
@@ -266,7 +266,9 @@ public class Player : MonoBehaviour
     {
         if (jumpsAvailable > 0)
         {
-            float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(heldTime / maxTime, (float)1.5));
+            float jumpHeight = Mathf.Lerp(minJump, jumpForce, Mathf.Pow(Mathf.Log(heldTime + 1) / Mathf.Log(maxTime + 1), (float)1.5));
+            //float jumpHeight = Mathf.Lerp(minJump, jumpForce, 1 - Mathf.Exp(-heldTime * 1.5f));
+
             heldTime = 0;
             body.velocity = new Vector2(sideJump, jumpHeight);
 
