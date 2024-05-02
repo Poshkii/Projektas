@@ -165,7 +165,7 @@ public class Player : MonoBehaviour
 
         if (sideJump > 2)
         {
-            sideJump -= 0.001f * Time.deltaTime;
+            sideJump -= 0.0015f * Time.deltaTime;
         }
 
         // Returns jump strength back to normal after jump boost time expires
