@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text highscoreText;
     public TMP_Text coinsText;
+    public TMP_Text coinsTextShop;
     public TMP_Text scoreboardText;
     public TMP_Text pickupText;
     public GameObject player;    
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score: " + runScore;
         highscoreText.text = "Highscore: " + highScore;
         coinsText.text = "Coins: " + coins;
+        coinsTextShop.text = "Coins: " + coins;
         SetPrefs(coins, highScore);
     }
 

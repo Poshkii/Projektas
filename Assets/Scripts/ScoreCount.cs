@@ -14,6 +14,7 @@ public class ScoreCount : MonoBehaviour
 
     public TMP_Text scoreText;
     public TMP_Text coinsText;
+    public TMP_Text coinsTextShop;
     float timer = 0;
     public Player playerScript;
     GameManager gameManager;
@@ -78,6 +79,7 @@ public class ScoreCount : MonoBehaviour
     {
         scoreText.text = "Score: " + score.ToString();
         coinsText.text = coins.ToString();
+        coinsTextShop.text = coins.ToString();
 
         //PlayerPrefs.SetInt("Coins", coins);
 
