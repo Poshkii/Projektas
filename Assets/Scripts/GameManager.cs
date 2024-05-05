@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     private float ShakeStrength;
     AudioManager audioManager;
     public ParticleSystem fogPartciles;
+    public ParticleSystem desertStormParticles;
     public PlatformSpawner platformSpawner;
     private float startTimeScale;
     private float startFixedDeltaTime;
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         isBought = Enumerable.Repeat(0, characters.Length).ToArray();
-        worldsBought = Enumerable.Repeat(0, characters.Length).ToArray();
+        worldsBought = Enumerable.Repeat(0, worlds.Length).ToArray();
         worldsBought[0] = 2;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         birdSpawner = birdSpawnerObj.GetComponent<BirdSpawner>();
