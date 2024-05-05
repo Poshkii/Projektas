@@ -8488,6 +8488,7 @@ MonoBehaviour:
   isBought: 
   worldsBought: 
   fogPartciles: {fileID: 765951640}
+  desertStormParticles: {fileID: 669820583}
   platformSpawner: {fileID: 1708826677}
 --- !u!114 &661003192
 MonoBehaviour:
@@ -8644,6 +8645,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663969250}
   m_CullTransparentMesh: 1
+--- !u!198 &669820583 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+  m_PrefabInstance: {fileID: 681596244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &680412983
 GameObject:
   m_ObjectHideFlags: 0
@@ -8920,7 +8926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1500
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -8948,7 +8954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: EmissionModule.rateOverTime.minScalar
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime0
