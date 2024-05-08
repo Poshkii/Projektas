@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BoosterManager : MonoBehaviour
 {
+    public GameManager gameManager;
     public RectTransform[] indications;
     public GameObject[] indicationObjects;
     private Vector3 startPos;
@@ -33,7 +34,6 @@ public class BoosterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Active boosters: " + activeIndicators.Count);
         
     }
 
@@ -43,15 +43,15 @@ public class BoosterManager : MonoBehaviour
         {
             activeIndicators.Add(name);            
         }
-        int index = 0;
-        dic.TryGetValue(name, out index);       
+        dic.TryGetValue(name, out int index);
         RearangeBoosters();
         indicationObjects[index].SetActive(true);
         indicationObjects[index].GetComponent<PickupIndication>().StartTimer(duration);
     }
 
     public void RemoveBooster(string name)
-    {
+    {        
+        gameManager.RemoveBooster(name);
         activeIndicators.Remove(name);
         RearangeBoosters();
     }

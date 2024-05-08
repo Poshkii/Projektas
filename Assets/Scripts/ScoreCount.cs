@@ -138,7 +138,7 @@ public class ScoreCount : MonoBehaviour
     public void SetMultiplier(int value)
     {
         multiplyer = value;
-        StartCoroutine(MultiplyerLastingTime());
+        //StartCoroutine(MultiplyerLastingTime());
     }
 
     IEnumerator BirdCooldown()
@@ -172,7 +172,7 @@ public class ScoreCount : MonoBehaviour
 
     IEnumerator FogCooldown()
     {
-        yield return new WaitForSeconds(Random.Range(15, 30));
+        yield return new WaitForSeconds(Random.Range(25, 45));
         fogReady = true;
     }
 }

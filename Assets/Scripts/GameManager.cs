@@ -337,7 +337,7 @@ public class GameManager : MonoBehaviour
             pickupText.text = "Double Jump Picked Up!";
             duration = 15f;
             SetJump(2);
-            StartCoroutine(DoubleJumpLastingTime());
+            //StartCoroutine(DoubleJumpLastingTime());
         }
         else if (type == "DoubleCoins")
         {
@@ -351,11 +351,33 @@ public class GameManager : MonoBehaviour
             pickupText.text = "Slow Motion Picked Up!";
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = startFixedDeltaTime * 0.5f;
-            StartCoroutine(SlowTimeLastingTime());
+            //StartCoroutine(SlowTimeLastingTime());
         }
         boosterManager.AddBooster(type, duration);
         pickupTextAnim.Play("BoosterPickupTextAnim", -1, 0f);
         audioManager.PlaySFX(audioManager.powerUp);
+    }
+
+    public void RemoveBooster(string type)
+    {
+        switch (type)
+        {
+            case "ExtraLife":
+
+                break;
+            case "ExtraJump":
+                SetJump(1);
+                break;
+            case "DoubleCoins":
+                scoreCount.SetMultiplier(1);
+                break;
+            case "SlowTime":
+                Time.timeScale = startTimeScale;
+                Time.fixedDeltaTime = startFixedDeltaTime;
+                break;
+            default:
+                break;
+        }
     }
 
     public void StartFog()
@@ -403,7 +425,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FogLastingTime()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
         StopFog();
     }
     public int GetCoins()

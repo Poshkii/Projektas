@@ -3234,7 +3234,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -5892,7 +5892,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -8578,6 +8578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee26e7c9f9f37674b96ff63c23fb206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 661003191}
   indications:
   - {fileID: 99588719}
   - {fileID: 165884788}
@@ -10741,7 +10742,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
@@ -11795,7 +11796,7 @@ MonoBehaviour:
     m_Bits: 128
   cloudLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
