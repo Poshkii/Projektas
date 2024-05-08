@@ -8560,7 +8560,11 @@ MonoBehaviour:
   - {fileID: 213910774}
   isBought: 
   worldsBought: 
-  fogPartciles: {fileID: 765951640}
+  selectedParticles: {fileID: 0}
+  allParticles:
+  - {fileID: 765951640}
+  - {fileID: 987666970}
+  - {fileID: 987666970}
   platformSpawner: {fileID: 1708826677}
 --- !u!114 &661003192
 MonoBehaviour:
@@ -9426,6 +9430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1415488499990716857, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5365000918961364497, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: m_Name
       value: FogParticles
@@ -11938,7 +11946,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12008,7 +12016,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -12074,8 +12082,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.02
-      minScalar: 5
+      scalar: 2.2
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12127,8 +12135,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 10
-      minScalar: 5
+      scalar: 20
+      minScalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12181,7 +12189,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -12245,8 +12253,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.93
-      minScalar: 0.2
+      scalar: 10
+      minScalar: 7
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12403,7 +12411,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -12456,7 +12464,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -12509,7 +12517,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 1.5707963
       minScalar: 0
       maxCurve:
@@ -12569,7 +12577,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03
+      scalar: 0.05
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -12828,8 +12836,8 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 200
-      minScalar: 50
+      scalar: 70
+      minScalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -13291,7 +13299,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
+        m_ColorSpace: 0
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minGradient:
@@ -16722,13 +16730,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987666968}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.9671003, y: -0.25439543, z: -0, w: 0}
-  m_LocalPosition: {x: 4.78, y: 7.2, z: 0}
+  m_LocalRotation: {x: 0.8312272, y: -0.55593294, z: 0, w: 0}
+  m_LocalPosition: {x: 12.85, y: 6.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 29.475998}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 67.55}
 --- !u!1 &993545277
 GameObject:
   m_ObjectHideFlags: 0
