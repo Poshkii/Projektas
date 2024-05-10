@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     public Button[] buttonsWorldBuy;
     public int[] isBought;
     public int[] worldsBought;
+    public int[] pricesForCharacters;
     private bool shakeCamera = false;
     private float duration = 0f;
     private Vector3 cameraStartPos;
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         isBought = Enumerable.Repeat(0, characters.Length).ToArray();
+        pricesForCharacters = new int[] { 5, 10, 15 };
         worldsBought = Enumerable.Repeat(0, worlds.Length).ToArray();
         worldsBought[0] = 2;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -524,9 +526,9 @@ public class GameManager : MonoBehaviour
         }
         else if(isBought[index] != 2)
         {
-            if(coins - 25 >= 0)
+            if(coins - pricesForCharacters[index] >= 0)
             {
-                DecreaseCoin(25); ;
+                DecreaseCoin(pricesForCharacters[index]); ;
                 SetPrefs(coins, highScore);
                 LoadPrefs();
                 isBought[index] = 1;
