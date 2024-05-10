@@ -2645,7 +2645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2ce7ab27aa84fa43aa75e88c18e9dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
+  defaultSprite: {fileID: 0}
 --- !u!1 &161660468
 GameObject:
   m_ObjectHideFlags: 0
@@ -8493,6 +8493,24 @@ MonoBehaviour:
   - {fileID: 669820583}
   - {fileID: 1041672432}
   platformSpawner: {fileID: 1708826677}
+  sprites_mountains:
+  - {fileID: 21300000, guid: bd06e5a91616ec144a7b7e794464baa4, type: 3}
+  - {fileID: 21300000, guid: 666a03d4f7871a84f94febd07583e8de, type: 3}
+  - {fileID: 21300000, guid: 99a2544de988b3844b4036202652759f, type: 3}
+  - {fileID: 21300000, guid: d71abf36fefa70d47859f3694e139fd0, type: 3}
+  - {fileID: 21300000, guid: d64d5eae3025175429295527a5833cf5, type: 3}
+  sprites_winter:
+  - {fileID: 21300000, guid: 4120b34ccf596914bba9d37c18691b47, type: 3}
+  - {fileID: 21300000, guid: 5d268b9bf112789488186cb9b87a010c, type: 3}
+  - {fileID: 21300000, guid: 2c240efb49624e341af6b5d9923bf593, type: 3}
+  - {fileID: 21300000, guid: e5a5b7c03d263d64ba0659089d423308, type: 3}
+  - {fileID: 21300000, guid: 9d3b5418bd6bb3746ad892b446bb66d4, type: 3}
+  sprites_desert:
+  - {fileID: 21300000, guid: c3b9ded058cba7a45a4ca2c6d3b9d2d7, type: 3}
+  - {fileID: 21300000, guid: 933cdb9a569eff042b84dca3a7cd61cd, type: 3}
+  - {fileID: 21300000, guid: 9fe5a1c79d0791546b1bbfc05cafe0cd, type: 3}
+  - {fileID: 21300000, guid: 9316561afc366df4d87eaccd3d8f6d19, type: 3}
+  - {fileID: 21300000, guid: 0be707dbcd903e5409b11f6343d84ce8, type: 3}
 --- !u!114 &661003192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22464,6 +22482,82 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a1be3c8503f621e48b22890a52d2d24a, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd06e5a91616ec144a7b7e794464baa4, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_desert.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_winter.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_desert.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c3b9ded058cba7a45a4ca2c6d3b9d2d7, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_desert.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 933cdb9a569eff042b84dca3a7cd61cd, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_desert.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fe5a1c79d0791546b1bbfc05cafe0cd, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_desert.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9316561afc366df4d87eaccd3d8f6d19, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_desert.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0be707dbcd903e5409b11f6343d84ce8, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_mountains.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_winter.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4120b34ccf596914bba9d37c18691b47, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_winter.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d268b9bf112789488186cb9b87a010c, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_winter.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2c240efb49624e341af6b5d9923bf593, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_winter.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: e5a5b7c03d263d64ba0659089d423308, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_winter.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d3b5418bd6bb3746ad892b446bb66d4, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_mountains.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: bd06e5a91616ec144a7b7e794464baa4, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_mountains.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 666a03d4f7871a84f94febd07583e8de, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_mountains.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 99a2544de988b3844b4036202652759f, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_mountains.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: d71abf36fefa70d47859f3694e139fd0, type: 3}
+    - target: {fileID: 2141222638410373067, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
+      propertyPath: sprites_mountains.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d64d5eae3025175429295527a5833cf5, type: 3}
     - target: {fileID: 3311479972532951146, guid: 193fe81b501097b4d91d7b9db52f0026, type: 3}
       propertyPath: m_Name
       value: Platform_new

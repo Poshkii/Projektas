@@ -52,6 +52,12 @@ public class GameManager : MonoBehaviour
     private float startFixedDeltaTime;
     internal bool gameStarted = false;
 
+    public Sprite[] sprites_mountains;
+    public Sprite[] sprites_winter;
+    public Sprite[] sprites_desert;
+    private Sprite[] sprites_active;
+    PlatformSpawner spawner;
+
     private List<int> scores = new List<int>();
     private void Awake()
     {
@@ -64,6 +70,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawner = FindObjectOfType<PlatformSpawner>();
         selectedParticles = allParticles[0];
         boosterManager = GetComponent<BoosterManager>();
         StopFog();
@@ -95,10 +102,12 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("mountains") || PlayerPrefs.HasKey("desert") || PlayerPrefs.HasKey("winter"))
         {
             LoadPrefsWorld();
+            LoadPlatformPrefs();
         }
         else
         {
             SetPrefsWorld(worldsBought);
+            SetPlatformPrefs(0);
         }
         
         cameraStartPos = camera.transform.position;
@@ -276,7 +285,59 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void SetPlatformPrefs(int index)
+    {
+        if (index == 0)
+        {
+            sprites_active = sprites_mountains;
+            Debug.Log("default");
+        }
+        else if (index == 1)
+        {
+            sprites_active = sprites_desert;
+            Debug.Log("desert");
+        }
+        else if (index == 2)
+        {
+            sprites_active = sprites_winter;
+            Debug.Log("winter");
+        }
+        else
+        {
+            sprites_active = sprites_mountains;
+            Debug.Log("default");
+        }
+        Debug.Log(sprites_active.Length);
+    }
+
+    public void LoadPlatformPrefs()
+    {
+        int[] x = new int[worldsBought.Length];
+        x[0] = PlayerPrefs.GetInt("mountains");
+        x[1] = PlayerPrefs.GetInt("desert");
+        x[2] = PlayerPrefs.GetInt("winter");
+        if (x[0] == 2)
+        {
+            sprites_active = sprites_mountains;
+            Debug.Log("default");
+        }
+        else if (x[1] == 2)
+        {
+            sprites_active = sprites_desert;
+            Debug.Log("desert");
+        }
+        else if (x[2] == 2)
+        {
+            sprites_active = sprites_winter;
+            Debug.Log("winter");
+        }
+        else
+        {
+            sprites_active = sprites_mountains;
+            Debug.Log("default");
+        }
+        Debug.Log(sprites_active.Length);
+    }
 
     public void QuitGame()
     {
@@ -508,6 +569,8 @@ public class GameManager : MonoBehaviour
             worlds[index].SetActive(true);
             buttonsWorldBuy[index].GetComponentInChildren<TMP_Text>().text = "SELECTED";
             selectedParticles = allParticles[index];
+            SetPlatformPrefs(index);
+            spawner.Restart();
         }
         SetPrefsWorld(worldsBought);
     }
@@ -519,6 +582,12 @@ public class GameManager : MonoBehaviour
         {
             coinCounter.DecreaseCoin(cost);
         }
+    }
+
+    internal Sprite SetSprite()
+    {
+        int random = UnityEngine.Random.Range(0, sprites_active.Length);
+        return sprites_active[random];
     }
 }
 

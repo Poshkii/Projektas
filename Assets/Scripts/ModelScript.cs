@@ -1,27 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ModelScript : MonoBehaviour
 {
-    public Sprite[] sprites;
-
-    // Start is called before the first frame update
+    public Sprite defaultSprite;
     void Start()
     {
+        GameManager manager = FindObjectOfType<GameManager>();
         SpriteRenderer render = GetComponent<SpriteRenderer>();
-        if (sprites.Length > 0)
+        render.sprite = defaultSprite;
+
+        if (manager != null)
         {
-            int random = Random.Range(0, sprites.Length);
-            render.sprite = sprites[random];
+            render.sprite = manager.SetSprite();
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PlayAnimation()

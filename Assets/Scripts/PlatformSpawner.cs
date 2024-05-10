@@ -21,7 +21,7 @@ public class PlatformSpawner : MonoBehaviour
         platformScript.SpawnRecusively(8);
     }
 
-    private void DestroyAllPlatforms()
+    internal void DestroyAllPlatforms()
     {
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
         foreach (GameObject platform in platforms)
