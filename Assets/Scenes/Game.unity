@@ -5222,7 +5222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &353169319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8487,8 +8487,11 @@ MonoBehaviour:
   - {fileID: 213910774}
   isBought: 
   worldsBought: 
-  fogPartciles: {fileID: 765951640}
-  desertStormParticles: {fileID: 669820583}
+  selectedParticles: {fileID: 0}
+  allParticles:
+  - {fileID: 765951640}
+  - {fileID: 669820583}
+  - {fileID: 1041672432}
   platformSpawner: {fileID: 1708826677}
 --- !u!114 &661003192
 MonoBehaviour:
@@ -8502,6 +8505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee26e7c9f9f37674b96ff63c23fb206b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 661003191}
   indications:
   - {fileID: 99588719}
   - {fileID: 165884788}
@@ -9710,7 +9714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365000918961364497, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7763172607419465932, guid: e2dc294e6ef2f1e49b0a63eda5bac0f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12470,6 +12474,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025956190}
   m_CullTransparentMesh: 1
+--- !u!1001 &1041672431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.8312272
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.55593294
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 635091033307000144, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 67.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759840379345340490, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_Name
+      value: SnowParticles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5759840379345340490, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+--- !u!198 &1041672432 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2852646049703131159, guid: b45639d3700e1c342ac2ecb3349ed039, type: 3}
+  m_PrefabInstance: {fileID: 1041672431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1064038899
 GameObject:
   m_ObjectHideFlags: 0
@@ -22500,3 +22570,4 @@ SceneRoots:
   - {fileID: 229818536}
   - {fileID: 286197060}
   - {fileID: 1711140120}
+  - {fileID: 1041672431}

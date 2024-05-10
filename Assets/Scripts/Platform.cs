@@ -45,11 +45,7 @@ public class Platform : MonoBehaviour
 
         model.transform.localScale = new Vector3(randomWidth, 1, 0);
 
-        coin.SetActive(hasCoin);
-        extraLife.SetActive(hasExtraLife);
-        extraJump.SetActive(hasExtraJump);
-        doubleCoins.SetActive(hasDoubleCoins);
-        slowTime.SetActive(hasSlowTime);
+        RefreshPickups();
     }
 
     public void SetPosAndSpeed(Vector2 position, float speed)
@@ -61,11 +57,7 @@ public class Platform : MonoBehaviour
         position.y = baseYValue;
         transform.position = position + offset;
 
-        TrySpawnCoin();
-        if (!hasCoin)
-        {
-            TrySpawnBooster();
-        }
+        TrySpawnCoin();        
     }      
     
     public void TrySpawnCoin()
@@ -81,9 +73,18 @@ public class Platform : MonoBehaviour
         if (count > 0)
         {
             count--;
-            SpawnPlatform();
+            SpawnPlatform(false);
             spawnedPlatform.SpawnRecusively(count);
         }
+    }
+
+    private void RefreshPickups()
+    {
+        coin.SetActive(hasCoin);
+        extraLife.SetActive(hasExtraLife);
+        extraJump.SetActive(hasExtraJump);
+        doubleCoins.SetActive(hasDoubleCoins);
+        slowTime.SetActive(hasSlowTime);
     }
 
     private void TrySpawnBooster()
@@ -110,12 +111,16 @@ public class Platform : MonoBehaviour
         }
     }
 
-    void SpawnPlatform()
+    void SpawnPlatform(bool spawnBoosters)
     {
         if (spawnedPlatform == null)
         {
             spawnedPlatform = Instantiate(gameObject).GetComponent<Platform>();
             spawnedPlatform.SetPosAndSpeed(transform.position, platformSpeed);
+            if (spawnBoosters && !spawnedPlatform.hasCoin)
+            {
+                spawnedPlatform.TrySpawnBooster();
+            }
         }        
     }
 
@@ -127,7 +132,7 @@ public class Platform : MonoBehaviour
         }
         else
         {
-            SpawnPlatform();
+            SpawnPlatform(true);
         }
     }    
    

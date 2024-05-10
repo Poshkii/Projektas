@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
     private const float baseShakeStrength = 0.2f;
     private float ShakeStrength;
     AudioManager audioManager;
-    public ParticleSystem fogPartciles;
-    public ParticleSystem desertStormParticles;
+    public ParticleSystem selectedParticles;
+    public ParticleSystem[] allParticles;
     public PlatformSpawner platformSpawner;
     private float startTimeScale;
     private float startFixedDeltaTime;
@@ -63,7 +63,8 @@ public class GameManager : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        selectedParticles = allParticles[0];
         boosterManager = GetComponent<BoosterManager>();
         StopFog();
         startTimeScale = Time.timeScale;
@@ -163,10 +164,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         deathScreenUI.gameObject.SetActive(false);
         gameUI.gameObject.SetActive(true);        
-        //Debug.Log("Play");
         Instantiate(starterPlatform);
         StopFog();
-        fogPartciles.Clear();
+        foreach (ParticleSystem ps in allParticles)
+        {
+            ps.Clear();
+        }
         platformSpawner.Restart();
         gameStarted = true;
     }
@@ -265,7 +268,11 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < 3; i++)
         {
             worldsBought[i] = x[i];
-            ChangeButtonText(x[i], buttonsWorldBuy[i], worlds[i]);            
+            ChangeButtonText(x[i], buttonsWorldBuy[i], worlds[i]);
+            if (x[i] == 2)
+            {
+                selectedParticles = allParticles[i];
+            }
         }
     }
 
@@ -333,7 +340,7 @@ public class GameManager : MonoBehaviour
             pickupText.text = "Double Jump Picked Up!";
             duration = 15f;
             SetJump(2);
-            StartCoroutine(DoubleJumpLastingTime());
+            //StartCoroutine(DoubleJumpLastingTime());
         }
         else if (type == "DoubleCoins")
         {
@@ -347,21 +354,46 @@ public class GameManager : MonoBehaviour
             pickupText.text = "Slow Motion Picked Up!";
             Time.timeScale = 0.5f;
             Time.fixedDeltaTime = startFixedDeltaTime * 0.5f;
-            StartCoroutine(SlowTimeLastingTime());
+            //StartCoroutine(SlowTimeLastingTime());
         }
         boosterManager.AddBooster(type, duration);
         pickupTextAnim.Play("BoosterPickupTextAnim", -1, 0f);
         audioManager.PlaySFX(audioManager.powerUp);
     }
 
+    public void RemoveBooster(string type)
+    {
+        switch (type)
+        {
+            case "ExtraLife":
+
+                break;
+            case "ExtraJump":
+                SetJump(1);
+                break;
+            case "DoubleCoins":
+                scoreCount.SetMultiplier(1);
+                break;
+            case "SlowTime":
+                Time.timeScale = startTimeScale;
+                Time.fixedDeltaTime = startFixedDeltaTime;
+                break;
+            default:
+                break;
+        }
+    }
+
     public void StartFog()
     {
-        fogPartciles.Play();
+        selectedParticles.Play();
         StartCoroutine(FogLastingTime());
     }
     public void StopFog()
     {
-        fogPartciles.Stop();
+        foreach (var particles in allParticles)
+        {
+            particles.Stop();
+        }
     }
 
     private void AddLife()
@@ -475,6 +507,7 @@ public class GameManager : MonoBehaviour
             worldsBought[index] = 2;
             worlds[index].SetActive(true);
             buttonsWorldBuy[index].GetComponentInChildren<TMP_Text>().text = "SELECTED";
+            selectedParticles = allParticles[index];
         }
         SetPrefsWorld(worldsBought);
     }
