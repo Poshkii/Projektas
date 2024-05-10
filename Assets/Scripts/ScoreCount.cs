@@ -17,6 +17,7 @@ public class ScoreCount : MonoBehaviour
     float timer = 0;
     public Player playerScript;
     GameManager gameManager;
+    BoosterManager boosterManager;
     private bool birdReady = true;
     private bool earthquakeReady = true;
     private bool multiplyerReady = true;
@@ -26,6 +27,7 @@ public class ScoreCount : MonoBehaviour
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
+        boosterManager = GetComponent<BoosterManager>();
         coins = gameManager.GetCoins();
     }
 
@@ -36,6 +38,7 @@ public class ScoreCount : MonoBehaviour
 
     public void Death()
     {
+        boosterManager.RemoveAllBoosters();
         gameManager.DisplayDeathScreen(score, coins);
         score = 0;
         //coins = 0;

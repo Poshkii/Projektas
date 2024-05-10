@@ -56,6 +56,20 @@ public class BoosterManager : MonoBehaviour
         RearangeBoosters();
     }
 
+    public void RemoveAllBoosters()
+    {
+        foreach (string booster in activeIndicators)
+        {
+            gameManager.RemoveBooster(booster);
+        }
+        activeIndicators.Clear();
+        foreach (GameObject indication in indicationObjects)
+        {
+            indication.SetActive(false);
+        }
+        RearangeBoosters();
+    }
+
     private void RearangeBoosters()
     {
         for(int i = 0; i < activeIndicators.Count; i++)
