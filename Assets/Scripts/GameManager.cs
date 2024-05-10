@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         isBought = Enumerable.Repeat(0, characters.Length).ToArray();
-        pricesForCharacters = new int[] { 5, 10, 15 };
+        pricesForCharacters = new int[] { 0, 5, 10, 15 };
         worldsBought = Enumerable.Repeat(0, worlds.Length).ToArray();
         worldsBought[0] = 2;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
