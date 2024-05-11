@@ -72,9 +72,10 @@ public class ScoreCount : MonoBehaviour
     {
         coins += multiplyer;
     }
-    internal void DecreaseCoin(int cost)
+    internal int DecreaseCoin(int cost)
     {
         coins -= cost;
+        return coins;
     }
 
     // Update is called once per frame

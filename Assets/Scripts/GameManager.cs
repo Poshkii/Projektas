@@ -529,7 +529,7 @@ public class GameManager : MonoBehaviour
         {
             if(coins - pricesForCharacters[index] >= 0)
             {
-                DecreaseCoin(pricesForCharacters[index]); ;
+                coins = DecreaseCoin(pricesForCharacters[index]); ;
                 SetPrefs(coins, highScore);
                 LoadPrefs();
                 isBought[index] = 1;
@@ -578,13 +578,14 @@ public class GameManager : MonoBehaviour
         SetPrefsWorld(worldsBought);
     }
 
-    internal void DecreaseCoin(int cost)
+    internal int DecreaseCoin(int cost)
     {
         ScoreCount coinCounter = FindObjectOfType<ScoreCount>();
         if (coinCounter != null)
         {
-            coinCounter.DecreaseCoin(cost);
+            coins = coinCounter.DecreaseCoin(cost);
         }
+        return coins;
     }
 
     internal Sprite SetSprite()
