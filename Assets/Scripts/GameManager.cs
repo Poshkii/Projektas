@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public int[] isBought;
     public int[] worldsBought;
     public int[] pricesForCharacters;
+    public int[] worldPrices;
     private bool shakeCamera = false;
     private float duration = 0f;
     private Vector3 cameraStartPos;
@@ -65,6 +66,7 @@ public class GameManager : MonoBehaviour
         isBought = Enumerable.Repeat(0, characters.Length).ToArray();
         isBought[0] = 2;
         pricesForCharacters = new int[] { 0, 5, 10, 15 };
+        worldPrices = new int[] { 0, 50, 100 };
         worldsBought = Enumerable.Repeat(0, worlds.Length).ToArray();
         worldsBought[0] = 2;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -72,7 +74,8 @@ public class GameManager : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
-    {
+    {       
+        //SetPrefsWorld(new int[] { 2, 0, 0});
         spawner = FindObjectOfType<PlatformSpawner>();
         selectedParticles = allParticles[0];
         boosterManager = GetComponent<BoosterManager>();
@@ -546,9 +549,9 @@ public class GameManager : MonoBehaviour
         //Buy
         if (worldsBought[index] == 0)
         {
-            if (coins >= 50)
+            if (coins >= worldPrices[index])
             {
-                DecreaseCoin(50);
+                DecreaseCoin(worldPrices[index]);
                 SetPrefs(coins, highScore);
                 LoadPrefs();
                 worldsBought[index] = 1;

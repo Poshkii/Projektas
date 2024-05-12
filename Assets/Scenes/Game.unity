@@ -4130,7 +4130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63d0bc9d0818ddb49b2461156f37d093, type: 2}
   m_sharedMaterial: {fileID: -2352901792105738536, guid: 63d0bc9d0818ddb49b2461156f37d093, type: 2}
@@ -7476,6 +7476,7 @@ MonoBehaviour:
   isBought: 
   worldsBought: 
   pricesForCharacters: 
+  worldPrices: 
   selectedParticles: {fileID: 0}
   allParticles:
   - {fileID: 765951640}
@@ -15551,7 +15552,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BUY
+  m_text: BUY 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 63d0bc9d0818ddb49b2461156f37d093, type: 2}
   m_sharedMaterial: {fileID: -2352901792105738536, guid: 63d0bc9d0818ddb49b2461156f37d093, type: 2}
