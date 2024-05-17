@@ -3046,7 +3046,7 @@ MonoBehaviour:
   sideJump: 3
   maxTime: 1
   minJump: 2
-  lives: 2
+  lives: 1
   jumpCount: 1
   bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
   frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
@@ -4664,7 +4664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &353169319
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5182,7 +5182,7 @@ MonoBehaviour:
   sideJump: 3
   maxTime: 1
   minJump: 2
-  lives: 2
+  lives: 1
   jumpCount: 1
   bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
   frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
@@ -10023,7 +10023,7 @@ MonoBehaviour:
   sideJump: 3
   maxTime: 1
   minJump: 2
-  lives: 2
+  lives: 1
   jumpCount: 1
   bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
   frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
@@ -11151,7 +11151,7 @@ MonoBehaviour:
   sideJump: 3
   maxTime: 1
   minJump: 2
-  lives: 2
+  lives: 1
   jumpCount: 1
   bounceMaterial: {fileID: 6200000, guid: 4c1bb3f9ca969584cbfee122855fd335, type: 2}
   frictionMaterial: {fileID: 6200000, guid: dc266b3d32f5a5348a8af904c17b6a39, type: 2}
@@ -13302,9 +13302,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 407648117}
-  - {fileID: 1939217801}
+  m_Children: []
   m_Father: {fileID: 1578682893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.73, y: 0.5}
@@ -17549,6 +17547,7 @@ RectTransform:
   m_Children:
   - {fileID: 1691329428}
   - {fileID: 161660469}
+  - {fileID: 1258359471}
   m_Father: {fileID: 1380296028}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}

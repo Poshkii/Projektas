@@ -149,21 +149,15 @@ public class ScoreCount : MonoBehaviour
 
     IEnumerator BirdCooldown()
     {
-        yield return new WaitForSeconds(Random.Range(5, 20));
+        yield return new WaitForSeconds(Random.Range(15, 60));
         birdReady = true;
     }
 
     IEnumerator EarthquakeCooldown()
     {
-        yield return new WaitForSeconds(Random.Range(5, 30));
+        yield return new WaitForSeconds(Random.Range(20, 50));
         earthquakeReady = true;
-    }
-    IEnumerator MultiplyerCooldown()
-    {
-        yield return new WaitForSeconds(Random.Range(10, 30));
-        multiplyerReady = true;
-        //multiplyer = 1;
-    }
+    }    
     IEnumerator MultiplyerLastingTime()
     {
         yield return new WaitForSeconds(15);
@@ -172,13 +166,13 @@ public class ScoreCount : MonoBehaviour
 
     IEnumerator WindCooldown()
     {
-        yield return new WaitForSeconds(Random.Range(15, 30));
+        yield return new WaitForSeconds(Random.Range(20, 40));
         windReady = true;
     }
 
     IEnumerator FogCooldown()
     {
-        yield return new WaitForSeconds(Random.Range(15, 30));
+        yield return new WaitForSeconds(Random.Range(30, 60));
         fogReady = true;
     }
 }

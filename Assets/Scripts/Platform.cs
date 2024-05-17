@@ -1,3 +1,4 @@
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class Platform : MonoBehaviour
     GameObject doubleCoins;
     GameObject slowTime;
     private float coinSpawnChance = 0.4f;
-    private float boosterSpawnChance = 0.15f;
+    private float boosterSpawnChance = 0.2f;
 
     private bool hasCoin = false;
     private bool hasExtraLife = false;
@@ -80,6 +81,7 @@ public class Platform : MonoBehaviour
 
     private void RefreshPickups()
     {
+        Debug.Log("Pickups refreshed");
         coin.SetActive(hasCoin);
         extraLife.SetActive(hasExtraLife);
         extraJump.SetActive(hasExtraJump);
@@ -119,6 +121,7 @@ public class Platform : MonoBehaviour
             spawnedPlatform.SetPosAndSpeed(transform.position, platformSpeed);
             if (spawnBoosters && !spawnedPlatform.hasCoin)
             {
+                Debug.Log("Spawning boosters");
                 spawnedPlatform.TrySpawnBooster();
             }
         }        

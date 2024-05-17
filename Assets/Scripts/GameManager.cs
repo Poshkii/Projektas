@@ -495,7 +495,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FogLastingTime()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(10f);
         StopFog();
     }
     public int GetCoins()
