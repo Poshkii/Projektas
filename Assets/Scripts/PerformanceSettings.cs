@@ -9,11 +9,26 @@ public class PerformanceSettings : MonoBehaviour
 
     private void Start()
     {
-        int savedFPS = PlayerPrefs.GetInt("FPS", 60);
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = savedFPS;
-        fpsSlider.value = GetSliderValue(savedFPS);
+        if (PlayerPrefs.HasKey("FPS"))
+        {
+            LoadFPS();
+        }
+        else
+        {
+            SetFPS();
+        }
+        
     }
+
+    public void LoadFPS()
+    {
+		int savedFPS = PlayerPrefs.GetInt("FPS", 60);
+		QualitySettings.vSyncCount = 0;
+		Application.targetFrameRate = savedFPS;
+		fpsSlider.value = GetSliderValue(savedFPS);
+
+        SetFPS();
+	}
 
     public void SetFPS()
     {
